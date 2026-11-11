@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { describe, expect, it } from 'vitest';
 import type { SegmentResult } from '../engine/stats';
 import { ProfileProvider } from '../storage/ProfileContext';
-import { STORAGE_KEY } from '../storage/profile';
+import { STORAGE_KEY, defaultStore, saveStore, today } from '../storage/profile';
 import Result from './Result';
 
 const RESULT: SegmentResult = {
@@ -43,6 +43,38 @@ function Remount() {
 }
 
 describe('Result', () => {
+  it('显示新解锁的奖励，可以马上穿上', () => {
+    const store = defaultStore();
+    store.profiles[0].skinsOwned = ['classic', 'scarf'];
+    store.profiles[0].skinsNew = ['scarf'];
+    saveStore(localStorage, store);
+    renderResult({ ...RESULT, unlocks: { skins: ['scarf'], badges: ['first'], speedLevel: 1 } });
+    expect(screen.getByRole('heading', { name: '获得奖励' })).toBeInTheDocument();
+    expect(screen.getByText('红围巾')).toBeInTheDocument();
+    expect(screen.getByText('初次上手')).toBeInTheDocument();
+    expect(screen.getByText('速度升到「小兔」啦！')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '马上穿上：红围巾' }));
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0].skinWorn).toBe('scarf');
+    expect(screen.getByText('穿好啦')).toBeInTheDocument();
+  });
+
+  it('没有新奖励时不显示奖励区', () => {
+    renderResult({ ...RESULT, unlocks: { skins: [], badges: [], speedLevel: null } });
+    expect(screen.queryByRole('heading', { name: '获得奖励' })).not.toBeInTheDocument();
+  });
+
+  it('答对小考考记到当天，完成全部任务再奖励', () => {
+    const store = defaultStore();
+    const date = today();
+    store.profiles[0].daily[date] = { minutes: 1, chars: 120, segments: 1 };
+    saveStore(localStorage, store);
+    renderResult();
+    fireEvent.click(screen.getByRole('button', { name: '傲来国' }));
+    const p = JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0];
+    expect(p.daily[date].quizRight).toBe(1);
+    expect(p.stars).toBe(4);
+  });
+
   it('离开再回到结算页，不能再答一次刷星星', () => {
     render(
       <ProfileProvider storage={localStorage} initialResult={RESULT}>

@@ -111,3 +111,5 @@
 @media (min-width: 1100px) and (max-height: 760px) {
   .practice-tip { display: none; }
 }
+
+.done-card .done-new { color: var(--purple-ink); }

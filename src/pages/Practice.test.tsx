@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { getSegment } from '../content/library';
 import { ProfileProvider } from '../storage/ProfileContext';
-import { STORAGE_KEY } from '../storage/profile';
+import { STORAGE_KEY, defaultStore, saveStore } from '../storage/profile';
 import Practice, { IDLE_PAUSE_MS } from './Practice';
 
 function renderPractice(bookId = 'xiyouji', segmentId = 'c1-1') {
@@ -88,6 +88,27 @@ describe('Practice', () => {
 
 describe('Practice 的计时和重打', () => {
   const saved = () => JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0];
+
+  it('打完时解锁奖励，就算不进结算页也已保存', () => {
+    const store = defaultStore();
+    store.profiles[0].totalChars = 480;
+    saveStore(localStorage, store);
+    renderPractice();
+    typeKeys(lettersOf('c1-1'));
+    expect(saved().skinsOwned).toContain('scarf');
+    expect(saved().skinsNew).toContain('scarf');
+    expect(saved().badges).toContain('first');
+    expect(screen.getByText('有新奖励等你领！')).toBeInTheDocument();
+  });
+
+  it('键宝穿着选好的皮肤', () => {
+    const store = defaultStore();
+    store.profiles[0].skinsOwned = ['classic', 'mint'];
+    store.profiles[0].skinWorn = 'mint';
+    saveStore(localStorage, store);
+    const { container } = renderPractice();
+    expect(container.querySelector('[data-part="body"]')).toHaveAttribute('fill', '#34C38F');
+  });
 
   afterEach(() => {
     vi.useRealTimers();

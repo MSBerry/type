@@ -39,7 +39,7 @@ describe('Wardrobe', () => {
     seedScarf();
     renderPage();
     expect(screen.getByText('NEW')).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: '红围巾：已拥有' }));
+    fireEvent.click(screen.getByRole('button', { name: '红围巾：已拥有，新' }));
     expect(screen.queryByText('NEW')).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: '穿上它' }));
     expect(saved().skinWorn).toBe('scarf');

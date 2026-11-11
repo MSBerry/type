@@ -6,14 +6,16 @@ import { createSession, currentToken, expectedKey, pause, press } from '../engin
 import { accuracy, buildResult, speedCpm, starsFor } from '../engine/stats';
 import { useTypingInput } from '../hooks/useTypingInput';
 import { navigate } from '../router';
+import { grantDailyBonus } from '../rewards/dailyTasks';
+import { syncRewards } from '../rewards/rewards';
 import { useProfile } from '../storage/ProfileContext';
 import { recordSegment, today } from '../storage/profile';
 import Hands from '../ui/Hands';
 import Keyboard from '../ui/Keyboard';
-import Mascot from '../ui/Mascot';
 import Passage from '../ui/Passage';
 import ProgressBar from '../ui/ProgressBar';
 import StarRow from '../ui/StarRow';
+import WornMascot from '../ui/WornMascot';
 import { coachMessage } from './coach';
 import './Practice.css';
 
@@ -44,7 +46,7 @@ export default function Practice({ bookId, segmentId }: { bookId: string; segmen
 }
 
 function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
-  const { profile, update, setLastResult } = useProfile();
+  const { profile, update, lastResult, setLastResult } = useProfile();
   const [session, setSession] = useState(() => createSession(segment.tokens));
   const [imeWarn, setImeWarn] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -69,14 +71,16 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
     return () => window.clearTimeout(t);
   }, [session.lastPressAt, session.done, onPause]);
 
-  // 打完一段：记成绩，只记一次
+  // 打完一段：记成绩、发奖励，只记一次。奖励在这里就保存，孩子不进结算页也不会丢。
   useEffect(() => {
     if (!session.done || saved.current) return;
     saved.current = true;
     const result = buildResult(session, book.id, segment.id);
-    setLastResult(result);
-    update((p) => recordSegment(p, result, today()));
-  }, [session, book.id, segment.id, setLastResult, update]);
+    const date = today();
+    const { profile: rewarded, unlocks } = syncRewards(recordSegment(profile, result, date), result, date);
+    setLastResult({ ...result, unlocks });
+    update(() => grantDailyBonus(rewarded, date));
+  }, [session, book.id, segment.id, profile, setLastResult, update]);
 
   const restart = () => {
     saved.current = false;
@@ -94,6 +98,8 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
   const typed = session.right + session.wrong;
   const total = session.hanziIdx.length;
   const showPinyin = profile.settings.showPinyin;
+  const u = lastResult?.unlocks;
+  const hasNewRewards = session.done && u !== undefined && (u.skins.length > 0 || u.badges.length > 0 || u.speedLevel !== null);
 
   return (
     <main className="page practice-page">
@@ -185,6 +191,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
               <div className="card done-card">
                 <StarRow count={starsFor(acc)} size={56} />
                 <h2 className="display">整段完成！</h2>
+                {hasNewRewards && <p className="done-new">有新奖励等你领！</p>}
                 <p>
                   速度 {speedCpm(session)} 字/分 · 正确率 {acc}%
                 </p>
@@ -197,7 +204,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
               </div>
             )}
             <div className="practice-coach">
-              <Mascot size={72} mood={session.lastWrongKey ? 'oops' : 'happy'} />
+              <WornMascot size={86} mood={session.lastWrongKey ? 'oops' : 'happy'} />
               <p className="coach-bubble" aria-live="polite">
                 {coachMessage(session)}
               </p>

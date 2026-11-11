@@ -1,9 +1,14 @@
 import { getBook, getSegment, segmentAfter } from '../content/library';
 import { navigate } from '../router';
+import { BADGES } from '../rewards/badges';
+import { SPEED_LEVELS } from '../rewards/config';
+import { grantDailyBonus } from '../rewards/dailyTasks';
+import { skinById } from '../rewards/skins';
 import { useProfile } from '../storage/ProfileContext';
-import { addStars } from '../storage/profile';
+import { recordQuizRight, today, wearSkin } from '../storage/profile';
 import Mascot from '../ui/Mascot';
 import StarRow from '../ui/StarRow';
+import WornMascot from '../ui/WornMascot';
 import { formatDuration, headlineFor } from './format';
 import './Result.css';
 
@@ -36,14 +41,21 @@ export default function Result() {
   const pick = (i: number) => {
     if (picked !== null || !quiz) return;
     setLastResult({ ...r, quizPick: i });
-    if (i === quiz.answer) update((p) => addStars(p, 1));
+    if (i === quiz.answer) {
+      const date = today();
+      update((p) => grantDailyBonus(recordQuizRight(p, date), date));
+    }
   };
+
+  const u = r.unlocks;
+  const hasRewards = u !== undefined && (u.skins.length > 0 || u.badges.length > 0 || u.speedLevel !== null);
+  const levelName = u?.speedLevel ? SPEED_LEVELS.find((l) => l.level === u.speedLevel)?.name : undefined;
 
   return (
     <main className="page">
       <div className="page-inner">
         <section className="card result-hero">
-          <Mascot size={180} mood="cheer" label="键宝在欢呼" />
+          <WornMascot size={180} mood="cheer" label="键宝在欢呼" />
           <div className="result-hero-text">
             <b>
               {book ? `《${book.title}》` : ''}
@@ -80,6 +92,43 @@ export default function Result() {
             </button>
           </div>
         </section>
+
+        {u && hasRewards && (
+          <section className="card rewards-card" aria-label="获得奖励">
+            <h2 className="display">获得奖励</h2>
+            {levelName && <p className="rewards-level">速度升到「{levelName}」啦！</p>}
+            <div className="rewards-list">
+              {u.skins.map((id) => {
+                const skin = skinById(id);
+                return (
+                  <div key={id} className="reward-item reward-pop">
+                    <Mascot size={110} skinId={id} label={skin.name} />
+                    <b>{skin.name}</b>
+                    {profile.skinWorn === id ? (
+                      <span className="tag">穿好啦</span>
+                    ) : (
+                      <button type="button" className="btn" aria-label={`马上穿上：${skin.name}`} onClick={() => update((p) => wearSkin(p, id))}>
+                        马上穿上
+                      </button>
+                    )}
+                  </div>
+                );
+              })}
+              {u.badges.map((id) => {
+                const badge = BADGES.find((b) => b.id === id);
+                return (
+                  <div key={id} className="reward-item reward-pop">
+                    <span className="reward-badge" aria-hidden="true">
+                      ★
+                    </span>
+                    <b>{badge?.name}</b>
+                    <span>{badge?.desc}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <section className="stat-grid" aria-label="本次成绩">
           <div className="card stat" data-testid="stat-speed">

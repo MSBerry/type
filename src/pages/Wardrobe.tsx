@@ -112,7 +112,7 @@ type CardProps = { skin: Skin; owned: boolean; isNew: boolean; selected: boolean
 function SkinCard({ skin, owned, isNew, selected, onPick }: CardProps) {
   const cls = ['skin-card', selected ? 'is-selected' : '', owned ? '' : 'is-locked'].filter(Boolean).join(' ');
   return (
-    <button type="button" className={cls} aria-pressed={selected} aria-label={`${skin.name}：${owned ? '已拥有' : skin.cond}`} onClick={onPick}>
+    <button type="button" className={cls} aria-pressed={selected} aria-label={`${skin.name}：${owned ? '已拥有' : skin.cond}${isNew ? '，新' : ''}`} onClick={onPick}>
       {isNew && <span className="skin-new">NEW</span>}
       {!owned && (
         <span className="skin-lock" aria-hidden="true">
