@@ -1,0 +1,38 @@
+import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { createSession, press } from '../engine/session';
+import type { Token } from '../engine/types';
+import Passage from './Passage';
+
+const TOKENS: Token[] = [
+  { kind: 'hanzi', char: '你', key: 'ni', tone: 'nǐ' },
+  { kind: 'hanzi', char: '好', key: 'hao', tone: 'hǎo' },
+  { kind: 'skip', char: '，' },
+  { kind: 'hanzi', char: '海', key: 'hai', tone: 'hǎi' },
+];
+
+function afterTyping(keys: string) {
+  let s = createSession(TOKENS);
+  [...keys].forEach((k, i) => {
+    s = press(s, k, i * 100).session;
+  });
+  return s;
+}
+
+describe('Passage', () => {
+  it('标出已完成、当前、未开始', () => {
+    const { container } = render(<Passage session={afterTyping('ni')} showPinyin />);
+    const cells = container.querySelectorAll('.pg-cell, .pg-skip');
+    expect(cells[0]).toHaveClass('is-done');
+    expect(cells[1]).toHaveClass('is-current');
+    expect(cells[1]).toHaveAttribute('aria-current', 'true');
+    expect(cells[2]).toHaveClass('is-todo');
+    expect(cells[1]).toHaveTextContent('hǎo好');
+  });
+
+  it('关掉拼音后只有当前字显示拼音', () => {
+    const { container } = render(<Passage session={afterTyping('ni')} showPinyin={false} />);
+    const py = [...container.querySelectorAll('.pg-py')].map((e) => e.textContent);
+    expect(py).toEqual(['', 'hǎo', '']);
+  });
+});

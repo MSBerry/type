@@ -1,0 +1,22 @@
+.passage { margin: 0; display: flex; flex-wrap: wrap; row-gap: 14px; column-gap: 2px; }
+.pg-cell {
+  display: inline-flex; flex-direction: column; align-items: center;
+  width: 62px; padding: 6px 0 4px; border: 3px solid transparent; border-radius: 14px;
+}
+.pg-py { height: 22px; font: 500 17px/22px var(--font-latin); color: var(--muted); }
+.pg-ch { font-size: 42px; line-height: 1.2; font-weight: 500; color: var(--muted); }
+.pg-cell.is-done { background: #e4f7ee; }
+.pg-cell.is-done .pg-ch { color: var(--ink); }
+.pg-cell.is-done .pg-py { color: var(--mint-ink); }
+.pg-cell.is-current { background: var(--sun); border-color: var(--ink); transform: translateY(-4px); }
+.pg-cell.is-current .pg-ch,
+.pg-cell.is-current .pg-py { color: var(--ink); }
+.pg-skip { display: inline-flex; align-items: flex-end; width: 30px; padding-bottom: 8px; font-size: 42px; color: var(--muted); }
+.pg-skip.is-done { color: var(--ink); }
+
+@media (max-width: 640px) {
+  .pg-cell { width: 44px; }
+  .pg-ch { font-size: 30px; }
+  .pg-py { font-size: 13px; }
+  .pg-skip { width: 20px; font-size: 30px; }
+}
