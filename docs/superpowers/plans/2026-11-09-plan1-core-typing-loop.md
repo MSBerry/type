@@ -2141,7 +2141,7 @@ export function ProfileProvider({ children, storage, initialResult }: Props) {
   const update = useCallback((fn: (p: Profile) => Profile) => {
     setState((prev) => {
       const store = replaceProfile(prev.store, fn(activeProfile(prev.store)));
-      const ok = prev.st !== null && saveStore(prev.st, store);
+      const ok = prev.persistent && prev.st !== null && saveStore(prev.st, store);
       return { ...prev, store, persistent: prev.persistent && ok };
     });
   }, []);
