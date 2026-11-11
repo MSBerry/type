@@ -6,11 +6,14 @@ import {
   addStars,
   defaultStore,
   loadStore,
+  markSkinSeen,
   migrate,
   newProfile,
+  recordQuizRight,
   recordSegment,
   saveStore,
   today,
+  wearSkin,
 } from './profile';
 
 const RESULT: SegmentResult = {
@@ -125,7 +128,7 @@ describe('recordSegment', () => {
     expect(p.totalChars).toBe(52);
     expect(p.bookProgress.xiyouji).toEqual({ done: ['c1-1'], lastSegment: 'c1-1', updatedAt: 1000 });
     expect(p.keyErrors).toEqual({ z: 2, h: 1 });
-    expect(p.daily['2026-11-09']).toEqual({ minutes: 1.5, chars: 52 });
+    expect(p.daily['2026-11-09']).toEqual({ minutes: 1.5, chars: 52, segments: 1 });
   });
 
   it('很短的段落也计入时长', () => {
@@ -141,7 +144,7 @@ describe('recordSegment', () => {
     expect(p.stars).toBe(6);
     expect(p.bookProgress.xiyouji.done).toEqual(['c1-1']);
     expect(p.keyErrors.z).toBe(4);
-    expect(p.daily['2026-11-09']).toEqual({ minutes: 3, chars: 104 });
+    expect(p.daily['2026-11-09']).toEqual({ minutes: 3, chars: 104, segments: 2 });
   });
 });
 
@@ -151,5 +154,36 @@ describe('addStars / today', () => {
   });
   it('日期用本地时间，格式 YYYY-MM-DD', () => {
     expect(today(new Date(2026, 0, 5))).toBe('2026-01-05');
+  });
+});
+
+describe('recordQuizRight', () => {
+  it('加一颗星，并记到当天', () => {
+    const p = recordQuizRight(newProfile('p1', '小明', 5), '2026-11-09');
+    expect(p.stars).toBe(1);
+    expect(p.daily['2026-11-09'].quizRight).toBe(1);
+  });
+});
+
+describe('皮肤', () => {
+  const withScarf = { ...newProfile('p1', '小明', 5), skinsOwned: ['classic', 'scarf'], skinsNew: ['scarf'] };
+
+  it('穿上已拥有的皮肤，并去掉 NEW 标记', () => {
+    const p = wearSkin(withScarf, 'scarf');
+    expect(p.skinWorn).toBe('scarf');
+    expect(p.skinsNew).toEqual([]);
+  });
+
+  it('没有的皮肤穿不上', () => {
+    expect(wearSkin(withScarf, 'rocket').skinWorn).toBe('classic');
+  });
+
+  it('看过之后去掉 NEW 标记', () => {
+    expect(markSkinSeen(withScarf, 'scarf').skinsNew).toEqual([]);
+  });
+
+  it('旧存档补上 skinsNew', () => {
+    const store = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: '小明', grade: 6 }] });
+    expect(activeProfile(store).skinsNew).toEqual([]);
   });
 });

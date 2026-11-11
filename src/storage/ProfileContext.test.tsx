@@ -88,4 +88,22 @@ describe('ProfileProvider', () => {
     );
     expect(screen.getByText(/ProfileProvider/)).toBeInTheDocument();
   });
+
+  it('档案没有变化时不写存储', () => {
+    function NoChange() {
+      const { update } = useProfile();
+      return (
+        <button type="button" onClick={() => update((p) => p)}>
+          不变
+        </button>
+      );
+    }
+    render(
+      <ProfileProvider storage={localStorage}>
+        <NoChange />
+      </ProfileProvider>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: '不变' }));
+    expect(localStorage.getItem(STORAGE_KEY)).toBeNull();
+  });
 });

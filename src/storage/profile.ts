@@ -1,7 +1,7 @@
 import type { SegmentResult } from '../engine/stats';
 
 export type BookProgress = { done: string[]; lastSegment: string; updatedAt: number };
-export type DailyLog = { minutes: number; chars: number };
+export type DailyLog = { minutes: number; chars: number; segments?: number; quizRight?: number; taskBonus?: boolean };
 
 export type Profile = {
   id: string;
@@ -12,6 +12,7 @@ export type Profile = {
   bestSpeedLevel: 0 | 1 | 2 | 3 | 4;
   badges: string[];
   skinsOwned: string[];
+  skinsNew: string[];
   skinWorn: string;
   bookProgress: Record<string, BookProgress>;
   keyErrors: Record<string, number>;
@@ -33,6 +34,7 @@ export function newProfile(id: string, nickname: string, grade: Profile['grade']
     bestSpeedLevel: 0,
     badges: [],
     skinsOwned: ['classic'],
+    skinsNew: [],
     skinWorn: 'classic',
     bookProgress: {},
     keyErrors: {},
@@ -135,11 +137,30 @@ export function recordSegment(p: Profile, r: SegmentResult, date: string, now = 
     keyErrors,
     daily: {
       ...p.daily,
-      [date]: { minutes: day.minutes + r.activeMs / 60000, chars: day.chars + r.hanzi },
+      [date]: {
+        ...day,
+        minutes: day.minutes + r.activeMs / 60000,
+        chars: day.chars + r.hanzi,
+        segments: (day.segments ?? 0) + 1,
+      },
     },
   };
 }
 
 export function addStars(p: Profile, n: number): Profile {
   return { ...p, stars: p.stars + n };
+}
+
+export function recordQuizRight(p: Profile, date: string): Profile {
+  const day = p.daily[date] ?? { minutes: 0, chars: 0 };
+  return { ...addStars(p, 1), daily: { ...p.daily, [date]: { ...day, quizRight: (day.quizRight ?? 0) + 1 } } };
+}
+
+export function markSkinSeen(p: Profile, skinId: string): Profile {
+  return p.skinsNew.includes(skinId) ? { ...p, skinsNew: p.skinsNew.filter((id) => id !== skinId) } : p;
+}
+
+export function wearSkin(p: Profile, skinId: string): Profile {
+  if (!p.skinsOwned.includes(skinId)) return p;
+  return { ...markSkinSeen(p, skinId), skinWorn: skinId };
 }
