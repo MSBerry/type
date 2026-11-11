@@ -14,6 +14,11 @@ describe('toKey', () => {
     expect(toKey('lü')).toBe('lv');
   });
 
+  it('拆开的 Unicode（NFD）也能认出 ü', () => {
+    expect(toKey('nǚ'.normalize('NFD'))).toBe('nv');
+    expect(toKey('lü'.normalize('NFD'))).toBe('lv');
+  });
+
   it('j q x y 后面按课本写法打 u', () => {
     expect(toKey('qù')).toBe('qu');
     expect(toKey('yú')).toBe('yu');

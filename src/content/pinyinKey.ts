@@ -4,6 +4,7 @@ const U_UMLAUT = /[üǖǘǚǜ]/g;
 export function toKey(tonePinyin: string): string {
   return tonePinyin
     .toLowerCase()
+    .normalize('NFC')
     .replace(U_UMLAUT, 'v')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '');
