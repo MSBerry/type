@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "annotate": "tsx scripts/annotate.ts",
+    "icons": "tsx scripts/make-icons.ts",
     "validate": "tsx scripts/validate.ts"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "tsx": "4.19.4",
     "typescript": "5.9.3",
     "vite": "6.4.5",
+    "vite-plugin-pwa": "1.3.0",
     "vitest": "4.1.12"
   }
 }
