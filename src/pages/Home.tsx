@@ -56,7 +56,7 @@ export default function Home() {
                     </span>
                   </div>
                   <button type="button" className="btn btn-dark" onClick={continueReading}>
-                    继续打字 →
+                    {doneCount === ids.length ? '再读一遍 →' : '继续打字 →'}
                   </button>
                 </>
               ) : (

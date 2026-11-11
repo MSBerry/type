@@ -39,4 +39,12 @@ describe('Home', () => {
       expect(screen.getByRole('button', { name: `${name}：即将开放` })).toBeDisabled();
     }
   });
+  it('读完的书显示再读一遍', () => {
+    const store = defaultStore();
+    store.profiles[0].bookProgress.xiyouji = { done: ['c1-1', 'c1-2', 'c1-3', 'c1-4'], lastSegment: 'c1-4', updatedAt: 5 };
+    saveStore(localStorage, store);
+    renderHome();
+    fireEvent.click(screen.getByRole('button', { name: '再读一遍 →' }));
+    expect(window.location.hash).toBe('#/practice/xiyouji/c1-1');
+  });
 });
