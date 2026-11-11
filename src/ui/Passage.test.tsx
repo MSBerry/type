@@ -45,4 +45,11 @@ describe('Passage', () => {
     expect(spy).toHaveBeenCalledWith({ block: 'nearest' });
     delete (Element.prototype as Partial<Element>).scrollIntoView;
   });
+
+  it('标点和前一个字不分开，行首不会出现标点', () => {
+    const { container } = render(<Passage session={afterTyping('')} showPinyin />);
+    const comma = [...container.querySelectorAll('.pg-skip')].find((e) => e.textContent === '，')!;
+    expect(comma.parentElement).toHaveClass('pg-unit');
+    expect(comma.parentElement).toHaveTextContent('好，');
+  });
 });
