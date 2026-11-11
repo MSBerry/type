@@ -4,7 +4,8 @@ export type Route =
   | { name: 'home' }
   | { name: 'books' }
   | { name: 'practice'; bookId: string; segmentId: string }
-  | { name: 'result' };
+  | { name: 'result' }
+  | { name: 'wardrobe' };
 
 export function parseHash(hash: string): Route {
   let parts: string[];
@@ -20,6 +21,7 @@ export function parseHash(hash: string): Route {
   if (parts[0] === 'books') return { name: 'books' };
   if (parts[0] === 'practice' && parts.length === 3) return { name: 'practice', bookId: parts[1], segmentId: parts[2] };
   if (parts[0] === 'result') return { name: 'result' };
+  if (parts[0] === 'wardrobe') return { name: 'wardrobe' };
   return { name: 'home' };
 }
 
@@ -33,6 +35,8 @@ export function toHash(route: Route): string {
       return `#/practice/${encodeURIComponent(route.bookId)}/${encodeURIComponent(route.segmentId)}`;
     case 'result':
       return '#/result';
+    case 'wardrobe':
+      return '#/wardrobe';
   }
 }
 

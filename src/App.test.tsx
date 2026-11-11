@@ -2,11 +2,26 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { getSegment } from './content/library';
+import { STORAGE_KEY, defaultStore, saveStore } from './storage/profile';
 
 describe('App', () => {
   it('默认进入首页', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: '你好，小朋友！' })).toBeInTheDocument();
+  });
+
+  it('按地址进入衣橱', () => {
+    window.location.hash = '#/wardrobe';
+    render(<App />);
+    expect(screen.getByRole('heading', { name: '我的衣橱' })).toBeInTheDocument();
+  });
+
+  it('打开时给旧存档补发该得的皮肤', () => {
+    const store = defaultStore();
+    store.profiles[0].bookProgress.xiyouji = { done: ['c1-1', 'c1-2', 'c1-3', 'c1-4'], lastSegment: 'c1-4', updatedAt: 1 };
+    saveStore(localStorage, store);
+    render(<App />);
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0].skinsOwned).toContain('monkey');
   });
 
   it('按地址进入读书岛', () => {
