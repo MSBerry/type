@@ -1,10 +1,10 @@
-import { type MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { type MouseEvent, useEffect, useRef } from 'react';
 import { getBook, getSegment } from '../content/library';
 import type { Book, Segment } from '../content/schema';
 import { FINGER_NAME, fingerOf } from '../engine/fingers';
-import { createSession, currentToken, expectedKey, pause, press } from '../engine/session';
+import { currentToken, expectedKey } from '../engine/session';
 import { accuracy, buildResult, speedCpm, starsFor } from '../engine/stats';
-import { useTypingInput } from '../hooks/useTypingInput';
+import { useTypingSession } from '../hooks/useTypingSession';
 import { navigate } from '../router';
 import { grantDailyBonus } from '../rewards/dailyTasks';
 import { syncRewards } from '../rewards/rewards';
@@ -18,7 +18,7 @@ import WornMascot from '../ui/WornMascot';
 import { coachMessage } from './coach';
 import './Practice.css';
 
-export const IDLE_PAUSE_MS = 10_000;
+export { IDLE_PAUSE_MS } from '../hooks/useTypingSession';
 
 /** 打字过程中点按钮不抢焦点，否则孩子按空格或回车会再次触发这个按钮 */
 const keepFocus = (e: MouseEvent) => e.preventDefault();
@@ -46,29 +46,8 @@ export default function Practice({ bookId, segmentId }: { bookId: string; segmen
 
 function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
   const { profile, update, lastResult, setLastResult } = useProfile();
-  const [session, setSession] = useState(() => createSession(segment.tokens));
-  const [imeWarn, setImeWarn] = useState(false);
-  const [paused, setPaused] = useState(false);
+  const { session, imeWarn, paused, restart: resetSession } = useTypingSession(segment.tokens);
   const saved = useRef(false);
-
-  const onLetter = useCallback((key: string, now: number) => {
-    setImeWarn(false);
-    setPaused(false);
-    setSession((s) => press(s, key, now).session);
-  }, []);
-  const onIme = useCallback(() => setImeWarn(true), []);
-  const onPause = useCallback(() => {
-    setSession((s) => pause(s));
-    setPaused(true);
-  }, []);
-  useTypingInput(!session.done, { onLetter, onIme, onPause });
-
-  // 10 秒没按键自动暂停
-  useEffect(() => {
-    if (session.done || session.lastPressAt === null) return;
-    const t = window.setTimeout(onPause, IDLE_PAUSE_MS);
-    return () => window.clearTimeout(t);
-  }, [session.lastPressAt, session.done, onPause]);
 
   // 打完一段：记成绩、发奖励，只记一次。奖励在这里就保存，孩子不进结算页也不会丢。
   useEffect(() => {
@@ -83,9 +62,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
 
   const restart = () => {
     saved.current = false;
-    setSession(createSession(segment.tokens));
-    setPaused(false);
-    setImeWarn(false);
+    resetSession();
   };
   const togglePinyin = () =>
     update((p) => ({ ...p, settings: { ...p.settings, showPinyin: !p.settings.showPinyin } }));
