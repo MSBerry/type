@@ -6,7 +6,7 @@
 
 **Architecture:** Vite + React + TypeScript 单页应用，用 hash 路由。核心逻辑（打字引擎、统计、内容校验、存档）全部写成纯 TypeScript 函数，用 Vitest 单测。界面组件只负责显示和把键盘事件交给引擎。课文先写成 `.txt` 源文件，用脚本借助 pinyin-pro 生成带拼音的 JSON。
 
-**Tech Stack:** Node 24、Vite 6.4、React 19.1、TypeScript 5.9、Vitest 3.2 + Testing Library + jsdom、pinyin-pro 3.29、tsx、@fontsource（站酷快乐体、Fredoka）
+**Tech Stack:** Node 24、Vite 6.4、React 19.1、TypeScript 5.9、Vitest 4.1 + Testing Library + jsdom、pinyin-pro 3.29、tsx、@fontsource（站酷快乐体、Fredoka）
 
 **设计依据:** `docs/superpowers/specs/2026-11-09-kids-typing-design.md`；视觉稿 https://claude.ai/artifact/7YWKQKkXZvTSFnaS8UStKe
 
@@ -107,7 +107,7 @@ Expected: `Initialized empty Git repository in .../打字/.git/`
   },
   "devDependencies": {
     "@testing-library/dom": "10.4.2",
-    "@testing-library/jest-dom": "6.10.0",
+    "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.3",
     "@testing-library/user-event": "14.6.8",
     "@types/node": "22.20.5",
@@ -119,7 +119,7 @@ Expected: `Initialized empty Git repository in .../打字/.git/`
     "tsx": "4.19.4",
     "typescript": "5.9.3",
     "vite": "6.4.5",
-    "vitest": "3.2.7"
+    "vitest": "4.1.12"
   }
 }
 ```
