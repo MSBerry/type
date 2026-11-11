@@ -1,20 +1,27 @@
 import { describe, expect, it } from 'vitest';
+import type { Book } from '../content/schema';
 import type { SegmentResult } from '../engine/stats';
 import {
   STORAGE_KEY,
   activeProfile,
+  addCustomBook,
   addStars,
   defaultStore,
+  exportStore,
   loadStore,
   markSkinSeen,
   migrate,
   newProfile,
+  parseBackup,
   passFingerLevel,
   recordGameScore,
   recordPractice,
   recordQuizRight,
   recordSegment,
+  removeCustomBook,
   saveStore,
+  setupChild,
+  switchProfile,
   today,
   wearSkin,
 } from './profile';
@@ -218,5 +225,109 @@ describe('指法、拼音、游戏的成绩', () => {
     expect(p.gameBest).toBe(0);
     const store = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: '小明', grade: 6 }] });
     expect(activeProfile(store).fingerLevel).toBe(0);
+  });
+});
+
+describe('首次启动和多个小朋友', () => {
+  it('本机没有存档才算第一次打开', () => {
+    const empty = { getItem: () => null, setItem: () => undefined } as unknown as Storage;
+    expect(loadStore(empty).store.setupDone).toBe(false);
+    expect(defaultStore().setupDone).toBe(true);
+    const old = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: '小明', grade: 6 }] });
+    expect(old.setupDone).toBe(true);
+    expect(old.customBooks).toEqual([]);
+  });
+
+  it('第一次建档是给默认档案起名字', () => {
+    const fresh = { ...defaultStore(), setupDone: false };
+    const s = setupChild(fresh, { nickname: '小红', grade: 4, avatar: 'mint' });
+    expect(s.setupDone).toBe(true);
+    expect(s.profiles).toHaveLength(1);
+    expect(activeProfile(s)).toMatchObject({ id: 'p1', nickname: '小红', grade: 4, avatar: 'mint' });
+  });
+
+  it('以后再建档是加一个新的小朋友，并切换过去', () => {
+    const s = setupChild(defaultStore(), { nickname: '小刚', grade: 6, avatar: 'blue' });
+    expect(s.profiles.map((p) => p.id)).toEqual(['p1', 'p2']);
+    expect(activeProfile(s).nickname).toBe('小刚');
+    const back = switchProfile(s, 'p1');
+    expect(activeProfile(back).id).toBe('p1');
+    expect(switchProfile(back, 'nope')).toBe(back);
+  });
+});
+
+describe('migrate 逐个字段校验', () => {
+  it('类型不对的字段换成默认值，不认识的字段丢掉', () => {
+    const s = migrate({
+      version: 1,
+      activeId: 'p1',
+      profiles: [
+        {
+          id: 'p1',
+          nickname: '小明',
+          grade: 5,
+          stars: 'lots',
+          totalChars: -3,
+          bestSpeedLevel: 9,
+          skinsOwned: ['monkey', 3],
+          skinWorn: 'rocket',
+          bookProgress: { xiyouji: { done: ['c1-1', 2], lastSegment: 'c1-1', updatedAt: 5 }, bad: 'x' },
+          keyErrors: { a: 2, b: 'x' },
+          daily: { '2026-11-09': { minutes: 3, chars: 10, segments: 1 }, nonsense: { minutes: 1 } },
+          settings: { sound: 'yes', dailyLimitMin: 30 },
+          hacked: true,
+        },
+      ],
+    });
+    const p = activeProfile(s);
+    expect(p.stars).toBe(0);
+    expect(p.totalChars).toBe(0);
+    expect(p.bestSpeedLevel).toBe(0);
+    expect(p.skinsOwned).toEqual(['classic', 'monkey']);
+    expect(p.skinWorn).toBe('classic');
+    expect(p.bookProgress).toEqual({ xiyouji: { done: ['c1-1'], lastSegment: 'c1-1', updatedAt: 5 } });
+    expect(p.keyErrors).toEqual({ a: 2 });
+    expect(p.daily).toEqual({ '2026-11-09': { minutes: 3, chars: 10, segments: 1 } });
+    expect(p.settings).toEqual({ dailyLimitMin: 30, sound: true, showPinyin: true });
+    expect('hacked' in p).toBe(false);
+  });
+
+  it('重复的档案编号会改开', () => {
+    const s = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: 'A', grade: 5 }, { id: 'p1', nickname: 'B', grade: 5 }] });
+    expect(new Set(s.profiles.map((p) => p.id)).size).toBe(2);
+  });
+
+  it('自己导入的文章：格式不对的丢掉', () => {
+    const good = { id: 'my-1', title: '小猫', segments: [{ id: 's1', title: '第 1 段', tokens: [{ kind: 'hanzi', char: '猫', key: 'mao', tone: 'māo' }] }] };
+    const bad = { id: 'my-2', title: '坏', segments: [{ id: 's1', title: '第 1 段', tokens: [{ kind: 'hanzi', char: '猫', key: 'MAO!', tone: '' }] }] };
+    const notMine = { ...good, id: 'xiyouji' };
+    const s = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: 'A', grade: 5 }], customBooks: [good, bad, notMine] });
+    expect(s.customBooks.map((b) => b.id)).toEqual(['my-1']);
+  });
+});
+
+describe('导入文章和备份', () => {
+  const book = { id: 'my-abc', title: '小猫', segments: [] } as unknown as Book;
+
+  it('加文章和删文章', () => {
+    const s = addCustomBook(defaultStore(), book);
+    expect(s.customBooks).toHaveLength(1);
+    expect(removeCustomBook(s, 'my-abc').customBooks).toHaveLength(0);
+  });
+
+  it('导出再导入，内容不变', () => {
+    const s = setupChild(defaultStore(), { nickname: '小刚', grade: 6, avatar: 'blue' });
+    expect(parseBackup(exportStore(s))).toEqual(s);
+  });
+
+  it('坏的备份给出原因', () => {
+    expect(() => parseBackup('not json')).toThrow('读不出内容');
+    expect(() => parseBackup('{"version":1}')).toThrow('格式不对');
+    expect(() => parseBackup('{"version":2,"profiles":[]}')).toThrow('更新版本');
+  });
+
+  it('导入的备份算已经建过档', () => {
+    const fresh = { ...defaultStore(), setupDone: false };
+    expect(parseBackup(exportStore(fresh)).setupDone).toBe(true);
   });
 });

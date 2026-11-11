@@ -13,7 +13,7 @@ const GRADES = [
 ] as const;
 
 export default function Bookshelf() {
-  const { profile } = useProfile();
+  const { profile, store } = useProfile();
   const [grade, setGrade] = useState<4 | 5 | 6>(profile.grade);
   const groups = listShelf(grade);
   const poems = listShelf(0).flatMap((g) => g.books);
@@ -68,6 +68,16 @@ export default function Bookshelf() {
           <Shelf key={group.term} term={group.term} title={group.theme} note="快乐读书吧推荐" books={group.books} doneOf={doneOf} skinsOwned={profile.skinsOwned} />
         ))}
         <Shelf term="通用" title="古诗词小站" note="短小好打，适合热身" books={poems} doneOf={doneOf} skinsOwned={profile.skinsOwned} />
+        {store.customBooks.length > 0 && (
+          <Shelf
+            term="通用"
+            title="我的文章"
+            note="家长导入的文章"
+            books={store.customBooks.map(({ segments, ...meta }) => ({ ...meta, ready: true, segmentIds: segments.map((s) => s.id) }))}
+            doneOf={doneOf}
+            skinsOwned={profile.skinsOwned}
+          />
+        )}
       </div>
     </main>
   );
@@ -134,7 +144,7 @@ function BookCard({ book, done, granted }: { book: ShelfBook; done: string[]; gr
       <div className="book-author">{book.author}</div>
       <ProgressBar value={total ? (doneCount * 100) / total : 0} label={`《${book.title}》阅读进度`} height={14} />
       <div className="book-status">{status}</div>
-      <div className="book-reward">{granted ? `已获得大皮肤「${book.skinName}」` : `读完送大皮肤「${book.skinName}」`}</div>
+      {book.skinName && <div className="book-reward">{granted ? `已获得大皮肤「${book.skinName}」` : `读完送大皮肤「${book.skinName}」`}</div>}
       {book.ready ? (
         <button type="button" className="btn btn-primary" onClick={open} aria-label={`${label}：《${book.title}》`}>
           {label}

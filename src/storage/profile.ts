@@ -1,3 +1,4 @@
+import { type Book, CUSTOM_BOOK_PREFIX } from '../content/schema';
 import type { SegmentResult } from '../engine/stats';
 
 export type BookProgress = { done: string[]; lastSegment: string; updatedAt: number };
@@ -7,6 +8,8 @@ export type Profile = {
   id: string;
   nickname: string;
   grade: 4 | 5 | 6;
+  /** 头像颜色，见 src/ui/Avatar.tsx */
+  avatar: string;
   stars: number;
   totalChars: number;
   bestSpeedLevel: 0 | 1 | 2 | 3 | 4;
@@ -24,15 +27,24 @@ export type Profile = {
   settings: { dailyLimitMin: number; sound: boolean; showPinyin: boolean };
 };
 
-export type Store = { version: 1; activeId: string; profiles: Profile[] };
+export type Store = {
+  version: 1;
+  activeId: string;
+  profiles: Profile[];
+  /** false 表示第一次打开，还没给孩子建档 */
+  setupDone: boolean;
+  /** 家长导入的文章，所有小朋友共用 */
+  customBooks: Book[];
+};
 
 export const STORAGE_KEY = 'kbd-adventure/v1';
 
-export function newProfile(id: string, nickname: string, grade: Profile['grade']): Profile {
+export function newProfile(id: string, nickname: string, grade: Profile['grade'], avatar = 'sun'): Profile {
   return {
     id,
     nickname,
     grade,
+    avatar,
     stars: 0,
     totalChars: 0,
     bestSpeedLevel: 0,
@@ -51,21 +63,100 @@ export function newProfile(id: string, nickname: string, grade: Profile['grade']
 
 export function defaultStore(): Store {
   const p = newProfile('p1', '小朋友', 5);
-  return { version: 1, activeId: p.id, profiles: [p] };
+  return { version: 1, activeId: p.id, profiles: [p], setupDone: true, customBooks: [] };
+}
+
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
+const num = (v: unknown, d: number) => (typeof v === 'number' && Number.isFinite(v) && v >= 0 ? v : d);
+const strs = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []);
+
+function cleanProfile(raw: unknown, index: number): Profile {
+  if (!isObj(raw)) throw new Error('存档格式不对');
+  const grade = raw.grade === 4 || raw.grade === 5 || raw.grade === 6 ? raw.grade : 5;
+  const id = typeof raw.id === 'string' && raw.id ? raw.id : `p${index + 1}`;
+  const nickname = typeof raw.nickname === 'string' && raw.nickname.trim() ? raw.nickname.trim().slice(0, 8) : '小朋友';
+  const base = newProfile(id, nickname, grade, typeof raw.avatar === 'string' ? raw.avatar : 'sun');
+
+  const bookProgress: Record<string, BookProgress> = {};
+  if (isObj(raw.bookProgress)) {
+    for (const [bookId, bp] of Object.entries(raw.bookProgress)) {
+      if (!isObj(bp)) continue;
+      bookProgress[bookId] = { done: strs(bp.done), lastSegment: typeof bp.lastSegment === 'string' ? bp.lastSegment : '', updatedAt: num(bp.updatedAt, 0) };
+    }
+  }
+  const keyErrors: Record<string, number> = {};
+  if (isObj(raw.keyErrors)) {
+    for (const [k, n] of Object.entries(raw.keyErrors)) if (typeof n === 'number' && n > 0) keyErrors[k] = n;
+  }
+  const daily: Record<string, DailyLog> = {};
+  if (isObj(raw.daily)) {
+    for (const [date, d] of Object.entries(raw.daily)) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !isObj(d)) continue;
+      const log: DailyLog = { minutes: num(d.minutes, 0), chars: num(d.chars, 0) };
+      if (typeof d.segments === 'number') log.segments = num(d.segments, 0);
+      if (typeof d.quizRight === 'number') log.quizRight = num(d.quizRight, 0);
+      if (d.taskBonus === true) log.taskBonus = true;
+      daily[date] = log;
+    }
+  }
+  const owned = strs(raw.skinsOwned);
+  const skinsOwned = owned.includes('classic') ? owned : ['classic', ...owned];
+  const level = num(raw.bestSpeedLevel, 0);
+  const s = isObj(raw.settings) ? raw.settings : {};
+  return {
+    ...base,
+    stars: num(raw.stars, 0),
+    totalChars: num(raw.totalChars, 0),
+    bestSpeedLevel: (Number.isInteger(level) && level <= 4 ? level : 0) as Profile['bestSpeedLevel'],
+    fingerLevel: Math.min(12, Math.floor(num(raw.fingerLevel, 0))),
+    gameBest: num(raw.gameBest, 0),
+    badges: strs(raw.badges),
+    skinsOwned,
+    skinsNew: strs(raw.skinsNew),
+    skinWorn: typeof raw.skinWorn === 'string' && skinsOwned.includes(raw.skinWorn) ? raw.skinWorn : 'classic',
+    bookProgress,
+    keyErrors,
+    daily,
+    settings: {
+      dailyLimitMin: num(s.dailyLimitMin, base.settings.dailyLimitMin),
+      sound: typeof s.sound === 'boolean' ? s.sound : base.settings.sound,
+      showPinyin: typeof s.showPinyin === 'boolean' ? s.showPinyin : base.settings.showPinyin,
+    },
+  };
+}
+
+const isToken = (t: unknown) =>
+  isObj(t) &&
+  typeof t.char === 'string' &&
+  (t.kind === 'skip' || (t.kind === 'hanzi' && typeof t.tone === 'string' && typeof t.key === 'string' && /^[a-z]+$/.test(t.key)));
+
+function cleanBooks(v: unknown): Book[] {
+  if (!Array.isArray(v)) return [];
+  return v.filter(
+    (b): b is Book =>
+      isObj(b) &&
+      typeof b.id === 'string' &&
+      b.id.startsWith(CUSTOM_BOOK_PREFIX) &&
+      typeof b.title === 'string' &&
+      Array.isArray(b.segments) &&
+      b.segments.length > 0 &&
+      b.segments.every((s) => isObj(s) && typeof s.id === 'string' && typeof s.title === 'string' && Array.isArray(s.tokens) && s.tokens.every(isToken)),
+  );
 }
 
 export function migrate(data: unknown): Store {
-  const d = data as Partial<Store> | null;
-  if (!d || d.version !== 1 || !Array.isArray(d.profiles) || d.profiles.length === 0) {
+  if (!isObj(data) || data.version !== 1 || !Array.isArray(data.profiles) || data.profiles.length === 0) {
     throw new Error('存档格式不对');
   }
-  const profiles = d.profiles.map((raw) => {
-    const grade = [4, 5, 6].includes(raw.grade) ? raw.grade : 5;
-    const base = newProfile(String(raw.id ?? 'p1'), String(raw.nickname ?? '小朋友'), grade);
-    return { ...base, ...raw, grade, settings: { ...base.settings, ...(raw.settings ?? {}) } };
+  const seen = new Set<string>();
+  const profiles = data.profiles.map((raw, i) => {
+    const p = cleanProfile(raw, i);
+    const id = seen.has(p.id) ? `${p.id}-${i + 1}` : p.id;
+    seen.add(id);
+    return id === p.id ? p : { ...p, id };
   });
-  const activeId = profiles.some((p) => p.id === d.activeId) ? (d.activeId as string) : profiles[0].id;
-  return { version: 1, activeId, profiles };
+  const activeId = profiles.some((p) => p.id === data.activeId) ? (data.activeId as string) : profiles[0].id;
+  return { version: 1, activeId, profiles, setupDone: data.setupDone !== false, customBooks: cleanBooks(data.customBooks) };
 }
 
 export function getStorage(): Storage | null {
@@ -88,7 +179,7 @@ export function loadStore(storage: Storage | null): { store: Store; persistent: 
   } catch {
     return { store: defaultStore(), persistent: false };
   }
-  if (raw === null) return { store: defaultStore(), persistent: true };
+  if (raw === null) return { store: { ...defaultStore(), setupDone: false }, persistent: true };
   try {
     const data = JSON.parse(raw) as { version?: unknown } | null;
     if (typeof data?.version === 'number' && data.version > 1) {
@@ -188,4 +279,51 @@ export function passFingerLevel(p: Profile, level: number): Profile {
 
 export function recordGameScore(p: Profile, score: number): Profile {
   return score > p.gameBest ? { ...p, gameBest: score } : p;
+}
+
+export type ChildInfo = { nickname: string; grade: Profile['grade']; avatar: string };
+
+/** 第一次打开时给默认档案起名字；以后再用，就是加一个新的小朋友并切换过去 */
+export function setupChild(store: Store, info: ChildInfo): Store {
+  if (!store.setupDone) {
+    return { ...replaceProfile(store, { ...activeProfile(store), ...info }), setupDone: true };
+  }
+  let n = store.profiles.length + 1;
+  while (store.profiles.some((p) => p.id === `p${n}`)) n += 1;
+  const p = newProfile(`p${n}`, info.nickname, info.grade, info.avatar);
+  return { ...store, activeId: p.id, profiles: [...store.profiles, p] };
+}
+
+export function switchProfile(store: Store, id: string): Store {
+  return store.activeId !== id && store.profiles.some((p) => p.id === id) ? { ...store, activeId: id } : store;
+}
+
+export function addCustomBook(store: Store, book: Book): Store {
+  return { ...store, customBooks: [...store.customBooks, book] };
+}
+
+export function removeCustomBook(store: Store, id: string): Store {
+  return { ...store, customBooks: store.customBooks.filter((b) => b.id !== id) };
+}
+
+export function exportStore(store: Store): string {
+  return JSON.stringify(store, null, 2);
+}
+
+/** 读备份文件。格式不对就抛出说明原因的错误，调用方不要改现有数据 */
+export function parseBackup(text: string): Store {
+  let data: unknown;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error('这不是小键盘大冒险的备份文件（读不出内容）');
+  }
+  if (isObj(data) && typeof data.version === 'number' && data.version > 1) {
+    throw new Error('这个备份来自更新版本的小键盘大冒险，请先更新程序');
+  }
+  try {
+    return { ...migrate(data), setupDone: true };
+  } catch {
+    throw new Error('这不是小键盘大冒险的备份文件（格式不对）');
+  }
 }

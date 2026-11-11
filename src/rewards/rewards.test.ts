@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import { setCustomBooks } from '../content/library';
+import type { Book } from '../content/schema';
 import type { SegmentResult } from '../engine/stats';
 import { type Profile, newProfile } from '../storage/profile';
 import { finishedBookIds, nextSmallSkin, nextSpeedLevel, smallSkinsFor, speedLevelOf, syncRewards } from './rewards';
@@ -55,6 +57,14 @@ describe('finishedBookIds', () => {
 });
 
 describe('syncRewards', () => {
+  it('读完自己导入的文章不算读完一本书', () => {
+    const book = { id: 'my-1', title: '小猫', skinId: '', segments: [{ id: 's1', title: '第 1 段', tokens: [] }] } as unknown as Book;
+    setCustomBooks([book]);
+    const p = { ...base, bookProgress: { 'my-1': { done: ['s1'], lastSegment: 's1', updatedAt: 1 } } };
+    expect(syncRewards(p, undefined, DATE).unlocks.badges).not.toContain('book-1');
+    setCustomBooks([]);
+  });
+
   it('12 关指法全部通过得指法毕业徽章', () => {
     expect(syncRewards({ ...base, fingerLevel: 12 }, undefined, DATE).unlocks.badges).toContain('finger-grad');
     expect(syncRewards({ ...base, fingerLevel: 11 }, undefined, DATE).unlocks.badges).not.toContain('finger-grad');

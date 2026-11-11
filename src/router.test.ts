@@ -15,6 +15,9 @@ describe('parseHash', () => {
     expect(parseHash('#/pinyin/zhengti')).toEqual({ name: 'pinyinSet', setId: 'zhengti' });
     expect(parseHash('#/game')).toEqual({ name: 'game' });
     expect(parseHash('#/finger/abc')).toEqual({ name: 'finger' });
+    expect(parseHash('#/welcome')).toEqual({ name: 'welcome' });
+    expect(parseHash('#/profiles')).toEqual({ name: 'profiles' });
+    expect(parseHash('#/parent')).toEqual({ name: 'parent' });
   });
 
   it('不认识的地址回首页', () => {
@@ -30,7 +33,7 @@ describe('parseHash', () => {
 
 describe('toHash', () => {
   it('和 parseHash 互相还原', () => {
-    const routes: Route[] = [{ name: 'home' }, { name: 'books' }, { name: 'practice', bookId: 'xiyouji', segmentId: 'c1-1' }, { name: 'result' }, { name: 'wardrobe' }, { name: 'finger' }, { name: 'fingerLevel', level: 3 }, { name: 'pinyin' }, { name: 'pinyinSet', setId: 'zhengti' }, { name: 'game' }];
+    const routes: Route[] = [{ name: 'home' }, { name: 'books' }, { name: 'practice', bookId: 'xiyouji', segmentId: 'c1-1' }, { name: 'result' }, { name: 'wardrobe' }, { name: 'finger' }, { name: 'fingerLevel', level: 3 }, { name: 'pinyin' }, { name: 'pinyinSet', setId: 'zhengti' }, { name: 'game' }, { name: 'welcome' }, { name: 'profiles' }, { name: 'parent' }];
     for (const r of routes) expect(parseHash(toHash(r))).toEqual(r);
   });
 });

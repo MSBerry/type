@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Component, type ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
 import { ProfileProvider, useProfile } from './ProfileContext';
-import { STORAGE_KEY, addStars } from './profile';
+import { STORAGE_KEY, addStars, setupChild } from './profile';
 
 /** 接住子组件抛出的错误并显示出来（React 19 不会把渲染错误抛给 render()） */
 class Catch extends Component<{ children: ReactNode }, { msg: string }> {
@@ -105,5 +105,24 @@ describe('ProfileProvider', () => {
     );
     fireEvent.click(screen.getByRole('button', { name: '不变' }));
     expect(localStorage.getItem(STORAGE_KEY)).toBeNull();
+  });
+
+  it('updateStore 改整份存档并保存', () => {
+    function Probe() {
+      const { store, profile, updateStore } = useProfile();
+      return (
+        <button type="button" onClick={() => updateStore((s) => setupChild(s, { nickname: '小红', grade: 4, avatar: 'mint' }))}>
+          {profile.nickname}/{store.profiles.length}
+        </button>
+      );
+    }
+    render(
+      <ProfileProvider storage={localStorage}>
+        <Probe />
+      </ProfileProvider>,
+    );
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.getByRole('button')).toHaveTextContent('小红/1');
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).setupDone).toBe(true);
   });
 });

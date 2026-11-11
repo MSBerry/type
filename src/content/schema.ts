@@ -61,3 +61,6 @@ export function validateBook(book: Book): string[] {
   }
   return errors;
 }
+
+/** 家长导入的文章，书的 id 都以它开头 */
+export const CUSTOM_BOOK_PREFIX = 'my-';

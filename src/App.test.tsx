@@ -1,10 +1,21 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { getSegment } from './content/library';
 import { STORAGE_KEY, defaultStore, saveStore } from './storage/profile';
 
 describe('App', () => {
+  beforeEach(() => {
+    saveStore(localStorage, defaultStore());
+  });
+
+  it('第一次打开先建档', () => {
+    localStorage.clear();
+    window.location.hash = '#/books';
+    render(<App />);
+    expect(screen.getByRole('heading', { name: '欢迎来到小键盘大冒险！' })).toBeInTheDocument();
+  });
+
   it('默认进入首页', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: '你好，小朋友！' })).toBeInTheDocument();

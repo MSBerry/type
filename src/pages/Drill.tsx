@@ -1,4 +1,5 @@
 import { type MouseEvent, useEffect, useRef } from 'react';
+import { useTypingSounds } from '../audio/useSfx';
 import { FINGER_NAME, fingerOf } from '../engine/fingers';
 import { currentToken, expectedKey } from '../engine/session';
 import { accuracy, speedCpm, starsFor } from '../engine/stats';
@@ -35,6 +36,7 @@ const keepFocus = (e: MouseEvent) => e.preventDefault();
 export default function Drill({ title, tokens, unit, back, onFinish, onRestart, onNext, note }: Props) {
   const { session, imeWarn, paused } = useTypingSession(tokens);
   const reported = useRef(false);
+  useTypingSounds(session);
 
   useEffect(() => {
     if (!session.done || reported.current) return;

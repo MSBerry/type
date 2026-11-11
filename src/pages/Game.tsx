@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useSfx } from '../audio/useSfx';
 import { GOAL, LANES, TICK_MS, type GameState, gameStars, newGame, targetIds, tick, typeKey } from '../game/bubbles';
 import { useTypingInput } from '../hooks/useTypingInput';
 import { navigate } from '../router';
@@ -17,6 +18,16 @@ export default function Game() {
   const [paused, setPaused] = useState(false);
   const [imeWarn, setImeWarn] = useState(false);
   const saved = useRef(false);
+  const play = useSfx();
+  const last = useRef({ popped: 0, wrong: 0 });
+  useEffect(() => {
+    if (!game) return;
+    const p = last.current;
+    if (game.status === 'won' && game.popped > p.popped) play('cheer');
+    else if (game.popped > p.popped) play('pop');
+    else if (game.wrong > p.wrong) play('wrong');
+    last.current = { popped: game.popped, wrong: game.wrong };
+  }, [game, play]);
   const playing = game?.status === 'playing';
 
   useEffect(() => {
@@ -47,6 +58,7 @@ export default function Game() {
 
   const start = () => {
     saved.current = false;
+    last.current = { popped: 0, wrong: 0 };
     setPaused(false);
     setImeWarn(false);
     setGame(newGame());

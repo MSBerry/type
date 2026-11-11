@@ -81,4 +81,10 @@ describe('Home', () => {
     fireEvent.click(screen.getByRole('button', { name: '再读一遍 →' }));
     expect(window.location.hash).toBe('#/practice/xiyouji/c1-1');
   });
+
+  it('有家长中心入口', () => {
+    renderHome();
+    fireEvent.click(screen.getByRole('button', { name: '家长中心' }));
+    expect(window.location.hash).toBe('#/parent');
+  });
 });

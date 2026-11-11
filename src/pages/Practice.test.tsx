@@ -112,6 +112,7 @@ describe('Practice 的计时和重打', () => {
 
   afterEach(() => {
     vi.useRealTimers();
+    vi.unstubAllGlobals();
   });
 
   it('10 秒不按键自动暂停', () => {
@@ -148,5 +149,37 @@ describe('Practice 的计时和重打', () => {
     renderPractice();
     typeKeys('x');
     expect(screen.getByRole('img', { name: '键宝' })).toHaveAttribute('data-mood', 'oops');
+  });
+
+  it('有中文语音时可以听一听这一段', () => {
+    const speakFn = vi.fn();
+    vi.stubGlobal('speechSynthesis', {
+      getVoices: () => [{ lang: 'zh-CN', name: 'Tingting' }],
+      speak: speakFn,
+      cancel: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    });
+    vi.stubGlobal(
+      'SpeechSynthesisUtterance',
+      class {
+        text: string;
+        voice: unknown = null;
+        lang = '';
+        rate = 1;
+        constructor(text: string) {
+          this.text = text;
+        }
+      },
+    );
+    renderPractice();
+    fireEvent.click(screen.getByRole('button', { name: '听一听' }));
+    expect(speakFn).toHaveBeenCalledTimes(1);
+    expect(speakFn.mock.calls[0][0].text.length).toBeGreaterThan(10);
+  });
+
+  it('没有中文语音时不显示听一听', () => {
+    renderPractice();
+    expect(screen.queryByRole('button', { name: '听一听' })).not.toBeInTheDocument();
   });
 });

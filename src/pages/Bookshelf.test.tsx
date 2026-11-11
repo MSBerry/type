@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { ProfileProvider } from '../storage/ProfileContext';
+import type { Book } from '../content/schema';
 import { defaultStore, saveStore } from '../storage/profile';
 import Bookshelf from './Bookshelf';
 
@@ -76,5 +77,18 @@ describe('Bookshelf', () => {
     renderShelf();
     expect(screen.getByText('已读完 · 全部 4 段')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '再读一遍：《西游记》' })).toBeEnabled();
+  });
+
+  it('有导入的文章时显示「我的文章」书架', () => {
+    const store = defaultStore();
+    store.customBooks = [
+      { id: 'my-1', title: '小猫钓鱼', author: '我的文章', grade: 0, term: '通用', theme: '我的文章', skinId: '', skinName: '', cover: '#8B6CFF', mark: '小', kind: 'prose', segments: [{ id: 's1', title: '第 1 段', tokens: [{ kind: 'hanzi', char: '猫', key: 'mao', tone: 'māo' }] }] } as Book,
+    ];
+    saveStore(localStorage, store);
+    renderShelf();
+    expect(screen.getByRole('heading', { name: '我的文章' })).toBeInTheDocument();
+    expect(screen.queryByText(/大皮肤「」/)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '开始打字：《小猫钓鱼》' }));
+    expect(window.location.hash).toBe('#/practice/my-1/s1');
   });
 });
