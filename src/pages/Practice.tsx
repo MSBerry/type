@@ -1,0 +1,213 @@
+import { type MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { getBook, getSegment } from '../content/library';
+import type { Book, Segment } from '../content/schema';
+import { FINGER_NAME, fingerOf } from '../engine/fingers';
+import { createSession, currentToken, expectedKey, pause, press } from '../engine/session';
+import { accuracy, buildResult, speedCpm, starsFor } from '../engine/stats';
+import { useTypingInput } from '../hooks/useTypingInput';
+import { navigate } from '../router';
+import { useProfile } from '../storage/ProfileContext';
+import { recordSegment, today } from '../storage/profile';
+import Hands from '../ui/Hands';
+import Keyboard from '../ui/Keyboard';
+import Mascot from '../ui/Mascot';
+import Passage from '../ui/Passage';
+import ProgressBar from '../ui/ProgressBar';
+import StarRow from '../ui/StarRow';
+import { coachMessage } from './coach';
+import './Practice.css';
+
+export const IDLE_PAUSE_MS = 10_000;
+
+/** 打字过程中点按钮不抢焦点，否则孩子按空格或回车会再次触发这个按钮 */
+const keepFocus = (e: MouseEvent) => e.preventDefault();
+
+export default function Practice({ bookId, segmentId }: { bookId: string; segmentId: string }) {
+  const book = getBook(bookId);
+  const segment = getSegment(bookId, segmentId);
+  if (!book || !segment) {
+    return (
+      <main className="page">
+        <div className="page-inner">
+          <div className="card">
+            <h1 className="display">找不到这一段</h1>
+            <p>可能这本书还没上线。</p>
+            <button type="button" className="btn btn-primary" onClick={() => navigate({ name: 'books' })}>
+              回读书岛
+            </button>
+          </div>
+        </div>
+      </main>
+    );
+  }
+  return <PracticeSession key={`${bookId}/${segmentId}`} book={book} segment={segment} />;
+}
+
+function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
+  const { profile, update, setLastResult } = useProfile();
+  const [session, setSession] = useState(() => createSession(segment.tokens));
+  const [imeWarn, setImeWarn] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const saved = useRef(false);
+
+  const onLetter = useCallback((key: string, now: number) => {
+    setImeWarn(false);
+    setPaused(false);
+    setSession((s) => press(s, key, now).session);
+  }, []);
+  const onIme = useCallback(() => setImeWarn(true), []);
+  const onPause = useCallback(() => {
+    setSession((s) => pause(s));
+    setPaused(true);
+  }, []);
+  useTypingInput(!session.done, { onLetter, onIme, onPause });
+
+  // 10 秒没按键自动暂停
+  useEffect(() => {
+    if (session.done || session.lastPressAt === null) return;
+    const t = window.setTimeout(onPause, IDLE_PAUSE_MS);
+    return () => window.clearTimeout(t);
+  }, [session.lastPressAt, session.done, onPause]);
+
+  // 打完一段：记成绩，只记一次
+  useEffect(() => {
+    if (!session.done || saved.current) return;
+    saved.current = true;
+    const result = buildResult(session, book.id, segment.id);
+    setLastResult(result);
+    update((p) => recordSegment(p, result, today()));
+  }, [session, book.id, segment.id, setLastResult, update]);
+
+  const restart = () => {
+    saved.current = false;
+    setSession(createSession(segment.tokens));
+    setPaused(false);
+    setImeWarn(false);
+  };
+  const togglePinyin = () =>
+    update((p) => ({ ...p, settings: { ...p.settings, showPinyin: !p.settings.showPinyin } }));
+
+  const cur = currentToken(session);
+  const next = expectedKey(session);
+  const finger = next ? fingerOf(next) : null;
+  const acc = accuracy(session);
+  const typed = session.right + session.wrong;
+  const total = session.hanziIdx.length;
+  const showPinyin = profile.settings.showPinyin;
+
+  return (
+    <main className="page">
+      <div className="page-inner">
+        <header className="row spread">
+          <div className="row">
+            <button type="button" className="btn" onClick={() => navigate({ name: 'books' })}>
+              ← 读书岛
+            </button>
+            <span className="chip">
+              <span className="mini-cover" style={{ background: book.cover }}>
+                {book.mark}
+              </span>
+              《{book.title}》{segment.title}
+            </span>
+          </div>
+          <div className="row">
+            <span className="chip">
+              速度 <b className="latin">{speedCpm(session)}</b> 字/分
+            </span>
+            <span className="chip">
+              正确率 <b className="latin">{acc}%</b>
+            </span>
+            <span className="chip">
+              <StarRow count={typed === 0 ? 3 : starsFor(acc)} />
+            </span>
+            <button type="button" className="btn" onMouseDown={keepFocus} onClick={restart} aria-label="重新开始这一段">
+              重来
+            </button>
+          </div>
+        </header>
+
+        <div className="row practice-progress">
+          <b>本段进度</b>
+          <ProgressBar value={(session.cursor * 100) / Math.max(1, total)} label="本段进度" height={26} />
+          <b className="latin">
+            {session.cursor} / {total} 字
+          </b>
+        </div>
+
+        {imeWarn && (
+          <div role="alert" className="banner">
+            好像开着中文输入法～按一下 Shift 切换成英文，再接着打。
+          </div>
+        )}
+        {paused && !session.done && (
+          <div role="status" className="banner banner-soft">
+            休息一下～按任意字母就继续。
+          </div>
+        )}
+
+        <div className="practice-main">
+          <section className="card practice-passage">
+            <div className="row spread">
+              <h1 className="display practice-title">{segment.title}</h1>
+              <button type="button" className="btn" aria-pressed={showPinyin} onMouseDown={keepFocus} onClick={togglePinyin}>
+                拼音：{showPinyin ? '开' : '关'}
+              </button>
+            </div>
+            <Passage session={session} showPinyin={showPinyin} />
+            <div className="row practice-coach">
+              <Mascot size={86} mood={session.lastWrongKey ? 'oops' : 'happy'} />
+              <p className="coach-bubble" aria-live="polite">
+                {coachMessage(session)}
+              </p>
+            </div>
+            <p className="practice-tip">小提示：只打拼音字母，不用打声调；标点会自动跳过。ü 用 V 键。</p>
+          </section>
+
+          <aside className="practice-side">
+            {cur && next ? (
+              <div className="card now-card">
+                <div className="now-label">现在打这个字</div>
+                <div className="row now-row">
+                  <div className="now-char">{cur.char}</div>
+                  <div className="now-tone latin">{cur.tone}</div>
+                </div>
+                <div className="now-letters">
+                  {[...cur.key].map((letter, j) => (
+                    <span
+                      key={j}
+                      className={j < session.pos ? 'now-letter is-done' : j === session.pos ? 'now-letter is-next' : 'now-letter'}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+                <p className="now-finger">
+                  用 <b>{finger ? FINGER_NAME[finger] : ''}</b> 按 <b className="latin">{next.toUpperCase()}</b> 键
+                </p>
+              </div>
+            ) : (
+              <div className="card done-card">
+                <StarRow count={starsFor(acc)} size={56} />
+                <h2 className="display">整段完成！</h2>
+                <p>
+                  速度 {speedCpm(session)} 字/分 · 正确率 {acc}%
+                </p>
+                <button type="button" className="btn btn-primary" onClick={() => navigate({ name: 'result' })}>
+                  看看我的成绩
+                </button>
+                <button type="button" className="btn" onClick={restart}>
+                  再打一次
+                </button>
+              </div>
+            )}
+          </aside>
+        </div>
+
+        <section className="card practice-keyboard">
+          <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} />
+          <Hands finger={finger} />
+        </section>
+      </div>
+    </main>
+  );
+}

@@ -1,0 +1,39 @@
+.mini-cover {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 38px; border: 2px solid var(--ink); border-radius: 4px 8px 8px 4px;
+  font: 400 18px var(--font-display);
+}
+.practice-progress { flex-wrap: nowrap; }
+.practice-main { display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch; }
+.practice-passage { flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.practice-title { font-size: 30px; }
+.practice-coach { flex-wrap: nowrap; margin-top: auto; }
+.coach-bubble {
+  flex: 1; margin: 0; padding: 14px 18px; background: var(--sun-soft);
+  border: 3px solid var(--ink); border-radius: 20px; font-weight: 700; font-size: 19px; line-height: 1.5;
+}
+.practice-tip { margin: 0; font-size: 15px; color: var(--ink-2); }
+.practice-side { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.now-card, .done-card { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.now-label { font-weight: 700; color: var(--ink-2); font-size: 18px; }
+.now-row { justify-content: center; }
+.now-char {
+  width: 112px; height: 112px; display: flex; align-items: center; justify-content: center;
+  background: var(--sun); border: 3px solid var(--ink); border-radius: 28px; box-shadow: 0 6px 0 var(--ink);
+  font-size: 66px; font-weight: 700;
+}
+.now-tone { font-weight: 600; font-size: 40px; }
+.now-letters { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.now-letter {
+  width: 60px; height: 66px; display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 3px solid var(--ink); border-radius: 16px; box-shadow: 0 4px 0 var(--ink);
+  font: 700 34px var(--font-latin);
+}
+.now-letter.is-done { background: var(--mint); }
+.now-letter.is-next { background: var(--sun); box-shadow: 0 7px 0 var(--ink); transform: translateY(-4px); }
+.now-finger { margin: 0; font-size: 19px; }
+.done-card { background: var(--mint-soft); }
+.done-card h2 { font-size: 40px; }
+.done-card p { margin: 0; font-weight: 700; font-size: 19px; }
+.done-card .btn { width: 100%; }
+.practice-keyboard { display: flex; flex-direction: column; gap: 14px; }
