@@ -10,7 +10,7 @@
   background: #e6f4ff; border: 3px solid var(--ink); border-radius: 999px; transition: bottom 50ms linear;
 }
 .bubble b { font-size: 26px; }
-.bubble-py { font: 400 17px var(--font-pinyin); color: var(--muted); }
+.bubble-py { font: 400 15px var(--font-pinyin); color: var(--muted); white-space: nowrap; }
 .bubble.is-target { background: var(--sun); border-width: 5px; }
 .game-typed {
   position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); min-width: 240px; padding: 10px 18px; text-align: center;
