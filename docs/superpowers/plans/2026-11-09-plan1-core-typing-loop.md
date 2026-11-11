@@ -2795,6 +2795,13 @@ describe('useTypingInput', () => {
     expect(h.onLetter).not.toHaveBeenCalled();
   });
 
+  it('按住一个键不放时只算一次', () => {
+    const h = setup();
+    fireEvent.keyDown(window, { key: 'a' });
+    fireEvent.keyDown(window, { key: 'a', repeat: true });
+    expect(h.onLetter).toHaveBeenCalledTimes(1);
+  });
+
   it('识别中文输入法正在拼写', () => {
     const h = setup();
     fireEvent.keyDown(window, { key: 'Process' });
@@ -2849,7 +2856,7 @@ export function useTypingInput(enabled: boolean, handlers: TypingHandlers): void
         ref.current.onIme();
         return;
       }
-      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
       if (/^[a-zA-Z]$/.test(e.key)) {
         e.preventDefault();
         ref.current.onLetter(e.key, Date.now());
@@ -2869,7 +2876,7 @@ export function useTypingInput(enabled: boolean, handlers: TypingHandlers): void
 - [ ] **Step 4: 运行，确认通过**
 
 Run: `npx vitest run src/hooks/useTypingInput.test.tsx`
-Expected: PASS（5 个测试）
+Expected: PASS（6 个测试）
 
 - [ ] **Step 5: 提交**
 
