@@ -2088,6 +2088,20 @@ describe('ProfileProvider', () => {
     expect(screen.getByTestId('persistent')).toHaveTextContent('false');
   });
 
+  it('遇到更新版本的存档时不写入，保住原数据', () => {
+    const newer = JSON.stringify({ version: 2, profiles: [] });
+    localStorage.setItem(STORAGE_KEY, newer);
+    render(
+      <ProfileProvider storage={localStorage}>
+        <Probe />
+      </ProfileProvider>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: '加星' }));
+    expect(screen.getByTestId('stars')).toHaveTextContent('2');
+    expect(screen.getByTestId('persistent')).toHaveTextContent('false');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe(newer);
+  });
+
   it('在 Provider 外面用会报出清楚的错误', () => {
     render(
       <Catch>
@@ -2163,7 +2177,7 @@ export function useProfile(): ProfileCtx {
 - [ ] **Step 8: 运行，确认通过**
 
 Run: `npx vitest run src/router.test.ts src/storage/ProfileContext.test.tsx`
-Expected: PASS（6 个测试）。第 3 个测试会在控制台打印一条 React 的错误日志，这是正常的。
+Expected: PASS（7 个测试）。最后一个测试会在控制台打印一条 React 的错误日志，这是正常的。
 
 - [ ] **Step 9: 提交**
 
