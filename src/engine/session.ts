@@ -43,9 +43,8 @@ export function tokenStatus(s: Session, index: number): 'done' | 'current' | 'to
 }
 
 export function press(s: Session, rawKey: string, now: number): { session: Session; result: PressResult } {
-  if (s.done || rawKey.length !== 1) return { session: s, result: 'ignored' };
+  if (s.done || !/^[A-Za-z]$/.test(rawKey)) return { session: s, result: 'ignored' };
   const key = rawKey.toLowerCase();
-  if (key < 'a' || key > 'z') return { session: s, result: 'ignored' };
 
   const gap = s.lastPressAt === null ? 0 : Math.max(0, Math.min(now - s.lastPressAt, IDLE_CAP_MS));
   const timed: Session = { ...s, activeMs: s.activeMs + gap, lastPressAt: now };

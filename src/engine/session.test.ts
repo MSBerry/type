@@ -73,7 +73,7 @@ describe('press', () => {
 
   it('数字、空格、功能键都忽略，不算错', () => {
     const s = createSession(TOKENS);
-    for (const k of ['1', ' ', 'Shift', 'Enter', ';']) {
+    for (const k of ['1', ' ', 'Shift', 'Enter', ';', 'İ']) {
       const r = press(s, k, 0);
       expect(r.result).toBe('ignored');
       expect(r.session).toBe(s);
