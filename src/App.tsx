@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Bookshelf from './pages/Bookshelf';
 import { FingerCamp, FingerLevelPage } from './pages/FingerCamp';
+import Game from './pages/Game';
 import Home from './pages/Home';
 import { PinyinHome, PinyinSetPage } from './pages/PinyinDrill';
 import Practice from './pages/Practice';
@@ -36,6 +37,7 @@ function Screens() {
       {route.name === 'fingerLevel' && <FingerLevelPage key={route.level} level={route.level} />}
       {route.name === 'pinyin' && <PinyinHome />}
       {route.name === 'pinyinSet' && <PinyinSetPage key={route.setId} setId={route.setId} />}
+      {route.name === 'game' && <Game />}
     </>
   );
 }
