@@ -22,3 +22,4 @@
   box-shadow: 0 4px 0 var(--ink); font: 700 28px/1 var(--font-latin);
 }
 .err-key small { margin-top: 4px; font: 700 13px var(--font-body); }
+.result-stars { align-self: flex-start; display: inline-flex; padding: 6px 16px; background: #fff; border: 3px solid var(--ink); border-radius: 999px; }

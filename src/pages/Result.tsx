@@ -50,7 +50,9 @@ export default function Result() {
               {segment?.title ?? ''} · 完成
             </b>
             <h1 className="display">{headlineFor(r.stars, profile.nickname)}</h1>
-            <StarRow count={r.stars} size={64} />
+            <span className="result-stars">
+              <StarRow count={r.stars} size={56} />
+            </span>
           </div>
           <div className="result-actions">
             {nextId ? (
