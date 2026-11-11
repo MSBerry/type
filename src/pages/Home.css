@@ -20,3 +20,18 @@
 .mode-desc { font-size: 17px; line-height: 1.6; }
 .mode-go { margin-top: auto; padding: 10px 20px; background: #fff; border: 3px solid var(--ink); border-radius: 16px; font-weight: 700; font-size: 20px; }
 .home-footer { text-align: center; color: var(--ink-2); font-size: 17px; }
+
+.home-panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.home-panel { display: flex; flex-direction: column; gap: 12px; }
+.home-panel h2 { font-size: 30px; }
+.task-row { display: flex; align-items: center; gap: 12px; font-size: 18px; }
+.task-title { flex: 1; }
+.task-mark { width: 38px; height: 38px; flex: none; display: flex; align-items: center; justify-content: center; background: #fff; border: 3px solid var(--ink); border-radius: 999px; font: 700 18px var(--font-latin); }
+.task-mark.is-done { background: var(--mint); }
+.panel-note { color: var(--ink-2); font-size: 17px; }
+.level-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.level-chip { padding: 8px 14px; background: #fff; border: 2px dashed var(--ink-2); border-radius: 14px; font-weight: 700; font-size: 17px; }
+.level-chip.is-on { background: var(--sun); border: 3px solid var(--ink); box-shadow: 0 4px 0 var(--ink); }
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge { padding: 6px 12px; background: #eef1f6; border: 2px dashed var(--ink-2); border-radius: 999px; font-size: 17px; color: var(--ink-2); }
+.badge.is-earned { background: var(--sun-soft); border: 2px solid var(--ink); color: var(--ink); font-weight: 700; }

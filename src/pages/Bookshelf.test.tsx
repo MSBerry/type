@@ -13,6 +13,22 @@ function renderShelf() {
 }
 
 describe('Bookshelf', () => {
+  it('已拥有皮肤时写已获得', () => {
+    const store = defaultStore();
+    store.profiles[0].skinsOwned = ['classic', 'monkey'];
+    saveStore(localStorage, store);
+    renderShelf();
+    expect(screen.getByText('已获得大皮肤「美猴王」')).toBeInTheDocument();
+  });
+
+  it('只读完书但皮肤没发时，不写已获得', () => {
+    const store = defaultStore();
+    store.profiles[0].bookProgress.xiyouji = { done: ['c1-1', 'c1-2', 'c1-3', 'c1-4'], lastSegment: 'c1-4', updatedAt: 1 };
+    saveStore(localStorage, store);
+    renderShelf();
+    expect(screen.getByText('读完送大皮肤「美猴王」')).toBeInTheDocument();
+  });
+
   it('默认显示档案里的年级（五年级）', () => {
     renderShelf();
     expect(screen.getByRole('tab', { name: '五年级' })).toHaveAttribute('aria-selected', 'true');

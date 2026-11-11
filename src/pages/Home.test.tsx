@@ -13,6 +13,29 @@ function renderHome() {
 }
 
 describe('Home', () => {
+  it('显示今日任务、速度等级和徽章', () => {
+    renderHome();
+    expect(screen.getByRole('heading', { name: '今日任务' })).toBeInTheDocument();
+    expect(screen.getByText('打一段课外书')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '速度等级' })).toBeInTheDocument();
+    expect(screen.getByText('打到 20 字/分，升级「小兔」，送大皮肤')).toBeInTheDocument();
+    expect(screen.getByText('已收集 0 / 15')).toBeInTheDocument();
+  });
+
+  it('可以进衣橱，有新皮肤时有提示', () => {
+    const store = defaultStore();
+    store.profiles[0].skinsNew = ['scarf'];
+    saveStore(localStorage, store);
+    renderHome();
+    fireEvent.click(screen.getByRole('button', { name: '我的衣橱：有新皮肤' }));
+    expect(window.location.hash).toBe('#/wardrobe');
+  });
+
+  it('显示离下一个小皮肤还差多少字', () => {
+    renderHome();
+    expect(screen.getByText('再打 500 字，解锁「红围巾」')).toBeInTheDocument();
+  });
+
   it('第一次来：打招呼，引导去读书岛', () => {
     renderHome();
     expect(screen.getByRole('heading', { name: '你好，小朋友！' })).toBeInTheDocument();

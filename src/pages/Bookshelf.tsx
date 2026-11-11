@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { type ShelfBook, listShelf, nextSegmentId } from '../content/library';
 import { navigate } from '../router';
 import { useProfile } from '../storage/ProfileContext';
-import Mascot from '../ui/Mascot';
 import ProgressBar from '../ui/ProgressBar';
+import WornMascot from '../ui/WornMascot';
 import './Bookshelf.css';
 
 const GRADES = [
@@ -37,7 +37,7 @@ export default function Bookshelf() {
         </header>
 
         <section className="card shelf-hero">
-          <Mascot size={130} label="键宝" />
+          <WornMascot size={130} label="键宝" />
           <div className="shelf-hero-text">
             <h1 className="display shelf-title">读书岛</h1>
             <p>跟着语文课本「快乐读书吧」选书，一段一段边读边打。读完一整本，就能领一套大皮肤！</p>
@@ -65,9 +65,9 @@ export default function Bookshelf() {
         </div>
 
         {groups.map((group) => (
-          <Shelf key={group.term} term={group.term} title={group.theme} note="快乐读书吧推荐" books={group.books} doneOf={doneOf} />
+          <Shelf key={group.term} term={group.term} title={group.theme} note="快乐读书吧推荐" books={group.books} doneOf={doneOf} skinsOwned={profile.skinsOwned} />
         ))}
-        <Shelf term="通用" title="古诗词小站" note="短小好打，适合热身" books={poems} doneOf={doneOf} />
+        <Shelf term="通用" title="古诗词小站" note="短小好打，适合热身" books={poems} doneOf={doneOf} skinsOwned={profile.skinsOwned} />
       </div>
     </main>
   );
@@ -82,9 +82,9 @@ function Stat({ n, label }: { n: number; label: string }) {
   );
 }
 
-type ShelfProps = { term: string; title: string; note: string; books: ShelfBook[]; doneOf: (id: string) => string[] };
+type ShelfProps = { term: string; title: string; note: string; books: ShelfBook[]; doneOf: (id: string) => string[]; skinsOwned: string[] };
 
-function Shelf({ term, title, note, books, doneOf }: ShelfProps) {
+function Shelf({ term, title, note, books, doneOf, skinsOwned }: ShelfProps) {
   return (
     <section className="shelf" aria-label={title}>
       <div className="row">
@@ -96,7 +96,7 @@ function Shelf({ term, title, note, books, doneOf }: ShelfProps) {
       </div>
       <div className="shelf-grid">
         {books.map((b) => (
-          <BookCard key={b.id} book={b} done={doneOf(b.id)} />
+          <BookCard key={b.id} book={b} done={doneOf(b.id)} granted={skinsOwned.includes(b.skinId)} />
         ))}
       </div>
       <div className="shelf-plank" />
@@ -104,7 +104,7 @@ function Shelf({ term, title, note, books, doneOf }: ShelfProps) {
   );
 }
 
-function BookCard({ book, done }: { book: ShelfBook; done: string[] }) {
+function BookCard({ book, done, granted }: { book: ShelfBook; done: string[]; granted: boolean }) {
   const total = book.segmentIds.length;
   const doneCount = book.segmentIds.filter((s) => done.includes(s)).length;
   const finished = book.ready && total > 0 && doneCount === total;
@@ -134,7 +134,7 @@ function BookCard({ book, done }: { book: ShelfBook; done: string[] }) {
       <div className="book-author">{book.author}</div>
       <ProgressBar value={total ? (doneCount * 100) / total : 0} label={`《${book.title}》阅读进度`} height={14} />
       <div className="book-status">{status}</div>
-      <div className="book-reward">{finished ? `已获得大皮肤「${book.skinName}」` : `读完送大皮肤「${book.skinName}」`}</div>
+      <div className="book-reward">{granted ? `已获得大皮肤「${book.skinName}」` : `读完送大皮肤「${book.skinName}」`}</div>
       {book.ready ? (
         <button type="button" className="btn btn-primary" onClick={open} aria-label={`${label}：《${book.title}》`}>
           {label}
