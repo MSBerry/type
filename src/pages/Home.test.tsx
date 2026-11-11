@@ -52,7 +52,7 @@ describe('Home', () => {
     saveStore(localStorage, store);
     renderHome();
     expect(screen.getByText('继续读：《西游记》')).toBeInTheDocument();
-    expect(screen.getByText('已打 1 / 4 段')).toBeInTheDocument();
+    expect(screen.getByText(`已打 1 / ${getBook('xiyouji')!.segments.length} 段`)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: '继续打字 →' }));
     expect(window.location.hash).toBe('#/practice/xiyouji/c1-2');
   });
