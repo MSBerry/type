@@ -1,0 +1,28 @@
+.shelf-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; background: var(--peach); }
+.shelf-hero-text { flex: 1 1 420px; min-width: 0; }
+.shelf-hero-text p { margin: 10px 0 0; font-size: 20px; line-height: 1.6; }
+.shelf-title { font-size: 54px; }
+.shelf-stat { min-width: 120px; padding: 14px 18px; background: #fff; border: 3px solid var(--ink); border-radius: 20px; text-align: center; display: flex; flex-direction: column; gap: 6px; }
+.shelf-stat b { font-size: 36px; line-height: 1; }
+.grade-tab { min-width: 160px; min-height: 70px; font: 400 32px var(--font-display); }
+.grade-tab.is-on { background: var(--sun); box-shadow: 0 7px 0 var(--ink); transform: translateY(-3px); }
+.shelf { display: flex; flex-direction: column; gap: 18px; }
+.shelf-name { font-size: 34px; }
+.shelf-count { color: var(--ink-2); }
+.shelf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
+.shelf-plank { height: 16px; background: #e2b984; border: 3px solid var(--ink); border-radius: 8px; }
+.book-card { display: flex; flex-direction: column; gap: 12px; padding: 14px; background: #fff; border: 3px solid var(--ink); border-radius: 24px; box-shadow: 0 6px 0 var(--ink); }
+.book-cover {
+  position: relative; height: 210px; padding: 18px 18px 18px 34px; overflow: hidden;
+  border: 3px solid var(--ink); border-radius: 10px 16px 16px 10px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.book-spine { position: absolute; left: 0; top: 0; bottom: 0; width: 16px; background: var(--ink); opacity: 0.2; }
+.book-cover-title { font-size: 30px; line-height: 1.2; }
+.book-mark {
+  align-self: flex-end; width: 86px; height: 86px; border-radius: 999px; background: #fff; border: 3px solid var(--ink);
+  display: flex; align-items: center; justify-content: center; font-size: 46px;
+}
+.book-author { color: var(--ink-2); font-size: 15px; }
+.book-status { font-weight: 700; font-size: 15px; }
+.book-reward { font-weight: 700; font-size: 14px; color: var(--purple-ink); }
