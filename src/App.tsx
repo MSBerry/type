@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Bookshelf from './pages/Bookshelf';
+import { FingerCamp, FingerLevelPage } from './pages/FingerCamp';
 import Home from './pages/Home';
 import Practice from './pages/Practice';
 import Result from './pages/Result';
@@ -30,6 +31,8 @@ function Screens() {
       {route.name === 'practice' && <Practice bookId={route.bookId} segmentId={route.segmentId} />}
       {route.name === 'result' && <Result />}
       {route.name === 'wardrobe' && <Wardrobe />}
+      {route.name === 'finger' && <FingerCamp />}
+      {route.name === 'fingerLevel' && <FingerLevelPage key={route.level} level={route.level} />}
     </>
   );
 }
