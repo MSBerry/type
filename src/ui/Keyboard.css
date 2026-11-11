@@ -21,7 +21,7 @@
 .palm {
   width: 200px; height: 40px; margin-top: -2px;
   border: 2px solid var(--ink); border-radius: 6px 6px 28px 28px; background: #f7f8fb;
-  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px;
 }
 
 @media (max-width: 640px) {

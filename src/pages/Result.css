@@ -18,8 +18,8 @@
 .errors-card { flex: 1 1 380px; display: flex; flex-direction: column; gap: 14px; }
 .err-key {
   display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
-  width: 76px; height: 76px; background: var(--peach); border: 3px solid var(--ink); border-radius: 16px;
+  width: 96px; height: 88px; background: var(--peach); border: 3px solid var(--ink); border-radius: 16px;
   box-shadow: 0 4px 0 var(--ink); font: 700 28px/1 var(--font-latin);
 }
-.err-key small { margin-top: 4px; font: 700 13px var(--font-body); }
+.err-key small { margin-top: 6px; font: 700 17px var(--font-body); }
 .result-stars { align-self: flex-start; display: inline-flex; padding: 6px 16px; background: #fff; border: 3px solid var(--ink); border-radius: 999px; }

@@ -23,6 +23,6 @@
   align-self: flex-end; width: 86px; height: 86px; border-radius: 999px; background: #fff; border: 3px solid var(--ink);
   display: flex; align-items: center; justify-content: center; font-size: 46px;
 }
-.book-author { color: var(--ink-2); font-size: 15px; }
-.book-status { font-weight: 700; font-size: 15px; }
-.book-reward { font-weight: 700; font-size: 14px; color: var(--purple-ink); }
+.book-author { color: var(--ink-2); font-size: 17px; }
+.book-status { font-weight: 700; font-size: 17px; }
+.book-reward { font-weight: 700; font-size: 17px; color: var(--purple-ink); }

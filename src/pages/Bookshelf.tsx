@@ -136,7 +136,7 @@ function BookCard({ book, done }: { book: ShelfBook; done: string[] }) {
       <div className="book-status">{status}</div>
       <div className="book-reward">{finished ? `已获得大皮肤「${book.skinName}」` : `读完送大皮肤「${book.skinName}」`}</div>
       {book.ready ? (
-        <button type="button" className={started ? 'btn btn-primary' : 'btn'} onClick={open} aria-label={`${label}：《${book.title}》`}>
+        <button type="button" className="btn btn-primary" onClick={open} aria-label={`${label}：《${book.title}》`}>
           {label}
         </button>
       ) : (

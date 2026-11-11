@@ -1,7 +1,7 @@
 .practice-page {
   --key-h: 64px;
   --key-font: 26px;
-  --cell: 62px;
+  --cell: 68px;
   --ch: 42px;
   --py: 17px;
   --row-gap: 14px;
@@ -29,7 +29,7 @@
 .practice-body { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
 .practice-left { flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
 .practice-passage { display: flex; flex-direction: column; gap: 8px; padding: 14px 18px; }
-.practice-tip { margin: 0; font-size: 15px; color: var(--ink-2); }
+.practice-tip { margin: 0; font-size: 17px; color: var(--ink-2); }
 .practice-keyboard { padding: 14px 18px 18px; }
 .practice-side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
 .practice-coach { display: flex; align-items: center; gap: 10px; }
@@ -47,9 +47,9 @@
   font-size: var(--now-char-font); font-weight: 700;
 }
 .now-tone { font-family: var(--font-pinyin); font-weight: 700; font-size: var(--now-tone); }
-.now-letters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.now-letters { display: flex; gap: 6px; flex-wrap: nowrap; justify-content: center; width: 100%; }
 .now-letter {
-  width: var(--letter-w); height: var(--letter-h); display: flex; align-items: center; justify-content: center;
+  flex: 0 1 var(--letter-w); min-width: 0; height: var(--letter-h); display: flex; align-items: center; justify-content: center;
   background: #fff; border: 3px solid var(--ink); border-radius: 14px; box-shadow: 0 4px 0 var(--ink);
   font: 700 var(--letter-font) var(--font-latin);
 }
@@ -68,11 +68,11 @@
 .practice-page .pg-skip { font-size: var(--ch); }
 .practice-page .kb { gap: 8px; }
 .practice-page .kb-key { height: var(--key-h); font-size: var(--key-font); }
-.practice-page .kb-space { height: calc(var(--key-h) * 0.62); font-size: 15px; }
+.practice-page .kb-space { height: calc(var(--key-h) * 0.62); font-size: 17px; }
 .practice-page .hands { flex-wrap: nowrap; gap: 20px; margin-top: 8px; }
 .practice-page .hand-fingers { gap: 4px; }
 .practice-page .finger { width: 20px; }
-.practice-page .palm { width: 116px; height: 28px; font-size: 13px; }
+.practice-page .palm { width: 116px; height: 28px; font-size: 17px; }
 
 /* 电脑窗口：整个练习页放进一屏，键盘和手指提示始终看得见，课文在卡片里自己滚动 */
 @media (min-width: 1100px) {
@@ -82,9 +82,9 @@
     padding: 10px 20px 18px;
     --key-h: clamp(42px, 7.2vh, 68px);
     --key-font: clamp(20px, 3.4vh, 28px);
-    --cell: clamp(54px, 7.6vh, 66px);
+    --cell: 68px;
     --ch: clamp(30px, 5.2vh, 44px);
-    --py: clamp(14px, 2.2vh, 17px);
+    --py: 17px;
     --row-gap: clamp(6px, 1.4vh, 14px);
     --now-char: clamp(72px, 12vh, 112px);
     --now-char-font: clamp(44px, 7.5vh, 66px);

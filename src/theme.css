@@ -47,12 +47,13 @@ button { font-family: inherit; color: inherit; }
 .btn-dark { background: var(--ink); color: #fff; box-shadow: 0 5px 0 var(--coral); min-height: 64px; font-size: 22px; }
 
 .chip { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 18px; background: #fff; border: 3px solid var(--ink); border-radius: 999px; font-weight: 700; font-size: 19px; }
-.tag { display: inline-flex; align-items: center; padding: 4px 12px; border: 2px solid var(--ink); border-radius: 999px; font-size: 15px; font-weight: 700; background: #fff; }
+.tag { display: inline-flex; align-items: center; padding: 4px 12px; border: 2px solid var(--ink); border-radius: 999px; font-size: 17px; font-weight: 700; background: #fff; }
 .tag-dark { background: var(--ink); color: #fff; }
 .tag-coral { background: var(--coral); }
 
 .banner { padding: 14px 20px; border: 3px solid var(--ink); border-radius: 20px; font-weight: 700; font-size: 19px; background: var(--coral); }
 .banner-soft { background: var(--sun-soft); }
+.storage-banner { position: fixed; left: 12px; bottom: 12px; z-index: 20; max-width: min(420px, calc(100vw - 24px)); }
 
 .progress { flex: 1; width: 100%; border: 3px solid var(--ink); border-radius: 999px; background: #fff; overflow: hidden; }
 .progress-fill { height: 100%; transition: width 0.2s; }
