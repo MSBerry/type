@@ -12,6 +12,7 @@ import Welcome from './pages/Welcome';
 import { syncRewards } from './rewards/rewards';
 import { toHash, useRoute } from './router';
 import { ProfileProvider, useProfile } from './storage/ProfileContext';
+import RestReminder from './ui/RestReminder';
 
 function Screens() {
   const route = useRoute();
@@ -51,6 +52,7 @@ function Screens() {
       {route.name === 'game' && <Game />}
       {route.name === 'welcome' && <Welcome mode="add" />}
       {route.name === 'profiles' && <Profiles />}
+      <RestReminder />
     </>
   );
 }
