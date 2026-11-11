@@ -63,6 +63,23 @@ describe('ProfileProvider', () => {
     expect(localStorage.getItem(STORAGE_KEY)).toBe(newer);
   });
 
+  it('保存失败时照样能用，并标记为不持久', () => {
+    const full = {
+      getItem: () => null,
+      setItem: () => {
+        throw new Error('QuotaExceededError');
+      },
+    } as unknown as Storage;
+    render(
+      <ProfileProvider storage={full}>
+        <Probe />
+      </ProfileProvider>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: '加星' }));
+    expect(screen.getByTestId('stars')).toHaveTextContent('2');
+    expect(screen.getByTestId('persistent')).toHaveTextContent('false');
+  });
+
   it('在 Provider 外面用会报出清楚的错误', () => {
     render(
       <Catch>

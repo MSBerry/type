@@ -14,6 +14,11 @@ describe('parseHash', () => {
     expect(parseHash('#/whatever')).toEqual({ name: 'home' });
     expect(parseHash('#/practice/onlybook')).toEqual({ name: 'home' });
   });
+
+  it('地址被弄坏时回首页，不崩溃', () => {
+    expect(parseHash('#/practice/%E0%A4%A/x')).toEqual({ name: 'home' });
+    expect(parseHash('#/%')).toEqual({ name: 'home' });
+  });
 });
 
 describe('toHash', () => {

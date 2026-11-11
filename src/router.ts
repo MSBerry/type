@@ -7,11 +7,16 @@ export type Route =
   | { name: 'result' };
 
 export function parseHash(hash: string): Route {
-  const parts = hash
-    .replace(/^#\/?/, '')
-    .split('/')
-    .filter(Boolean)
-    .map(decodeURIComponent);
+  let parts: string[];
+  try {
+    parts = hash
+      .replace(/^#\/?/, '')
+      .split('/')
+      .filter(Boolean)
+      .map((p) => decodeURIComponent(p));
+  } catch {
+    return { name: 'home' };
+  }
   if (parts[0] === 'books') return { name: 'books' };
   if (parts[0] === 'practice' && parts.length === 3) return { name: 'practice', bookId: parts[1], segmentId: parts[2] };
   if (parts[0] === 'result') return { name: 'result' };
