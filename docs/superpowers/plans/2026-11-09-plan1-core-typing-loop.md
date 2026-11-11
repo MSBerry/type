@@ -3403,7 +3403,7 @@ const RESULT: SegmentResult = {
   ],
 };
 
-function renderResult(result: SegmentResult | undefined = RESULT) {
+function renderResult(result: SegmentResult = RESULT) {
   return render(
     <ProfileProvider storage={localStorage} initialResult={result}>
       <Result />
@@ -3455,7 +3455,11 @@ describe('Result', () => {
   });
 
   it('没有成绩时引导去读书岛', () => {
-    renderResult(undefined);
+    render(
+      <ProfileProvider storage={localStorage}>
+        <Result />
+      </ProfileProvider>,
+    );
     expect(screen.getByText('还没有成绩哦')).toBeInTheDocument();
   });
 });
