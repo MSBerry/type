@@ -18,6 +18,7 @@
   --font-display: 'ZCOOL KuaiLe', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
   --font-body: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
   --font-latin: 'Fredoka', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-pinyin: 'Andika', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 
 * { box-sizing: border-box; }

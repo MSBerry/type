@@ -165,7 +165,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
                 <div className="now-label">现在打这个字</div>
                 <div className="row now-row">
                   <div className="now-char">{cur.char}</div>
-                  <div className="now-tone latin">{cur.tone}</div>
+                  <div className="now-tone">{cur.tone}</div>
                 </div>
                 <div className="now-letters">
                   {[...cur.key].map((letter, j) => (
