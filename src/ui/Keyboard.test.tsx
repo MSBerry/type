@@ -11,6 +11,13 @@ describe('Keyboard', () => {
     expect(container.querySelectorAll('.is-next')).toHaveLength(1);
   });
 
+  it('连续按错同一个键时，抖动动画重新开始', () => {
+    const { container, rerender } = render(<Keyboard nextKey="h" wrongKey="x" wrongTick={1} />);
+    const first = container.querySelector('[data-key="x"]');
+    rerender(<Keyboard nextKey="h" wrongKey="x" wrongTick={2} />);
+    expect(container.querySelector('[data-key="x"]')).not.toBe(first);
+  });
+
   it('F 和 J 有定位凸点', () => {
     const { getByTestId } = render(<Keyboard nextKey={null} wrongKey={null} />);
     expect(getByTestId('bump-f')).toBeInTheDocument();

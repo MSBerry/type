@@ -7,7 +7,7 @@
   font: 700 26px var(--font-latin); transition: transform 0.1s;
 }
 .kb-key.is-next { background: var(--sun) !important; border-width: 4px; box-shadow: 0 8px 0 var(--ink); transform: translateY(-5px); }
-.kb-key.is-wrong { background: var(--coral) !important; animation: kb-shake 0.25s; }
+.kb-key.is-wrong { background: var(--coral) !important; border-width: 4px; border-style: dashed; animation: kb-shake 0.25s; }
 .kb-bump { width: 18px; height: 4px; border-radius: 2px; background: var(--ink); }
 .kb-space-row { justify-content: center; padding-left: 4%; }
 .kb-space { flex: 0 0 46%; height: 56px; background: #f1f3f8; font: 700 18px var(--font-body); }

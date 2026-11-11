@@ -1,7 +1,7 @@
 import { FINGER_TINT, HOME_KEYS, KEY_ROWS, fingerOf } from '../engine/fingers';
 import './Keyboard.css';
 
-type Props = { nextKey: string | null; wrongKey: string | null };
+type Props = { nextKey: string | null; wrongKey: string | null; wrongTick?: number };
 
 /** 每排左右留白，让三排键一样宽、错开排列，像真键盘 */
 const ROW_PAD: [string, string][] = [
@@ -10,17 +10,16 @@ const ROW_PAD: [string, string][] = [
   ['5%', '1%'],
 ];
 
-export default function Keyboard({ nextKey, wrongKey }: Props) {
+export default function Keyboard({ nextKey, wrongKey, wrongTick = 0 }: Props) {
   return (
     <div className="kb" aria-hidden="true">
       {KEY_ROWS.map((row, r) => (
         <div className="kb-row" key={r} style={{ paddingLeft: ROW_PAD[r][0], paddingRight: ROW_PAD[r][1] }}>
           {row.map((k) => {
-            const cls = ['kb-key', k === nextKey ? 'is-next' : '', k === wrongKey && k !== nextKey ? 'is-wrong' : '']
-              .filter(Boolean)
-              .join(' ');
+            const isWrong = k === wrongKey && k !== nextKey;
+            const cls = ['kb-key', k === nextKey ? 'is-next' : '', isWrong ? 'is-wrong' : ''].filter(Boolean).join(' ');
             return (
-              <div key={k} className={cls} data-key={k} style={{ background: FINGER_TINT[fingerOf(k)] }}>
+              <div key={isWrong ? `${k}-${wrongTick}` : k} className={cls} data-key={k} style={{ background: FINGER_TINT[fingerOf(k)] }}>
                 <span>{k.toUpperCase()}</span>
                 {HOME_KEYS.includes(k) && <span className="kb-bump" data-testid={`bump-${k}`} />}
               </div>
