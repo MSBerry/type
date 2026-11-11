@@ -1,10 +1,25 @@
 import { describe, expect, it } from 'vitest';
 import { getBook, getSegment, listShelf, nextSegmentId, segmentAfter } from './library';
 import { SHELF } from './shelf';
+import type { Book } from './schema';
 
 describe('SHELF', () => {
   it('书的 id 不重复', () => {
     expect(new Set(SHELF.map((b) => b.id)).size).toBe(SHELF.length);
+  });
+
+  it('每本书的皮肤不重复', () => {
+    expect(new Set(SHELF.map((b) => b.skinId)).size).toBe(SHELF.length);
+  });
+
+  it('每本上线的书都在书目里，信息一致', () => {
+    const modules = import.meta.glob<{ default: Book }>('./books/*.json', { eager: true });
+    expect(Object.keys(modules).length).toBeGreaterThan(0);
+    for (const m of Object.values(modules)) {
+      const meta = SHELF.find((b) => b.id === m.default.id);
+      expect(meta, `《${m.default.title}》不在 SHELF 里`).toBeDefined();
+      expect(m.default).toMatchObject(meta!);
+    }
   });
 });
 
