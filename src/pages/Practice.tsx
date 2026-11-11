@@ -1,4 +1,6 @@
 import { type MouseEvent, useEffect, useRef } from 'react';
+import { speak, stopSpeaking, useChineseVoice } from '../audio/speech';
+import { useTypingSounds } from '../audio/useSfx';
 import { getBook, getSegment } from '../content/library';
 import type { Book, Segment } from '../content/schema';
 import { FINGER_NAME, fingerOf } from '../engine/fingers';
@@ -48,6 +50,9 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
   const { profile, update, lastResult, setLastResult } = useProfile();
   const { session, imeWarn, paused, restart: resetSession } = useTypingSession(segment.tokens);
   const saved = useRef(false);
+  useTypingSounds(session);
+  const voice = useChineseVoice();
+  useEffect(() => stopSpeaking, []);
 
   // 打完一段：记成绩、发奖励，只记一次。奖励在这里就保存，孩子不进结算页也不会丢。
   useEffect(() => {
@@ -134,7 +139,19 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
           <div className="practice-left">
             <section className="card practice-passage" aria-label="课文">
               <Passage session={session} showPinyin={showPinyin} />
-              <p className="practice-tip">小提示：只打拼音字母，不用打声调；标点会自动跳过。ü 用 V 键。</p>
+              <div className="practice-tools">
+                <p className="practice-tip">小提示：只打拼音字母，不用打声调；标点会自动跳过。ü 用 V 键。</p>
+                {voice && (
+                  <button
+                    type="button"
+                    className="btn"
+                    onMouseDown={keepFocus}
+                    onClick={() => speak(segment.tokens.map((t) => t.char).join(''), voice)}
+                  >
+                    听一听
+                  </button>
+                )}
+              </div>
             </section>
             <section className="card practice-keyboard" aria-label="键盘提示">
               <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} showHands />
