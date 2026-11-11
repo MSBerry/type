@@ -200,6 +200,11 @@ export default function Home() {
         </section>
 
         <footer className="home-footer">Windows / macOS 通用 · 每天建议 20 分钟，记得让眼睛休息</footer>
+        <footer className="row" style={{ justifyContent: 'center' }}>
+          <button type="button" className="btn" onClick={() => navigate({ name: 'parent' })}>
+            家长中心
+          </button>
+        </footer>
       </div>
     </main>
   );
