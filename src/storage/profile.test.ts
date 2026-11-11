@@ -50,8 +50,32 @@ describe('loadStore', () => {
     localStorage.setItem(STORAGE_KEY, '{坏掉的');
     const r = loadStore(localStorage);
     expect(activeProfile(r.store).stars).toBe(0);
-    const keys = Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i));
-    expect(keys.some((k) => k?.startsWith(`${STORAGE_KEY}/broken-`))).toBe(true);
+    expect(localStorage.getItem(`${STORAGE_KEY}/broken`)).toBe('{坏掉的');
+  });
+
+  it('反复遇到损坏的存档，只保留一份备份', () => {
+    localStorage.setItem(STORAGE_KEY, '{坏掉的');
+    loadStore(localStorage);
+    loadStore(localStorage);
+    expect(localStorage.length).toBe(2);
+  });
+
+  it('遇到更新版本写的存档：不动原数据，这次不保存', () => {
+    const newer = JSON.stringify({ version: 2, profiles: [] });
+    localStorage.setItem(STORAGE_KEY, newer);
+    const r = loadStore(localStorage);
+    expect(r.persistent).toBe(false);
+    expect(localStorage.getItem(STORAGE_KEY)).toBe(newer);
+    expect(localStorage.length).toBe(1);
+  });
+
+  it('读取存储出错时不崩溃', () => {
+    const blocked = {
+      getItem: () => {
+        throw new Error('SecurityError');
+      },
+    } as unknown as Storage;
+    expect(loadStore(blocked).persistent).toBe(false);
   });
 
   it('保存后能原样读回', () => {
@@ -101,6 +125,11 @@ describe('recordSegment', () => {
     expect(p.bookProgress.xiyouji).toEqual({ done: ['c1-1'], lastSegment: 'c1-1', updatedAt: 1000 });
     expect(p.keyErrors).toEqual({ z: 2, h: 1 });
     expect(p.daily['2026-11-09']).toEqual({ minutes: 1.5, chars: 52 });
+  });
+
+  it('很短的段落也计入时长', () => {
+    const p = recordSegment(newProfile('p1', '小明', 5), { ...RESULT, activeMs: 1000 }, '2026-11-09', 1);
+    expect(p.daily['2026-11-09'].minutes).toBeCloseTo(1 / 60);
   });
 
   it('同一段打两遍：字数和星星累加，进度不重复', () => {

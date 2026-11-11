@@ -74,13 +74,23 @@ export function getStorage(): Storage | null {
 
 export function loadStore(storage: Storage | null): { store: Store; persistent: boolean } {
   if (!storage) return { store: defaultStore(), persistent: false };
-  const raw = storage.getItem(STORAGE_KEY);
+  let raw: string | null;
+  try {
+    raw = storage.getItem(STORAGE_KEY);
+  } catch {
+    return { store: defaultStore(), persistent: false };
+  }
   if (raw === null) return { store: defaultStore(), persistent: true };
   try {
-    return { store: migrate(JSON.parse(raw)), persistent: true };
+    const data = JSON.parse(raw) as { version?: unknown } | null;
+    if (typeof data?.version === 'number' && data.version > 1) {
+      // 这是更新版本的程序写的存档：不动它，这次的进度只放在内存里
+      return { store: defaultStore(), persistent: false };
+    }
+    return { store: migrate(data), persistent: true };
   } catch {
     try {
-      storage.setItem(`${STORAGE_KEY}/broken-${Date.now()}`, raw);
+      storage.setItem(`${STORAGE_KEY}/broken`, raw);
     } catch {
       // 备份失败也继续，不能让孩子卡在这里
     }
@@ -125,7 +135,7 @@ export function recordSegment(p: Profile, r: SegmentResult, date: string, now = 
     keyErrors,
     daily: {
       ...p.daily,
-      [date]: { minutes: Math.round((day.minutes + r.activeMs / 60000) * 10) / 10, chars: day.chars + r.hanzi },
+      [date]: { minutes: day.minutes + r.activeMs / 60000, chars: day.chars + r.hanzi },
     },
   };
 }
