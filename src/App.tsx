@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Bookshelf from './pages/Bookshelf';
 import { FingerCamp, FingerLevelPage } from './pages/FingerCamp';
 import Home from './pages/Home';
+import { PinyinHome, PinyinSetPage } from './pages/PinyinDrill';
 import Practice from './pages/Practice';
 import Result from './pages/Result';
 import Wardrobe from './pages/Wardrobe';
@@ -33,6 +34,8 @@ function Screens() {
       {route.name === 'wardrobe' && <Wardrobe />}
       {route.name === 'finger' && <FingerCamp />}
       {route.name === 'fingerLevel' && <FingerLevelPage key={route.level} level={route.level} />}
+      {route.name === 'pinyin' && <PinyinHome />}
+      {route.name === 'pinyinSet' && <PinyinSetPage key={route.setId} setId={route.setId} />}
     </>
   );
 }
