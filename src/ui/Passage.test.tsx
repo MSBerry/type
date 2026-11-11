@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { createSession, press } from '../engine/session';
 import type { Token } from '../engine/types';
@@ -51,5 +51,23 @@ describe('Passage', () => {
     const comma = [...container.querySelectorAll('.pg-skip')].find((e) => e.textContent === '，')!;
     expect(comma.parentElement).toHaveClass('pg-unit');
     expect(comma.parentElement).toHaveTextContent('好，');
+  });
+  it('前引号和书名号跟后一个字在同一组', () => {
+    const tokens: Token[] = [
+      { kind: 'hanzi', char: '说', key: 'shuo', tone: 'shuō' },
+      { kind: 'skip', char: '：' },
+      { kind: 'skip', char: '“' },
+      { kind: 'hanzi', char: '读', key: 'du', tone: 'dú' },
+      { kind: 'skip', char: '《' },
+      { kind: 'hanzi', char: '西', key: 'xi', tone: 'xī' },
+      { kind: 'skip', char: '》' },
+      { kind: 'skip', char: '”' },
+    ];
+    render(<Passage session={createSession(tokens)} showPinyin />);
+    const unitOf = (ch: string) => screen.getByText(ch).closest('.pg-unit');
+    expect(unitOf('“')).toBe(unitOf('读'));
+    expect(unitOf('《')).toBe(unitOf('西'));
+    expect(unitOf('：')).toBe(unitOf('说'));
+    expect(unitOf('”')).toBe(unitOf('西'));
   });
 });

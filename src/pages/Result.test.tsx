@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useState } from 'react';
 import { describe, expect, it } from 'vitest';
+import { getBook, getSegment } from '../content/library';
 import type { SegmentResult } from '../engine/stats';
 import { ProfileProvider } from '../storage/ProfileContext';
 import { STORAGE_KEY, defaultStore, saveStore, today } from '../storage/profile';
@@ -133,7 +134,8 @@ describe('Result', () => {
   });
 
   it('最后一段时改成回读书岛', () => {
-    renderResult({ ...RESULT, segmentId: 'c1-4' });
+    const segs = getBook('xiyouji')!.segments;
+    renderResult({ ...RESULT, segmentId: segs[segs.length - 1].id });
     fireEvent.click(screen.getByRole('button', { name: '这本读完啦，回读书岛' }));
     expect(window.location.hash).toBe('#/books');
   });
@@ -145,5 +147,12 @@ describe('Result', () => {
       </ProfileProvider>,
     );
     expect(screen.getByText('还没有成绩哦')).toBeInTheDocument();
+  });
+  it('选项顺序打乱后，判对错仍然按原来的正确答案', () => {
+    // 用一段带小考考的真实段落；无论选项怎么排，点正确答案的文字就算对
+    const seg = getSegment('xiyouji', 'c1-1')!;
+    renderResult({ ...RESULT, segmentId: seg.id });
+    fireEvent.click(screen.getByRole('button', { name: seg.quiz!.options[seg.quiz!.answer] }));
+    expect(screen.getByText('答对啦！星星 +1')).toBeInTheDocument();
   });
 });

@@ -1,8 +1,10 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
-import { getSegment } from './content/library';
+import { getBook, getSegment } from './content/library';
 import { STORAGE_KEY, defaultStore, saveStore } from './storage/profile';
+
+const XIYOUJI_ALL = getBook('xiyouji')!.segments.map((s) => s.id);
 
 describe('App', () => {
   beforeEach(() => {
@@ -29,7 +31,7 @@ describe('App', () => {
 
   it('打开时给旧存档补发该得的皮肤', () => {
     const store = defaultStore();
-    store.profiles[0].bookProgress.xiyouji = { done: ['c1-1', 'c1-2', 'c1-3', 'c1-4'], lastSegment: 'c1-4', updatedAt: 1 };
+    store.profiles[0].bookProgress.xiyouji = { done: XIYOUJI_ALL, lastSegment: XIYOUJI_ALL[XIYOUJI_ALL.length - 1], updatedAt: 1 };
     saveStore(localStorage, store);
     render(<App />);
     expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0].skinsOwned).toContain('monkey');

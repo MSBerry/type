@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { setCustomBooks } from '../content/library';
+import { getBook, setCustomBooks } from '../content/library';
 import type { Book } from '../content/schema';
 import type { SegmentResult } from '../engine/stats';
 import { type Profile, newProfile } from '../storage/profile';
@@ -20,8 +20,8 @@ const result = (over: Partial<SegmentResult> = {}): SegmentResult => ({
   maxStreak: 5,
   ...over,
 });
-const ALL = ['c1-1', 'c1-2', 'c1-3', 'c1-4'];
-const finished = (p: Profile): Profile => ({ ...p, bookProgress: { xiyouji: { done: ALL, lastSegment: 'c1-4', updatedAt: 1 } } });
+const ALL = getBook('xiyouji')!.segments.map((s) => s.id);
+const finished = (p: Profile): Profile => ({ ...p, bookProgress: { xiyouji: { done: ALL, lastSegment: ALL[ALL.length - 1], updatedAt: 1 } } });
 
 describe('speedLevelOf', () => {
   it('按速度门槛定等级', () => {

@@ -1,8 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+import { getBook } from '../content/library';
 import { ProfileProvider } from '../storage/ProfileContext';
 import { defaultStore, saveStore } from '../storage/profile';
 import Home from './Home';
+
+const XIYOUJI_ALL = getBook('xiyouji')!.segments.map((s) => s.id);
 
 function renderHome() {
   return render(
@@ -75,7 +78,7 @@ describe('Home', () => {
   });
   it('读完的书显示再读一遍', () => {
     const store = defaultStore();
-    store.profiles[0].bookProgress.xiyouji = { done: ['c1-1', 'c1-2', 'c1-3', 'c1-4'], lastSegment: 'c1-4', updatedAt: 5 };
+    store.profiles[0].bookProgress.xiyouji = { done: XIYOUJI_ALL, lastSegment: XIYOUJI_ALL[XIYOUJI_ALL.length - 1], updatedAt: 5 };
     saveStore(localStorage, store);
     renderHome();
     fireEvent.click(screen.getByRole('button', { name: '再读一遍 →' }));
