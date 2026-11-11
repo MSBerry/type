@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { createSession, press } from '../engine/session';
 import type { Token } from '../engine/types';
 import Passage from './Passage';
@@ -34,5 +34,15 @@ describe('Passage', () => {
     const { container } = render(<Passage session={afterTyping('ni')} showPinyin={false} />);
     const py = [...container.querySelectorAll('.pg-py')].map((e) => e.textContent);
     expect(py).toEqual(['', 'hǎo', '']);
+  });
+
+  it('当前字变化时滚动到看得见的位置', () => {
+    const spy = vi.fn();
+    Element.prototype.scrollIntoView = spy;
+    const { rerender } = render(<Passage session={afterTyping('')} showPinyin />);
+    spy.mockClear();
+    rerender(<Passage session={afterTyping('ni')} showPinyin />);
+    expect(spy).toHaveBeenCalledWith({ block: 'nearest' });
+    delete (Element.prototype as Partial<Element>).scrollIntoView;
   });
 });

@@ -96,72 +96,68 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
   const showPinyin = profile.settings.showPinyin;
 
   return (
-    <main className="page">
-      <div className="page-inner">
-        <header className="row spread">
-          <div className="row">
-            <button type="button" className="btn" onClick={() => navigate({ name: 'books' })}>
-              ← 读书岛
-            </button>
-            <span className="chip">
-              <span className="mini-cover" style={{ background: book.cover }}>
-                {book.mark}
-              </span>
+    <main className="page practice-page">
+      <div className="page-inner practice-inner">
+        <header className="row practice-header">
+          <button type="button" className="btn" onClick={() => navigate({ name: 'books' })}>
+            ← 读书岛
+          </button>
+          <h1 className="chip practice-book">
+            <span className="mini-cover" style={{ background: book.cover }}>
+              {book.mark}
+            </span>
+            <span className="practice-book-title">
               《{book.title}》{segment.title}
             </span>
+          </h1>
+          <div className="practice-progress">
+            <ProgressBar value={(session.cursor * 100) / Math.max(1, total)} label="本段进度" height={22} />
+            <b className="latin">
+              {session.cursor} / {total} 字
+            </b>
           </div>
-          <div className="row">
-            <span className="chip">
-              速度 <b className="latin">{speedCpm(session)}</b> 字/分
-            </span>
-            <span className="chip">
-              正确率 <b className="latin">{acc}%</b>
-            </span>
-            <span className="chip">
-              <StarRow count={typed === 0 ? 3 : starsFor(acc)} />
-            </span>
-            <button type="button" className="btn" onMouseDown={keepFocus} onClick={restart} aria-label="重新开始这一段">
-              重来
-            </button>
-          </div>
+          <span className="chip">
+            速度 <b className="latin">{speedCpm(session)}</b> 字/分
+          </span>
+          <span className="chip">
+            正确率 <b className="latin">{acc}%</b>
+          </span>
+          <span className="chip">
+            <StarRow count={typed === 0 ? 3 : starsFor(acc)} />
+          </span>
+          <button type="button" className="btn" aria-pressed={showPinyin} onMouseDown={keepFocus} onClick={togglePinyin}>
+            拼音：{showPinyin ? '开' : '关'}
+          </button>
+          <button type="button" className="btn" onMouseDown={keepFocus} onClick={restart} aria-label="重新开始这一段">
+            重来
+          </button>
         </header>
 
-        <div className="row practice-progress">
-          <b>本段进度</b>
-          <ProgressBar value={(session.cursor * 100) / Math.max(1, total)} label="本段进度" height={26} />
-          <b className="latin">
-            {session.cursor} / {total} 字
-          </b>
-        </div>
-
-        {imeWarn && (
-          <div role="alert" className="banner">
-            好像开着中文输入法～按一下 Shift 切换成英文，再接着打。
-          </div>
-        )}
-        {paused && !session.done && (
-          <div role="status" className="banner banner-soft">
-            休息一下～按任意字母就继续。
+        {(imeWarn || (paused && !session.done)) && (
+          <div className="practice-banners">
+            {imeWarn && (
+              <div role="alert" className="banner">
+                好像开着中文输入法～按一下 Shift 切换成英文，再接着打。
+              </div>
+            )}
+            {paused && !session.done && (
+              <div role="status" className="banner banner-soft">
+                休息一下～按任意字母就继续。
+              </div>
+            )}
           </div>
         )}
 
-        <div className="practice-main">
-          <section className="card practice-passage">
-            <div className="row spread">
-              <h1 className="display practice-title">{segment.title}</h1>
-              <button type="button" className="btn" aria-pressed={showPinyin} onMouseDown={keepFocus} onClick={togglePinyin}>
-                拼音：{showPinyin ? '开' : '关'}
-              </button>
-            </div>
-            <Passage session={session} showPinyin={showPinyin} />
-            <div className="row practice-coach">
-              <Mascot size={86} mood={session.lastWrongKey ? 'oops' : 'happy'} />
-              <p className="coach-bubble" aria-live="polite">
-                {coachMessage(session)}
-              </p>
-            </div>
-            <p className="practice-tip">小提示：只打拼音字母，不用打声调；标点会自动跳过。ü 用 V 键。</p>
-          </section>
+        <div className="practice-body">
+          <div className="practice-left">
+            <section className="card practice-passage" aria-label="课文">
+              <Passage session={session} showPinyin={showPinyin} />
+              <p className="practice-tip">小提示：只打拼音字母，不用打声调；标点会自动跳过。ü 用 V 键。</p>
+            </section>
+            <section className="card practice-keyboard" aria-label="键盘提示">
+              <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} />
+            </section>
+          </div>
 
           <aside className="practice-side">
             {cur && next ? (
@@ -200,13 +196,19 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
                 </button>
               </div>
             )}
+            <div className="practice-coach">
+              <Mascot size={72} mood={session.lastWrongKey ? 'oops' : 'happy'} />
+              <p className="coach-bubble" aria-live="polite">
+                {coachMessage(session)}
+              </p>
+            </div>
+            {finger && (
+              <div className="card practice-hands">
+                <Hands finger={finger} />
+              </div>
+            )}
           </aside>
         </div>
-
-        <section className="card practice-keyboard">
-          <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} />
-          <Hands finger={finger} />
-        </section>
       </div>
     </main>
   );
