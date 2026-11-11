@@ -3018,6 +3018,20 @@ describe('Practice', () => {
     expect(window.location.hash).toBe('#/result');
   });
 
+  it('连续按错同一个键，键盘上的错键会重新抖动', () => {
+    renderPractice();
+    typeKeys('x');
+    const first = document.querySelector('[data-key="x"]');
+    typeKeys('x');
+    expect(document.querySelector('[data-key="x"]')).not.toBe(first);
+  });
+
+  it('点按钮不抢键盘焦点，免得按空格时误触发重来', () => {
+    renderPractice();
+    expect(fireEvent.mouseDown(screen.getByRole('button', { name: '重新开始这一段' }))).toBe(false);
+    expect(fireEvent.mouseDown(screen.getByRole('button', { name: '拼音：开' }))).toBe(false);
+  });
+
   it('找不到这一段时给出返回按钮', () => {
     renderPractice('sanguo', 'x');
     expect(screen.getByText('找不到这一段')).toBeInTheDocument();
@@ -3079,7 +3093,7 @@ Expected: FAIL，提示找不到 `./Practice`
 - [ ] **Step 8: 实现 `src/pages/Practice.tsx`**
 
 ```tsx
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { type MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { getBook, getSegment } from '../content/library';
 import type { Book, Segment } from '../content/schema';
 import { FINGER_NAME, fingerOf } from '../engine/fingers';
@@ -3099,6 +3113,9 @@ import { coachMessage } from './coach';
 import './Practice.css';
 
 export const IDLE_PAUSE_MS = 10_000;
+
+/** 打字过程中点按钮不抢焦点，否则孩子按空格或回车会再次触发这个按钮 */
+const keepFocus = (e: MouseEvent) => e.preventDefault();
 
 export default function Practice({ bookId, segmentId }: { bookId: string; segmentId: string }) {
   const book = getBook(bookId);
@@ -3198,7 +3215,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
             <span className="chip">
               <StarRow count={typed === 0 ? 3 : starsFor(acc)} />
             </span>
-            <button type="button" className="btn" onClick={restart} aria-label="重新开始这一段">
+            <button type="button" className="btn" onMouseDown={keepFocus} onClick={restart} aria-label="重新开始这一段">
               重来
             </button>
           </div>
@@ -3227,7 +3244,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
           <section className="card practice-passage">
             <div className="row spread">
               <h1 className="display practice-title">{segment.title}</h1>
-              <button type="button" className="btn" aria-pressed={showPinyin} onClick={togglePinyin}>
+              <button type="button" className="btn" aria-pressed={showPinyin} onMouseDown={keepFocus} onClick={togglePinyin}>
                 拼音：{showPinyin ? '开' : '关'}
               </button>
             </div>
@@ -3294,7 +3311,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
 - [ ] **Step 9: 运行，确认通过**
 
 Run: `npx vitest run src/pages/Practice.test.tsx`
-Expected: PASS（6 个测试）
+Expected: PASS（8 个测试）
 
 - [ ] **Step 10: 提交**
 
