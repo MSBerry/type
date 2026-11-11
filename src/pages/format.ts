@@ -8,5 +8,5 @@ export function formatDuration(ms: number): string {
 export function headlineFor(stars: number, name: string): string {
   if (stars >= 3) return `太棒了，${name}！`;
   if (stars === 2) return `真不错，${name}！`;
-  return `完成啦，${name}！再练练会更好`;
+  return `完成啦，${name}！下次会更棒`;
 }

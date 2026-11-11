@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { useState } from 'react';
 import { describe, expect, it } from 'vitest';
 import type { SegmentResult } from '../engine/stats';
 import { ProfileProvider } from '../storage/ProfileContext';
@@ -28,7 +29,40 @@ function renderResult(result: SegmentResult = RESULT) {
   );
 }
 
+function Remount() {
+  const [show, setShow] = useState(true);
+  return (
+    <>
+      <button type="button" onClick={() => setShow((s) => !s)}>
+        切换
+      </button>
+      {show && <Result />}
+    </>
+  );
+}
+
 describe('Result', () => {
+  it('离开再回到结算页，不能再答一次刷星星', () => {
+    render(
+      <ProfileProvider storage={localStorage} initialResult={RESULT}>
+        <Remount />
+      </ProfileProvider>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: '傲来国' }));
+    fireEvent.click(screen.getByRole('button', { name: '切换' }));
+    fireEvent.click(screen.getByRole('button', { name: '切换' }));
+    expect(screen.getByText('答对啦！星星 +1')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '傲来国' }));
+    expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0].stars).toBe(1);
+  });
+
+  it('答完后对错不只靠颜色，有对勾和叉', () => {
+    renderResult();
+    fireEvent.click(screen.getByRole('button', { name: '车迟国' }));
+    expect(screen.getByText('✓')).toBeInTheDocument();
+    expect(screen.getByText('✗')).toBeInTheDocument();
+  });
+
   it('显示夸奖、星星和四项成绩', () => {
     renderResult();
     expect(screen.getByRole('heading', { name: '太棒了，小朋友！' })).toBeInTheDocument();

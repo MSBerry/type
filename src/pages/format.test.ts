@@ -13,6 +13,6 @@ describe('headlineFor', () => {
   it('按星星给不同的夸奖', () => {
     expect(headlineFor(3, '小明')).toBe('太棒了，小明！');
     expect(headlineFor(2, '小明')).toBe('真不错，小明！');
-    expect(headlineFor(1, '小明')).toBe('完成啦，小明！再练练会更好');
+    expect(headlineFor(1, '小明')).toBe('完成啦，小明！下次会更棒');
   });
 });

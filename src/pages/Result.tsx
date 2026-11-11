@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { getBook, getSegment, segmentAfter } from '../content/library';
 import { navigate } from '../router';
 import { useProfile } from '../storage/ProfileContext';
@@ -9,8 +8,7 @@ import { formatDuration, headlineFor } from './format';
 import './Result.css';
 
 export default function Result() {
-  const { profile, update, lastResult } = useProfile();
-  const [picked, setPicked] = useState<number | null>(null);
+  const { profile, update, lastResult, setLastResult } = useProfile();
 
   if (!lastResult) {
     return (
@@ -34,9 +32,10 @@ export default function Result() {
   const nextId = book ? segmentAfter(book, r.segmentId) : null;
   const quiz = segment?.quiz;
 
+  const picked = r.quizPick ?? null;
   const pick = (i: number) => {
     if (picked !== null || !quiz) return;
-    setPicked(i);
+    setLastResult({ ...r, quizPick: i });
     if (i === quiz.answer) update((p) => addStars(p, 1));
   };
 
@@ -109,10 +108,13 @@ export default function Result() {
               <h2 className="display">读书小考考</h2>
               <p className="quiz-q">{quiz.q}</p>
               {quiz.options.map((opt, i) => {
-                const cls =
-                  picked === null ? 'btn quiz-option' : i === quiz.answer ? 'btn quiz-option is-right' : i === picked ? 'btn quiz-option is-wrong' : 'btn quiz-option';
+                const isRight = picked !== null && i === quiz.answer;
+                const isWrong = picked === i && i !== quiz.answer;
+                const cls = isRight ? 'btn quiz-option is-right' : isWrong ? 'btn quiz-option is-wrong' : 'btn quiz-option';
                 return (
                   <button key={opt} type="button" className={cls} aria-pressed={picked === i} onClick={() => pick(i)}>
+                    {isRight && <span aria-hidden="true">✓</span>}
+                    {isWrong && <span aria-hidden="true">✗</span>}
                     {opt}
                   </button>
                 );

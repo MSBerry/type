@@ -38,6 +38,8 @@ export type SegmentResult = {
   activeMs: number;
   keyErrors: Record<string, number>;
   topErrors: { key: string; count: number }[];
+  /** 读书小考考选了第几个；答过就不能再答 */
+  quizPick?: number;
 };
 
 export function buildResult(s: Session, bookId: string, segmentId: string): SegmentResult {
