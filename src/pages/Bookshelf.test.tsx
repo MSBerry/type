@@ -53,4 +53,12 @@ describe('Bookshelf', () => {
     renderShelf();
     expect(screen.getByText('读完送大皮肤「美猴王」')).toBeInTheDocument();
   });
+  it('全部打完的书显示已读完', () => {
+    const store = defaultStore();
+    store.profiles[0].bookProgress.xiyouji = { done: ['c1-1', 'c1-2', 'c1-3', 'c1-4'], lastSegment: 'c1-4', updatedAt: 1 };
+    saveStore(localStorage, store);
+    renderShelf();
+    expect(screen.getByText('已读完 · 全部 4 段')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '再读一遍：《西游记》' })).toBeEnabled();
+  });
 });

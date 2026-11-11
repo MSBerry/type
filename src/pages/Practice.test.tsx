@@ -1,9 +1,9 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { getSegment } from '../content/library';
 import { ProfileProvider } from '../storage/ProfileContext';
 import { STORAGE_KEY } from '../storage/profile';
-import Practice from './Practice';
+import Practice, { IDLE_PAUSE_MS } from './Practice';
 
 function renderPractice(bookId = 'xiyouji', segmentId = 'c1-1') {
   return render(
@@ -83,5 +83,49 @@ describe('Practice', () => {
     expect(screen.getByText('找不到这一段')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: '回读书岛' }));
     expect(window.location.hash).toBe('#/books');
+  });
+});
+
+describe('Practice 的计时和重打', () => {
+  const saved = () => JSON.parse(localStorage.getItem(STORAGE_KEY)!).profiles[0];
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('10 秒不按键自动暂停', () => {
+    vi.useFakeTimers();
+    renderPractice();
+    typeKeys('h');
+    act(() => {
+      vi.advanceTimersByTime(IDLE_PAUSE_MS);
+    });
+    expect(screen.getByRole('status')).toHaveTextContent('休息一下');
+  });
+
+  it('窗口失焦期间的时间不计入打字时长', () => {
+    vi.useFakeTimers();
+    renderPractice();
+    const letters = lettersOf('c1-1');
+    typeKeys(letters[0]);
+    fireEvent.blur(window);
+    vi.setSystemTime(Date.now() + 60_000);
+    typeKeys(letters.slice(1));
+    const day = Object.values(saved().daily)[0] as { minutes: number };
+    expect(day.minutes).toBe(0);
+  });
+
+  it('再打一次也会记录成绩', () => {
+    renderPractice();
+    typeKeys(lettersOf('c1-1'));
+    fireEvent.click(screen.getByRole('button', { name: '再打一次' }));
+    typeKeys(lettersOf('c1-1'));
+    expect(saved().totalChars).toBe(104);
+  });
+
+  it('按错时键宝换成担心的表情', () => {
+    renderPractice();
+    typeKeys('x');
+    expect(screen.getByRole('img', { name: '键宝' })).toHaveAttribute('data-mood', 'oops');
   });
 });
