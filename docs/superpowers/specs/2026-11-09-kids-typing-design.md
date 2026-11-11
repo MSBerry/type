@@ -142,8 +142,11 @@ type Token =
     "grade": 5,
     "term": "下册",
     "theme": "古典名著",
-    "status": "ready",
     "skinId": "monkey",
+    "skinName": "美猴王",
+    "cover": "#FF7A45",
+    "mark": "西",
+    "kind": "prose",
     "segments": [
       { "id": "c1-1", "title": "第一回 · 花果山", "tokens": ["…"], "quiz": { "q": "…", "options": ["…"], "answer": 0 } }
     ]
