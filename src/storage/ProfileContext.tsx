@@ -1,9 +1,12 @@
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react';
 import type { SegmentResult } from '../engine/stats';
-import { type Profile, activeProfile, getStorage, loadStore, replaceProfile, saveStore } from './profile';
+import { type Profile, type Store, activeProfile, getStorage, loadStore, replaceProfile, saveStore } from './profile';
 
 type ProfileCtx = {
   profile: Profile;
+  /** 整份存档：所有小朋友、导入的文章 */
+  store: Store;
+  updateStore: (fn: (s: Store) => Store) => void;
   /** false 表示这次的进度不会保存 */
   persistent: boolean;
   update: (fn: (p: Profile) => Profile) => void;
@@ -29,20 +32,28 @@ export function ProfileProvider({ children, storage, initialResult }: Props) {
   });
   const [lastResult, setLastResult] = useState<SegmentResult | null>(initialResult ?? null);
 
-  const update = useCallback((fn: (p: Profile) => Profile) => {
+  const updateStore = useCallback((fn: (s: Store) => Store) => {
     setState((prev) => {
-      const current = activeProfile(prev.store);
-      const next = fn(current);
-      if (next === current) return prev;
-      const store = replaceProfile(prev.store, next);
+      const store = fn(prev.store);
+      if (store === prev.store) return prev;
       const ok = prev.persistent && prev.st !== null && saveStore(prev.st, store);
       return { ...prev, store, persistent: prev.persistent && ok };
     });
   }, []);
 
+  const update = useCallback(
+    (fn: (p: Profile) => Profile) =>
+      updateStore((s) => {
+        const current = activeProfile(s);
+        const next = fn(current);
+        return next === current ? s : replaceProfile(s, next);
+      }),
+    [updateStore],
+  );
+
   const value = useMemo<ProfileCtx>(
-    () => ({ profile: activeProfile(state.store), persistent: state.persistent, update, lastResult, setLastResult }),
-    [state, update, lastResult],
+    () => ({ profile: activeProfile(state.store), store: state.store, updateStore, persistent: state.persistent, update, lastResult, setLastResult }),
+    [state, update, updateStore, lastResult],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
