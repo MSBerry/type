@@ -21,8 +21,19 @@ export function listShelf(grade: BookMeta['grade']): ShelfGroup[] {
   return groups;
 }
 
+let CUSTOM = new Map<string, Book>();
+
+/** 家长导入的文章：存档变化时由 ProfileProvider 登记 */
+export function setCustomBooks(books: Book[]): void {
+  CUSTOM = new Map(books.map((b) => [b.id, b]));
+}
+
+export function listCustomBooks(): Book[] {
+  return [...CUSTOM.values()];
+}
+
 export function getBook(id: string): Book | null {
-  return READY.get(id) ?? null;
+  return READY.get(id) ?? CUSTOM.get(id) ?? null;
 }
 
 export function getSegment(bookId: string, segmentId: string): Segment | null {

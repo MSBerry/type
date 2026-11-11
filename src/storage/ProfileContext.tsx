@@ -1,4 +1,5 @@
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { setCustomBooks } from '../content/library';
 import type { SegmentResult } from '../engine/stats';
 import { type Profile, type Store, activeProfile, getStorage, loadStore, replaceProfile, saveStore } from './profile';
 
@@ -50,6 +51,9 @@ export function ProfileProvider({ children, storage, initialResult }: Props) {
       }),
     [updateStore],
   );
+
+  // 在子组件渲染前登记导入的文章，getBook 才找得到
+  useMemo(() => setCustomBooks(state.store.customBooks), [state.store.customBooks]);
 
   const value = useMemo<ProfileCtx>(
     () => ({ profile: activeProfile(state.store), store: state.store, updateStore, persistent: state.persistent, update, lastResult, setLastResult }),

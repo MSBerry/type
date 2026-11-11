@@ -1,4 +1,5 @@
 import { getBook } from '../content/library';
+import { CUSTOM_BOOK_PREFIX } from '../content/schema';
 import type { SegmentResult, Unlocks } from '../engine/stats';
 import { type Profile, today } from '../storage/profile';
 import { BADGES } from './badges';
@@ -22,6 +23,7 @@ export function smallSkinsFor(totalChars: number): string[] {
 export function finishedBookIds(p: Profile): string[] {
   return Object.entries(p.bookProgress)
     .filter(([id, progress]) => {
+      if (id.startsWith(CUSTOM_BOOK_PREFIX)) return false;
       const book = getBook(id);
       return book !== null && book.segments.every((s) => progress.done.includes(s.id));
     })

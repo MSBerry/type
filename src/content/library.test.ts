@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getBook, getSegment, listShelf, nextSegmentId, segmentAfter } from './library';
+import { getBook, getSegment, listCustomBooks, listShelf, nextSegmentId, segmentAfter, setCustomBooks } from './library';
 import { SHELF } from './shelf';
 import type { Book } from './schema';
 
@@ -78,5 +78,17 @@ describe('nextSegmentId / segmentAfter', () => {
     const book = getBook('xiyouji')!;
     expect(segmentAfter(book, 'c1-1')).toBe('c1-2');
     expect(segmentAfter(book, 'c1-4')).toBeNull();
+  });
+});
+
+describe('自己导入的文章', () => {
+  it('登记后 getBook 能找到，换一批就替换', () => {
+    const book = { id: 'my-1', title: '小猫', segments: [{ id: 's1', title: '第 1 段', tokens: [] }] } as unknown as Book;
+    setCustomBooks([book]);
+    expect(getBook('my-1')?.title).toBe('小猫');
+    expect(getSegment('my-1', 's1')?.title).toBe('第 1 段');
+    expect(listCustomBooks()).toHaveLength(1);
+    setCustomBooks([]);
+    expect(getBook('my-1')).toBeNull();
   });
 });

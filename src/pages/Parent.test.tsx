@@ -30,6 +30,19 @@ describe('Parent', () => {
     else delete u.revokeObjectURL;
   });
 
+  it('粘贴文章生成练习，可以删除', async () => {
+    renderParent();
+    unlock();
+    fireEvent.change(screen.getByLabelText('文章标题'), { target: { value: '小猫' } });
+    fireEvent.change(screen.getByLabelText('文章内容'), { target: { value: '小猫跟着妈妈到河边去钓鱼。' } });
+    fireEvent.click(screen.getByRole('button', { name: '生成练习' }));
+    expect(await screen.findByText(/已生成《小猫》，共 1 段/)).toBeInTheDocument();
+    expect(saved().customBooks).toHaveLength(1);
+    fireEvent.click(screen.getByRole('button', { name: '删除《小猫》' }));
+    fireEvent.click(screen.getByRole('button', { name: '确定删除《小猫》' }));
+    expect(saved().customBooks).toHaveLength(0);
+  });
+
   it('先做一道加法题才能进', () => {
     renderParent();
     expect(screen.getByText('10 + 10 = ?')).toBeInTheDocument();

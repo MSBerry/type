@@ -1,9 +1,10 @@
 import { type ChangeEvent, type FormEvent, useState } from 'react';
+import { ARTICLE_MAX_CHARS, buildCustomBook, loadPinyinFn } from '../content/importArticle';
 import { navigate } from '../router';
 import { SPEED_LEVELS } from '../rewards/config';
 import { finishedBookIds } from '../rewards/rewards';
 import { useProfile } from '../storage/ProfileContext';
-import { exportStore, parseBackup, switchProfile, today } from '../storage/profile';
+import { addCustomBook, exportStore, parseBackup, removeCustomBook, switchProfile, today } from '../storage/profile';
 import Avatar from '../ui/Avatar';
 import { lastDays, topErrorKeys } from './parentStats';
 import './Parent.css';
@@ -229,6 +230,8 @@ function ParentCenter() {
             </button>
           </section>
 
+          <ArticleImport />
+
           <section className="card">
             <h2 className="display">备份和恢复</h2>
             <p className="parent-note">进度只存在这台电脑的浏览器里。换电脑或清理浏览器前，先导出一份备份。</p>
@@ -247,5 +250,74 @@ function ParentCenter() {
         </div>
       </div>
     </main>
+  );
+}
+
+function ArticleImport() {
+  const { store, updateStore } = useProfile();
+  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  const [confirmId, setConfirmId] = useState<string | null>(null);
+
+  const create = async () => {
+    setBusy(true);
+    setMsg(null);
+    try {
+      const fn = await loadPinyinFn();
+      const { book, unknown } = buildCustomBook(title, text, fn);
+      updateStore((s) => addCustomBook(s, book));
+      setTitle('');
+      setText('');
+      const skipped = unknown.length > 0 ? ` 这些字标不出拼音，练习时会自动跳过：${unknown.join(' ')}` : '';
+      setMsg({ ok: true, text: `已生成《${book.title}》，共 ${book.segments.length} 段，在读书岛的「我的文章」里。${skipped}` });
+    } catch (err) {
+      setMsg({ ok: false, text: err instanceof Error ? err.message : '生成失败' });
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <section className="card">
+      <h2 className="display">导入文章</h2>
+      <p className="parent-note">粘贴一篇文章（最多 {ARTICLE_MAX_CHARS} 字），自动标上拼音，切成一段一段放进读书岛。多音字由程序自动判断，可能有个别读音不准。</p>
+      <input className="text-input" aria-label="文章标题" placeholder="标题，比如：小猫钓鱼" maxLength={20} value={title} onChange={(e) => setTitle(e.target.value)} />
+      <textarea aria-label="文章内容" rows={6} maxLength={ARTICLE_MAX_CHARS} value={text} onChange={(e) => setText(e.target.value)} />
+      <div className="row spread">
+        <span className="parent-note">
+          {text.length} / {ARTICLE_MAX_CHARS} 字
+        </span>
+        <button type="button" className="btn btn-primary" disabled={busy || !text.trim()} onClick={create}>
+          {busy ? '正在生成…' : '生成练习'}
+        </button>
+      </div>
+      {msg && <p className={msg.ok ? 'msg-ok' : 'msg-bad'}>{msg.text}</p>}
+      {store.customBooks.map((b) => (
+        <div key={b.id} className="kid-row">
+          <span>
+            《{b.title}》 · {b.segments.length} 段
+          </span>
+          {confirmId === b.id ? (
+            <button
+              type="button"
+              className="btn"
+              aria-label={`确定删除《${b.title}》`}
+              onClick={() => {
+                updateStore((s) => removeCustomBook(s, b.id));
+                setConfirmId(null);
+              }}
+            >
+              确定删除
+            </button>
+          ) : (
+            <button type="button" className="btn" aria-label={`删除《${b.title}》`} onClick={() => setConfirmId(b.id)}>
+              删除
+            </button>
+          )}
+        </div>
+      ))}
+    </section>
   );
 }
