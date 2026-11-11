@@ -28,6 +28,8 @@ export function topErrorKeys(errors: Record<string, number>, n = 3): { key: stri
     .map(([key, count]) => ({ key, count }));
 }
 
+export type Unlocks = { skins: string[]; badges: string[]; speedLevel: number | null };
+
 export type SegmentResult = {
   bookId: string;
   segmentId: string;
@@ -38,6 +40,9 @@ export type SegmentResult = {
   activeMs: number;
   keyErrors: Record<string, number>;
   topErrors: { key: string; count: number }[];
+  maxStreak: number;
+  /** 这一段新解锁的奖励，保存成绩时填入 */
+  unlocks?: Unlocks;
   /** 读书小考考选了第几个；答过就不能再答 */
   quizPick?: number;
 };
@@ -54,5 +59,6 @@ export function buildResult(s: Session, bookId: string, segmentId: string): Segm
     activeMs: s.activeMs,
     keyErrors: { ...s.errorsByKey },
     topErrors: topErrorKeys(s.errorsByKey),
+    maxStreak: s.maxStreak,
   };
 }

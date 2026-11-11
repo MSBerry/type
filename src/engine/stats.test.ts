@@ -58,5 +58,6 @@ describe('buildResult', () => {
     expect(r.speed).toBe(20);
     expect(r.keyErrors).toEqual({ h: 1 });
     expect(r.topErrors).toEqual([{ key: 'h', count: 1 }]);
+    expect(r.maxStreak).toBe(6);
   });
 });

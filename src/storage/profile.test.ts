@@ -23,6 +23,7 @@ const RESULT: SegmentResult = {
   activeMs: 90000,
   keyErrors: { z: 2, h: 1 },
   topErrors: [],
+  maxStreak: 0,
 };
 
 describe('newProfile', () => {

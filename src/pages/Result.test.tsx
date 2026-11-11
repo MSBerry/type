@@ -19,6 +19,7 @@ const RESULT: SegmentResult = {
     { key: 'z', count: 2 },
     { key: 'h', count: 1 },
   ],
+  maxStreak: 0,
 };
 
 function renderResult(result: SegmentResult = RESULT) {

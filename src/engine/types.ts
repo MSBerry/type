@@ -13,6 +13,8 @@ export type Session = {
   right: number;
   wrong: number;
   streak: number;
+  /** 这一段里最长连对了多少个字母 */
+  maxStreak: number;
   /** 刚才按错的键，下次按对后清空 */
   lastWrongKey: string | null;
   /** 应该按的键 → 按错次数 */

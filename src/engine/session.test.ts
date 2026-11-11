@@ -33,6 +33,14 @@ describe('createSession', () => {
 });
 
 describe('press', () => {
+  it('记录这一段最长的连对', () => {
+    let s = typeAll(createSession(TOKENS), 'nih');
+    s = press(s, 'x', 1000).session;
+    s = press(s, 'a', 1100).session;
+    expect(s.streak).toBe(1);
+    expect(s.maxStreak).toBe(3);
+  });
+
   it('按对了前进一个字母，打完一个字跳到下一个字', () => {
     let s = createSession(TOKENS);
     const r = press(s, 'n', 0);
