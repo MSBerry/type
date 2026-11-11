@@ -6,5 +6,5 @@ export function toKey(tonePinyin: string): string {
     .toLowerCase()
     .replace(U_UMLAUT, 'v')
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '');
+    .replace(/[\u0300-\u036f]/g, '');
 }
