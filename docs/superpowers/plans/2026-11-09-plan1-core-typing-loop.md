@@ -3282,7 +3282,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
         </div>
 
         <section className="card practice-keyboard">
-          <Keyboard nextKey={next} wrongKey={session.lastWrongKey} />
+          <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} />
           <Hands finger={finger} />
         </section>
       </div>
