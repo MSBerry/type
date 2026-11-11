@@ -10,7 +10,6 @@ import { grantDailyBonus } from '../rewards/dailyTasks';
 import { syncRewards } from '../rewards/rewards';
 import { useProfile } from '../storage/ProfileContext';
 import { recordSegment, today } from '../storage/profile';
-import Hands from '../ui/Hands';
 import Keyboard from '../ui/Keyboard';
 import Passage from '../ui/Passage';
 import ProgressBar from '../ui/ProgressBar';
@@ -161,7 +160,7 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
               <p className="practice-tip">小提示：只打拼音字母，不用打声调；标点会自动跳过。ü 用 V 键。</p>
             </section>
             <section className="card practice-keyboard" aria-label="键盘提示">
-              <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} />
+              <Keyboard nextKey={next} wrongKey={session.lastWrongKey} wrongTick={session.wrong} showHands />
             </section>
           </div>
 
@@ -209,11 +208,6 @@ function PracticeSession({ book, segment }: { book: Book; segment: Segment }) {
                 {coachMessage(session)}
               </p>
             </div>
-            {finger && (
-              <div className="card practice-hands">
-                <Hands finger={finger} />
-              </div>
-            )}
           </aside>
         </div>
       </div>

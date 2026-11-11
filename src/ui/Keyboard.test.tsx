@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import Hands from './Hands';
 import Keyboard from './Keyboard';
 
 describe('Keyboard', () => {
@@ -35,21 +34,32 @@ describe('Keyboard', () => {
   });
 });
 
-describe('Hands', () => {
-  it('亮起对应的手指', () => {
-    const { container } = render(<Hands finger="ri" />);
-    expect(container.querySelector('[data-finger="ri"]')).toHaveClass('is-on');
-    expect(container.querySelectorAll('.is-on')).toHaveLength(1);
+describe('键盘上的半透明双手', () => {
+  it('不打开时不画手', () => {
+    const { container } = render(<Keyboard nextKey="t" wrongKey={null} />);
+    expect(container.querySelector('.kb-hands')).toBeNull();
   });
 
-  it('大拇指两只一起亮', () => {
-    const { container } = render(<Hands finger="th" />);
-    expect(container.querySelector('[data-finger="lt"]')).toHaveClass('is-on');
-    expect(container.querySelector('[data-finger="rt"]')).toHaveClass('is-on');
+  it('画出两只手的 8 根手指和 2 根拇指', () => {
+    const { container } = render(<Keyboard nextKey="t" wrongKey={null} showHands />);
+    expect(container.querySelectorAll('[data-hand-finger]')).toHaveLength(10);
   });
 
-  it('没有要按的键时都不亮', () => {
-    const { container } = render(<Hands finger={null} />);
-    expect(container.querySelectorAll('.is-on')).toHaveLength(0);
+  it('亮起负责下一个键的手指，并画出伸过去的方向', () => {
+    const { container } = render(<Keyboard nextKey="t" wrongKey={null} showHands />);
+    expect(container.querySelector('[data-hand-finger="li"]')).toHaveClass('is-active');
+    expect(container.querySelectorAll('.is-active')).toHaveLength(1);
+    expect(container.querySelector('.kb-hand-arrow')).toBeInTheDocument();
+  });
+
+  it('下一个键就在手指原位时，只按下去，不画方向', () => {
+    const { container } = render(<Keyboard nextKey="j" wrongKey={null} showHands />);
+    expect(container.querySelector('[data-hand-finger="ri"]')).toHaveClass('is-active');
+    expect(container.querySelector('.kb-hand-arrow')).toBeNull();
+  });
+
+  it('没有下一个键时手指都不亮', () => {
+    const { container } = render(<Keyboard nextKey={null} wrongKey={null} showHands />);
+    expect(container.querySelectorAll('.is-active')).toHaveLength(0);
   });
 });
