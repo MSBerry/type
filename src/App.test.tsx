@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 import App from './App';
 
 describe('App', () => {
@@ -18,6 +18,18 @@ describe('App', () => {
     window.location.hash = '#/practice/xiyouji/c1-1';
     render(<App />);
     expect(screen.getByText('现在打这个字')).toBeInTheDocument();
+  });
+
+  it('换页时回到页面顶部', () => {
+    const spy = vi.spyOn(window, 'scrollTo').mockImplementation(() => undefined);
+    render(<App />);
+    spy.mockClear();
+    act(() => {
+      window.location.hash = '#/books';
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    });
+    expect(spy).toHaveBeenCalledWith(0, 0);
+    spy.mockRestore();
   });
 
   it('能保存时不显示提示条', () => {

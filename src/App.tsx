@@ -1,13 +1,18 @@
+import { useEffect } from 'react';
 import Bookshelf from './pages/Bookshelf';
 import Home from './pages/Home';
 import Practice from './pages/Practice';
 import Result from './pages/Result';
-import { useRoute } from './router';
+import { toHash, useRoute } from './router';
 import { ProfileProvider, useProfile } from './storage/ProfileContext';
 
 function Screens() {
   const route = useRoute();
   const { persistent } = useProfile();
+  const hash = toHash(route);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [hash]);
   return (
     <>
       {!persistent && (
