@@ -54,13 +54,24 @@ describe('Home', () => {
     expect(window.location.hash).toBe('#/practice/xiyouji/c1-2');
   });
 
-  it('读书岛入口可以点，其他三个模式即将开放', () => {
+  it('四个模式都能进', () => {
     renderHome();
     fireEvent.click(screen.getByRole('button', { name: '读书岛：去选书' }));
     expect(window.location.hash).toBe('#/books');
-    for (const name of ['指法训练营', '拼音快打', '游戏乐园']) {
-      expect(screen.getByRole('button', { name: `${name}：即将开放` })).toBeDisabled();
-    }
+    fireEvent.click(screen.getByRole('button', { name: '指法训练营：出发' }));
+    expect(window.location.hash).toBe('#/finger');
+    fireEvent.click(screen.getByRole('button', { name: '拼音快打：出发' }));
+    expect(window.location.hash).toBe('#/pinyin');
+    fireEvent.click(screen.getByRole('button', { name: '游戏乐园：去玩' }));
+    expect(window.location.hash).toBe('#/game');
+  });
+
+  it('指法卡片显示练到第几关', () => {
+    const store = defaultStore();
+    store.profiles[0].fingerLevel = 2;
+    saveStore(localStorage, store);
+    renderHome();
+    expect(screen.getByText('第 3 / 12 关')).toBeInTheDocument();
   });
   it('读完的书显示再读一遍', () => {
     const store = defaultStore();

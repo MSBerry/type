@@ -1,7 +1,7 @@
 import { getBook, nextSegmentId } from '../content/library';
 import { navigate } from '../router';
 import { BADGES } from '../rewards/badges';
-import { SPEED_LEVELS } from '../rewards/config';
+import { FINGER_LEVEL_COUNT, SPEED_LEVELS } from '../rewards/config';
 import { dailyTasks, streakDays } from '../rewards/dailyTasks';
 import { nextSmallSkin, nextSpeedLevel } from '../rewards/rewards';
 import { skinById } from '../rewards/skins';
@@ -109,9 +109,30 @@ export default function Home() {
               <span className="mode-desc">4–6 年级「快乐读书吧」书单，边读边打</span>
               <span className="mode-go">去选书 →</span>
             </button>
-            <ModeSoon title="指法训练营" desc="从 F 和 J 出发，认识每根手指的「家」" tint="var(--blue-soft)" />
-            <ModeSoon title="拼音快打" desc="声母、韵母、整体认读，zh / ch / sh 专项练" tint="var(--mint-soft)" />
-            <ModeSoon title="游戏乐园" desc="龙宫泡泡 · 筋斗云赛跑 · 字母雨" tint="var(--lav)" />
+            <ModeCard
+              title="指法训练营"
+              desc="从 F 和 J 出发，认识每根手指的「家」"
+              tint="var(--blue-soft)"
+              tag={`第 ${Math.min(profile.fingerLevel + 1, FINGER_LEVEL_COUNT)} / ${FINGER_LEVEL_COUNT} 关`}
+              go="出发"
+              onClick={() => navigate({ name: 'finger' })}
+            />
+            <ModeCard
+              title="拼音快打"
+              desc="声母、韵母、整体认读，zh / ch / sh 专项练"
+              tint="var(--mint-soft)"
+              tag="4 组"
+              go="出发"
+              onClick={() => navigate({ name: 'pinyin' })}
+            />
+            <ModeCard
+              title="游戏乐园"
+              desc="龙宫泡泡：打拼音戳破《西游记》词语泡泡"
+              tint="var(--lav)"
+              tag={`最高分 ${profile.gameBest}`}
+              go="去玩"
+              onClick={() => navigate({ name: 'game' })}
+            />
           </div>
         </section>
 
@@ -174,12 +195,15 @@ export default function Home() {
   );
 }
 
-function ModeSoon({ title, desc, tint }: { title: string; desc: string; tint: string }) {
+type ModeCardProps = { title: string; desc: string; tint: string; tag: string; go: string; onClick: () => void };
+
+function ModeCard({ title, desc, tint, tag, go, onClick }: ModeCardProps) {
   return (
-    <button type="button" className="mode-card" style={{ background: tint }} aria-label={`${title}：即将开放`} disabled>
-      <span className="tag">即将开放</span>
+    <button type="button" className="mode-card" style={{ background: tint }} aria-label={`${title}：${go}`} onClick={onClick}>
+      <span className="tag">{tag}</span>
       <span className="display mode-title">{title}</span>
       <span className="mode-desc">{desc}</span>
+      <span className="mode-go">{go} →</span>
     </button>
   );
 }
