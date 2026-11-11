@@ -51,8 +51,11 @@ export function validateBook(book: Book): string[] {
       }
     });
     if (seg.quiz) {
-      const { options, answer } = seg.quiz;
+      const { q, options, answer } = seg.quiz;
+      if (q.trim() === '') errors.push(`${where}: 小考考的问题是空的`);
       if (options.length < 2) errors.push(`${where}: 小考考至少要 2 个选项`);
+      if (options.some((o) => o.trim() === '')) errors.push(`${where}: 小考考有空选项`);
+      if (new Set(options).size !== options.length) errors.push(`${where}: 小考考有重复选项`);
       if (!Number.isInteger(answer) || answer < 0 || answer >= options.length) errors.push(`${where}: 小考考答案下标越界`);
     }
   }

@@ -64,4 +64,17 @@ describe('validateBook', () => {
     expect(errors.join()).toContain('没有任何段落');
     expect(errors.join()).toContain('skinId');
   });
+
+  it('小考考不能有空问题、空选项或重复选项', () => {
+    const withQuiz = (q: string, options: string[]) =>
+      validateBook(makeBook({ segments: [{ id: 's1', title: 't', tokens: hanzi(50), quiz: { q, options, answer: 0 } }] })).join();
+    expect(withQuiz(' ', ['甲', '乙'])).toContain('问题是空的');
+    expect(withQuiz('问题', ['', '乙'])).toContain('空选项');
+    expect(withQuiz('问题', ['甲', '甲'])).toContain('重复选项');
+  });
+
+  it('空按键会让孩子卡住，必须报错', () => {
+    const tokens: Token[] = [...hanzi(49), { kind: 'hanzi', char: '字', key: '', tone: '' }];
+    expect(validateBook(makeBook({ segments: [{ id: 's1', title: 't', tokens }] })).join()).toContain('只能包含 a–z');
+  });
 });
