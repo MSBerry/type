@@ -19,7 +19,7 @@ describe('Home', () => {
     expect(screen.getByText('打一段课外书')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '速度等级' })).toBeInTheDocument();
     expect(screen.getByText('打到 20 字/分，升级「小兔」，送大皮肤')).toBeInTheDocument();
-    expect(screen.getByText('已收集 0 / 15')).toBeInTheDocument();
+    expect(screen.getByText('已收集 0 / 16')).toBeInTheDocument();
   });
 
   it('可以进衣橱，有新皮肤时有提示', () => {

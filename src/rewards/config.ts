@@ -14,3 +14,6 @@ export const SPEED_MIN_ACCURACY = 90;
 
 export const DAILY_CHAR_GOAL = 100;
 export const DAILY_TASK_BONUS = 3;
+
+export const FINGER_LEVEL_COUNT = 12;
+export const FINGER_PASS_ACCURACY = 90;

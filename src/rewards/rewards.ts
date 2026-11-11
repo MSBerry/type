@@ -2,7 +2,7 @@ import { getBook } from '../content/library';
 import type { SegmentResult, Unlocks } from '../engine/stats';
 import { type Profile, today } from '../storage/profile';
 import { BADGES } from './badges';
-import { SMALL_SKIN_STEP, SPEED_LEVELS, SPEED_MIN_ACCURACY, SPEED_MIN_HANZI } from './config';
+import { FINGER_LEVEL_COUNT, SMALL_SKIN_STEP, SPEED_LEVELS, SPEED_MIN_ACCURACY, SPEED_MIN_HANZI } from './config';
 import { streakDays } from './dailyTasks';
 import { SKINS, SMALL_SKIN_ORDER } from './skins';
 
@@ -56,6 +56,7 @@ function badgesEarned(p: Profile, r: SegmentResult | undefined, date: string): s
     'speed-2': p.bestSpeedLevel >= 2,
     'speed-3': p.bestSpeedLevel >= 3,
     'speed-4': p.bestSpeedLevel >= 4,
+    'finger-grad': p.fingerLevel >= FINGER_LEVEL_COUNT,
     huaguoshan: chapter1.length > 0 && chapter1.every((s) => done.includes(s.id)),
   };
   return BADGES.filter((b) => earned[b.id]).map((b) => b.id);

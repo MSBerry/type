@@ -16,4 +16,5 @@ export const BADGES: Badge[] = [
   { id: 'speed-3', name: '猎豹速度', desc: '速度到 40 字/分' },
   { id: 'speed-4', name: '火箭速度', desc: '速度到 50 字/分' },
   { id: 'huaguoshan', name: '花果山', desc: '打完《西游记》第一回' },
+  { id: 'finger-grad', name: '指法毕业', desc: '通过指法训练营全部 12 关' },
 ];

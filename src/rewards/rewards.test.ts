@@ -55,6 +55,11 @@ describe('finishedBookIds', () => {
 });
 
 describe('syncRewards', () => {
+  it('12 关指法全部通过得指法毕业徽章', () => {
+    expect(syncRewards({ ...base, fingerLevel: 12 }, undefined, DATE).unlocks.badges).toContain('finger-grad');
+    expect(syncRewards({ ...base, fingerLevel: 11 }, undefined, DATE).unlocks.badges).not.toContain('finger-grad');
+  });
+
   it('打满 500 字解锁红围巾，并标记为新皮肤', () => {
     const { profile, unlocks } = syncRewards({ ...base, totalChars: 500 }, undefined, DATE);
     expect(unlocks.skins).toEqual(['scarf']);
