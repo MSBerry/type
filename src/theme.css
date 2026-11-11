@@ -68,3 +68,8 @@ a:focus-visible, button:focus-visible { outline: 4px solid var(--blue); outline-
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+.avatar {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  border: 3px solid var(--ink); border-radius: 999px; font-family: var(--font-display); line-height: 1;
+}

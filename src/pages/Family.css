@@ -1,0 +1,27 @@
+.family { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.family-hero { display: flex; align-items: center; gap: 20px; }
+.family-title { font-size: 44px; margin: 0; }
+.family-step { font-size: 30px; margin: 0 0 16px; }
+.avatar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; }
+.avatar-pick {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px; background: #fff;
+  border: 3px solid var(--ink); border-radius: 22px; box-shadow: 0 5px 0 var(--ink); font-size: 18px; font-weight: 700; cursor: pointer;
+}
+.avatar-pick[aria-pressed='true'] { background: var(--sun); transform: translateY(-3px); }
+.name-input {
+  width: 100%; min-height: 72px; padding: 0 20px; border: 3px solid var(--ink); border-radius: 20px;
+  font: 400 34px var(--font-display); background: #fff;
+}
+.grade-row { display: flex; flex-wrap: wrap; gap: 16px; }
+.grade-row .btn { flex: 1 1 160px; min-height: 88px; font-size: 28px; }
+.grade-row .btn[aria-pressed='true'] { background: var(--sun); }
+.family-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 20px; }
+.family-nav .btn-primary { margin-left: auto; min-width: 200px; }
+.who-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.who-card {
+  display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 22px; background: #fff;
+  border: 3px solid var(--ink); border-radius: 26px; box-shadow: 0 6px 0 var(--ink); cursor: pointer; font-size: 18px;
+}
+.who-card.is-current { background: var(--sun-soft); }
+.who-name { font: 400 30px var(--font-display); }
+.home-who { gap: 8px; padding-left: 8px; }

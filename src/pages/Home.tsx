@@ -7,9 +7,11 @@ import { nextSmallSkin, nextSpeedLevel } from '../rewards/rewards';
 import { skinById } from '../rewards/skins';
 import { useProfile } from '../storage/ProfileContext';
 import { today } from '../storage/profile';
+import Avatar from '../ui/Avatar';
 import Mascot from '../ui/Mascot';
 import ProgressBar from '../ui/ProgressBar';
 import WornMascot from '../ui/WornMascot';
+import './Family.css';
 import './Home.css';
 
 export default function Home() {
@@ -62,7 +64,15 @@ export default function Home() {
               我的衣橱
               {hasNewSkin && <span className="tag tag-coral">NEW</span>}
             </button>
-            <span className="chip">{profile.nickname}</span>
+            <button
+              type="button"
+              className="btn home-who"
+              aria-label={`换人：现在是${profile.nickname}`}
+              onClick={() => navigate({ name: 'profiles' })}
+            >
+              <Avatar avatar={profile.avatar} name={profile.nickname} size={36} />
+              {profile.nickname}
+            </button>
           </div>
         </header>
 
