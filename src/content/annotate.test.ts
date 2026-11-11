@@ -38,4 +38,19 @@ describe('annotateBody', () => {
   it('方括号没闭合时报错', () => {
     expect(() => annotateBody('便[bian', realPinyin)).toThrow('没闭合');
   });
+
+  it('手动拼音写错时报错，不能悄悄跳过这个字', () => {
+    expect(() => annotateBody('便[biàn1]', realPinyin)).toThrow('手动拼音');
+    expect(() => annotateBody('便[]', realPinyin)).toThrow('手动拼音');
+  });
+
+  it('全角方括号也算手动拼音', () => {
+    const { tokens } = annotateBody('正当［dàng］', realPinyin);
+    expect(tokens).toHaveLength(2);
+    expect(tokens[1]).toEqual({ kind: 'hanzi', char: '当', key: 'dang', tone: 'dàng' });
+  });
+
+  it('方括号前面没有字时报错', () => {
+    expect(() => annotateBody('[biàn]便', realPinyin)).toThrow('前面没有字');
+  });
 });

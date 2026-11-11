@@ -20,18 +20,26 @@ const files =
 mkdirSync(OUT_DIR, { recursive: true });
 
 for (const file of files) {
-  const { meta, segments } = parseSource(readFileSync(file, 'utf8'));
-  const book: Book = { ...meta, segments: [] };
-  console.log(`\n《${meta.title}》 ${file}`);
-  for (const seg of segments) {
-    const r = annotateBody(seg.body, pinyinFn);
-    book.segments.push({ id: seg.id, title: seg.title, tokens: r.tokens, ...(seg.quiz ? { quiz: seg.quiz } : {}) });
-    for (const p of r.polyphones) {
-      console.log(`  [多音字] ${seg.id} 第 ${p.index + 1} 字「${p.char}」用了 ${p.chosen}（可选：${p.options.join(' / ')}）`);
+  let where = file;
+  try {
+    const { meta, segments } = parseSource(readFileSync(file, 'utf8'));
+    const book: Book = { ...meta, segments: [] };
+    console.log(`
+《${meta.title}》 ${file}`);
+    for (const seg of segments) {
+      where = `${file} 段落 ${seg.id}`;
+      const r = annotateBody(seg.body, pinyinFn);
+      book.segments.push({ id: seg.id, title: seg.title, tokens: r.tokens, ...(seg.quiz ? { quiz: seg.quiz } : {}) });
+      for (const p of r.polyphones) {
+        console.log(`  [多音字] ${seg.id} 第 ${p.index + 1} 字「${p.char}」用了 ${p.chosen}（可选：${p.options.join(' / ')}）`);
+      }
+      for (const u of r.unknown) console.log(`  [标不出] ${seg.id} 第 ${u.index + 1} 字「${u.char}」已改为自动跳过`);
     }
-    for (const u of r.unknown) console.log(`  [标不出] ${seg.id} 第 ${u.index + 1} 字「${u.char}」已改为自动跳过`);
+    const out = join(OUT_DIR, `${meta.id}.json`);
+    writeFileSync(out, JSON.stringify(book, null, 2) + '\n', 'utf8');
+    console.log(`  已写入 ${out}`);
+  } catch (e) {
+    console.error(`ERR ${where}: ${(e as Error).message}`);
+    process.exitCode = 1;
   }
-  const out = join(OUT_DIR, `${meta.id}.json`);
-  writeFileSync(out, JSON.stringify(book, null, 2) + '\n', 'utf8');
-  console.log(`  已写入 ${out}`);
 }

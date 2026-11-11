@@ -12,11 +12,12 @@ export type AnnotateReport = {
 };
 
 export function annotateBody(body: string, pinyinFn: PinyinFn): AnnotateReport {
-  const src = [...body];
+  const src = [...body.replace(/［/g, '[').replace(/］/g, ']')];
   const chars: string[] = [];
   const overrides = new Map<number, string>();
   for (let i = 0; i < src.length; i++) {
-    if (src[i] === '[' && chars.length > 0) {
+    if (src[i] === '[') {
+      if (chars.length === 0) throw new Error(`「${body.slice(0, 20)}…」开头的 [ 前面没有字`);
       const end = src.indexOf(']', i);
       if (end < 0) throw new Error(`「${body.slice(0, 20)}…」里有没闭合的 [`);
       overrides.set(chars.length - 1, src.slice(i + 1, end).join('').trim());
@@ -41,6 +42,7 @@ export function annotateBody(body: string, pinyinFn: PinyinFn): AnnotateReport {
     const tone = overrides.get(i) ?? it.pinyin;
     const key = toKey(tone);
     if (!/^[a-z]+$/.test(key)) {
+      if (overrides.has(i)) throw new Error(`「${char}」的手动拼音「${tone}」不合法`);
       report.unknown.push({ index: i, char });
       report.tokens.push({ kind: 'skip', char });
       return;
