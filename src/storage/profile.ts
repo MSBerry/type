@@ -10,6 +10,10 @@ export type Profile = {
   stars: number;
   totalChars: number;
   bestSpeedLevel: 0 | 1 | 2 | 3 | 4;
+  /** 指法训练营已通过的最高关（0 表示还没通过） */
+  fingerLevel: number;
+  /** 龙宫泡泡最高分 */
+  gameBest: number;
   badges: string[];
   skinsOwned: string[];
   skinsNew: string[];
@@ -32,6 +36,8 @@ export function newProfile(id: string, nickname: string, grade: Profile['grade']
     stars: 0,
     totalChars: 0,
     bestSpeedLevel: 0,
+    fingerLevel: 0,
+    gameBest: 0,
     badges: [],
     skinsOwned: ['classic'],
     skinsNew: [],
@@ -163,4 +169,23 @@ export function markSkinSeen(p: Profile, skinId: string): Profile {
 export function wearSkin(p: Profile, skinId: string): Profile {
   if (!p.skinsOwned.includes(skinId)) return p;
   return { ...markSkinSeen(p, skinId), skinWorn: skinId };
+}
+
+/** 指法、拼音快打、游戏的成绩：加星星、打字量和当天时长（不算段数） */
+export function recordPractice(p: Profile, r: { chars: number; stars: number; activeMs: number }, date: string): Profile {
+  const day = p.daily[date] ?? { minutes: 0, chars: 0 };
+  return {
+    ...p,
+    stars: p.stars + r.stars,
+    totalChars: p.totalChars + r.chars,
+    daily: { ...p.daily, [date]: { ...day, minutes: day.minutes + r.activeMs / 60000, chars: day.chars + r.chars } },
+  };
+}
+
+export function passFingerLevel(p: Profile, level: number): Profile {
+  return level > p.fingerLevel ? { ...p, fingerLevel: level } : p;
+}
+
+export function recordGameScore(p: Profile, score: number): Profile {
+  return score > p.gameBest ? { ...p, gameBest: score } : p;
 }

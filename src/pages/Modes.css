@@ -1,0 +1,13 @@
+.modes-title { font-size: 46px; }
+.modes-intro { margin: 0; font-size: 19px; line-height: 1.6; }
+.level-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.level-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 150px; padding: 18px;
+  background: #fff; border: 3px solid var(--ink); border-radius: 22px; box-shadow: 0 6px 0 var(--ink); text-align: left; cursor: pointer;
+}
+.level-card.is-passed { background: var(--mint-soft); }
+.level-card.is-current { background: var(--sun); }
+.level-card:disabled { cursor: not-allowed; background: #eef1f6; box-shadow: none; border-style: dashed; color: var(--muted); }
+.level-no { font: 700 17px var(--font-latin); }
+.level-name { font: 400 28px var(--font-display); }
+.level-tip { font-size: 17px; line-height: 1.5; }

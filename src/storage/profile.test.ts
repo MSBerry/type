@@ -9,6 +9,9 @@ import {
   markSkinSeen,
   migrate,
   newProfile,
+  passFingerLevel,
+  recordGameScore,
+  recordPractice,
   recordQuizRight,
   recordSegment,
   saveStore,
@@ -185,5 +188,35 @@ describe('皮肤', () => {
   it('旧存档补上 skinsNew', () => {
     const store = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: '小明', grade: 6 }] });
     expect(activeProfile(store).skinsNew).toEqual([]);
+  });
+});
+
+describe('指法、拼音、游戏的成绩', () => {
+  const p = newProfile('p1', '小明', 5);
+
+  it('recordPractice 记星星、打字量和当天时长', () => {
+    const next = recordPractice(p, { chars: 20, stars: 2, activeMs: 60000 }, '2026-11-09');
+    expect(next.stars).toBe(2);
+    expect(next.totalChars).toBe(20);
+    expect(next.daily['2026-11-09']).toEqual({ minutes: 1, chars: 20 });
+  });
+
+  it('指法关卡只升不降', () => {
+    expect(passFingerLevel(p, 3).fingerLevel).toBe(3);
+    const at5 = { ...p, fingerLevel: 5 };
+    expect(passFingerLevel(at5, 3)).toBe(at5);
+  });
+
+  it('游戏只记最高分', () => {
+    expect(recordGameScore(p, 120).gameBest).toBe(120);
+    const best = { ...p, gameBest: 300 };
+    expect(recordGameScore(best, 120)).toBe(best);
+  });
+
+  it('新档案和旧存档都从第 0 关、0 分开始', () => {
+    expect(p.fingerLevel).toBe(0);
+    expect(p.gameBest).toBe(0);
+    const store = migrate({ version: 1, activeId: 'p1', profiles: [{ id: 'p1', nickname: '小明', grade: 6 }] });
+    expect(activeProfile(store).fingerLevel).toBe(0);
   });
 });

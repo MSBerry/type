@@ -1,0 +1,24 @@
+.game-title { font-size: 46px; }
+.game-main { display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch; }
+.game-stage {
+  position: relative; flex: 999 1 640px; min-width: 0; height: min(560px, calc(100vh - 160px)); min-height: 420px; overflow: hidden;
+  background: #1b3a6b; border: 3px solid var(--ink); border-radius: 32px; box-shadow: 0 8px 0 var(--ink);
+}
+.game-hint { position: absolute; left: 20px; top: 16px; color: #fff; font-weight: 700; font-size: 17px; }
+.bubble {
+  position: absolute; width: 130px; height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  background: #e6f4ff; border: 3px solid var(--ink); border-radius: 999px; transition: bottom 50ms linear;
+}
+.bubble b { font-size: 26px; }
+.bubble-py { font: 400 15px var(--font-pinyin); color: var(--muted); white-space: nowrap; }
+.bubble.is-target { background: var(--sun); border-width: 5px; }
+.game-typed {
+  position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); min-width: 240px; padding: 10px 18px; text-align: center;
+  background: #fff; border: 3px solid var(--ink); border-radius: 20px; font: 700 26px var(--font-latin);
+}
+.game-side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.game-side .card { display: flex; flex-direction: column; gap: 10px; }
+.game-hearts { font-size: 28px; color: #e8483b; letter-spacing: 4px; }
+.game-start, .game-over { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.game-start p, .game-over p { margin: 0; font-size: 19px; line-height: 1.6; }
+.game-over .btn, .game-start .btn { min-width: 240px; }

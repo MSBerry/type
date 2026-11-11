@@ -5,7 +5,12 @@ export type Route =
   | { name: 'books' }
   | { name: 'practice'; bookId: string; segmentId: string }
   | { name: 'result' }
-  | { name: 'wardrobe' };
+  | { name: 'wardrobe' }
+  | { name: 'finger' }
+  | { name: 'fingerLevel'; level: number }
+  | { name: 'pinyin' }
+  | { name: 'pinyinSet'; setId: string }
+  | { name: 'game' };
 
 export function parseHash(hash: string): Route {
   let parts: string[];
@@ -22,6 +27,12 @@ export function parseHash(hash: string): Route {
   if (parts[0] === 'practice' && parts.length === 3) return { name: 'practice', bookId: parts[1], segmentId: parts[2] };
   if (parts[0] === 'result') return { name: 'result' };
   if (parts[0] === 'wardrobe') return { name: 'wardrobe' };
+  if (parts[0] === 'finger') {
+    const level = Number(parts[1]);
+    return parts.length === 2 && Number.isInteger(level) && level > 0 ? { name: 'fingerLevel', level } : { name: 'finger' };
+  }
+  if (parts[0] === 'pinyin') return parts.length === 2 ? { name: 'pinyinSet', setId: parts[1] } : { name: 'pinyin' };
+  if (parts[0] === 'game') return { name: 'game' };
   return { name: 'home' };
 }
 
@@ -37,6 +48,16 @@ export function toHash(route: Route): string {
       return '#/result';
     case 'wardrobe':
       return '#/wardrobe';
+    case 'finger':
+      return '#/finger';
+    case 'fingerLevel':
+      return `#/finger/${route.level}`;
+    case 'pinyin':
+      return '#/pinyin';
+    case 'pinyinSet':
+      return `#/pinyin/${encodeURIComponent(route.setId)}`;
+    case 'game':
+      return '#/game';
   }
 }
 
