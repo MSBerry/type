@@ -1,4 +1,5 @@
 import { getBook, getSegment, segmentAfter } from '../content/library';
+import { quizOrder } from '../content/quizOrder';
 import { navigate } from '../router';
 import { BADGES } from '../rewards/badges';
 import { SPEED_LEVELS } from '../rewards/config';
@@ -158,7 +159,8 @@ export default function Result() {
             <section className="card quiz-card">
               <h2 className="display">读书小考考</h2>
               <p className="quiz-q">{quiz.q}</p>
-              {quiz.options.map((opt, i) => {
+              {quizOrder(quiz.options.length, `${r.bookId}/${r.segmentId}`).map((i) => {
+                const opt = quiz.options[i];
                 const isRight = picked !== null && i === quiz.answer;
                 const isWrong = picked === i && i !== quiz.answer;
                 const cls = isRight ? 'btn quiz-option is-right' : isWrong ? 'btn quiz-option is-wrong' : 'btn quiz-option';

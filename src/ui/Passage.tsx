@@ -5,13 +5,27 @@ import './Passage.css';
 
 type Item = { token: Token; index: number };
 
-/** 把标点和前一个字放在一组，换行时不会分开 */
+/** 这些标点要和后面的字排在一起，不能留在行尾 */
+const OPENERS = '“‘「『《〈（(【〔';
+
+/** 把标点和前一个字放在一组（开始标点和后一个字一组），换行时不会分开 */
 function toUnits(tokens: Token[]): Item[][] {
   const units: Item[][] = [];
+  let open: Item[] = [];
   tokens.forEach((token, index) => {
-    if (token.kind === 'skip' && units.length > 0) units[units.length - 1].push({ token, index });
-    else units.push([{ token, index }]);
+    const item = { token, index };
+    if (token.kind === 'skip' && OPENERS.includes(token.char)) {
+      open.push(item);
+      return;
+    }
+    if (token.kind === 'skip' && open.length === 0 && units.length > 0) {
+      units[units.length - 1].push(item);
+      return;
+    }
+    units.push([...open, item]);
+    open = [];
   });
+  if (open.length > 0) units.push(open);
   return units;
 }
 

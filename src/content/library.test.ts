@@ -33,10 +33,13 @@ describe('listShelf', () => {
   it('有内容的书标记为已上线，带段落列表', () => {
     const xiyouji = listShelf(5)[1].books.find((b) => b.id === 'xiyouji');
     expect(xiyouji?.ready).toBe(true);
-    expect(xiyouji?.segmentIds).toEqual(['c1-1', 'c1-2', 'c1-3', 'c1-4']);
-    const sanguo = listShelf(5)[1].books.find((b) => b.id === 'sanguo');
-    expect(sanguo?.ready).toBe(false);
-    expect(sanguo?.segmentIds).toEqual([]);
+    expect(xiyouji?.segmentIds.slice(0, 4)).toEqual(['c1-1', 'c1-2', 'c1-3', 'c1-4']);
+    expect(xiyouji?.segmentIds).toEqual(getBook('xiyouji')!.segments.map((s) => s.id));
+    // 没内容的书：哪些书上线会变，从全部年级里找一本还没上线的
+    const notReady = ([0, 4, 5, 6] as const).flatMap((g) => listShelf(g).flatMap((grp) => grp.books)).find((b) => !b.ready)!;
+    expect(notReady).toBeDefined();
+    expect(getBook(notReady.id)).toBeNull();
+    expect(notReady.segmentIds).toEqual([]);
   });
 
   it('古诗词小站是通用的', () => {
@@ -51,7 +54,9 @@ describe('getBook / getSegment', () => {
   });
 
   it('没上线或不存在的返回 null', () => {
-    expect(getBook('sanguo')).toBeNull();
+    const notReady = SHELF.find((b) => listShelf(b.grade).some((g) => g.books.some((x) => x.id === b.id && !x.ready)))!;
+    expect(getBook(notReady.id)).toBeNull();
+    expect(getBook('nope')).toBeNull();
     expect(getSegment('xiyouji', 'nope')).toBeNull();
   });
 
@@ -77,7 +82,7 @@ describe('nextSegmentId / segmentAfter', () => {
   it('找下一段，最后一段返回 null', () => {
     const book = getBook('xiyouji')!;
     expect(segmentAfter(book, 'c1-1')).toBe('c1-2');
-    expect(segmentAfter(book, 'c1-4')).toBeNull();
+    expect(segmentAfter(book, book.segments[book.segments.length - 1].id)).toBeNull();
   });
 });
 

@@ -1,0 +1,8869 @@
+{
+  "id": "zhongguominjian",
+  "title": "中国民间故事",
+  "author": "牛郎织女 · 神笔马良",
+  "grade": 5,
+  "term": "上册",
+  "theme": "民间故事",
+  "skinId": "painter",
+  "skinName": "神笔小画家",
+  "cover": "#FF7A45",
+  "mark": "民",
+  "kind": "prose",
+  "segments": [
+    {
+      "id": "niulang-1",
+      "title": "牛郎织女 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "从",
+          "key": "cong",
+          "tone": "cóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "前",
+          "key": "qian",
+          "tone": "qián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "放",
+          "key": "fang",
+          "tone": "fàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "伙",
+          "key": "huo",
+          "tone": "huǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "叫",
+          "key": "jiao",
+          "tone": "jiào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "郎",
+          "key": "lang",
+          "tone": "láng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "没",
+          "key": "mei",
+          "tone": "méi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爹",
+          "key": "die",
+          "tone": "diē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "娘",
+          "key": "niang",
+          "tone": "niáng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "只",
+          "key": "zhi",
+          "tone": "zhǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tóu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "黄",
+          "key": "huang",
+          "tone": "huáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "陪",
+          "key": "pei",
+          "tone": "péi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "郎",
+          "key": "lang",
+          "tone": "láng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "每",
+          "key": "mei",
+          "tone": "měi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "割",
+          "key": "ge",
+          "tone": "gē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "最",
+          "key": "zui",
+          "tone": "zuì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "嫩",
+          "key": "nen",
+          "tone": "nèn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "青",
+          "key": "qing",
+          "tone": "qīng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "草",
+          "key": "cao",
+          "tone": "cǎo"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "也",
+          "key": "ye",
+          "tone": "yě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "像",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "亲",
+          "key": "qin",
+          "tone": "qīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "样",
+          "key": "yang",
+          "tone": "yàng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "跟",
+          "key": "gen",
+          "tone": "gēn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "下",
+          "key": "xia",
+          "tone": "xià"
+        },
+        {
+          "kind": "hanzi",
+          "char": "地",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "干",
+          "key": "gan",
+          "tone": "gàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "活",
+          "key": "huo",
+          "tone": "huó"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "牛郎身边一直陪着他的是谁？",
+        "options": [
+          "一只小狗",
+          "一头老黄牛",
+          "一匹白马"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "niulang-2",
+      "title": "牛郎织女 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "忽",
+          "key": "hu",
+          "tone": "hū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "然",
+          "key": "ran",
+          "tone": "rán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "开",
+          "key": "kai",
+          "tone": "kāi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "口",
+          "key": "kou",
+          "tone": "kǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "话",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "告",
+          "key": "gao",
+          "tone": "gào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "诉",
+          "key": "su",
+          "tone": "sù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "郎",
+          "key": "lang",
+          "tone": "láng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "仙",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "要",
+          "key": "yao",
+          "tone": "yào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "河",
+          "key": "he",
+          "tone": "hé"
+        },
+        {
+          "kind": "hanzi",
+          "char": "边",
+          "key": "bian",
+          "tone": "biān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "洗",
+          "key": "xi",
+          "tone": "xǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "澡",
+          "key": "zao",
+          "tone": "zǎo"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "郎",
+          "key": "lang",
+          "tone": "láng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "照",
+          "key": "zhao",
+          "tone": "zhào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "话",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "认",
+          "key": "ren",
+          "tone": "rèn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "识",
+          "key": "shi",
+          "tone": "shi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "心",
+          "key": "xin",
+          "tone": "xīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "灵",
+          "key": "ling",
+          "tone": "líng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "手",
+          "key": "shou",
+          "tone": "shǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "巧",
+          "key": "qiao",
+          "tone": "qiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "织",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "两",
+          "key": "liang",
+          "tone": "liǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "情",
+          "key": "qing",
+          "tone": "qíng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "投",
+          "key": "tou",
+          "tone": "tóu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "意",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "合",
+          "key": "he",
+          "tone": "hé"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "结",
+          "key": "jie",
+          "tone": "jié"
+        },
+        {
+          "kind": "hanzi",
+          "char": "成",
+          "key": "cheng",
+          "tone": "chéng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夫",
+          "key": "fu",
+          "tone": "fū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "妻",
+          "key": "qi",
+          "tone": "qī"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "还",
+          "key": "hai",
+          "tone": "hái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "生",
+          "key": "sheng",
+          "tone": "shēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "儿",
+          "key": "er",
+          "tone": "ér"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "是谁告诉牛郎仙女要来河边的？",
+        "options": [
+          "村里的老人",
+          "一只喜鹊",
+          "老黄牛"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "niulang-3",
+      "title": "牛郎织女 · 三",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "王",
+          "key": "wang",
+          "tone": "wáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "母",
+          "key": "mu",
+          "tone": "mǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "娘",
+          "key": "niang",
+          "tone": "niáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "娘",
+          "key": "niang",
+          "tone": "niáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "知",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "道",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "后",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "发",
+          "key": "fa",
+          "tone": "fā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "脾",
+          "key": "pi",
+          "tone": "pí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "气",
+          "key": "qi",
+          "tone": "qi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "织",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "抓",
+          "key": "zhua",
+          "tone": "zhuā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "回",
+          "key": "hui",
+          "tone": "huí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "郎",
+          "key": "lang",
+          "tone": "láng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "挑",
+          "key": "tiao",
+          "tone": "tiāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "两",
+          "key": "liang",
+          "tone": "liǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "孩",
+          "key": "hai",
+          "tone": "hái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "追",
+          "key": "zhui",
+          "tone": "zhuī"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "王",
+          "key": "wang",
+          "tone": "wáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "母",
+          "key": "mu",
+          "tone": "mǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拔",
+          "key": "ba",
+          "tone": "bá"
+        },
+        {
+          "kind": "hanzi",
+          "char": "下",
+          "key": "xia",
+          "tone": "xià"
+        },
+        {
+          "kind": "hanzi",
+          "char": "金",
+          "key": "jin",
+          "tone": "jīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "簪",
+          "key": "zan",
+          "tone": "zān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "划",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "变",
+          "key": "bian",
+          "tone": "biàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "条",
+          "key": "tiao",
+          "tone": "tiáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "宽",
+          "key": "kuan",
+          "tone": "kuān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "宽",
+          "key": "kuan",
+          "tone": "kuān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "河",
+          "key": "he",
+          "tone": "hé"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "从",
+          "key": "cong",
+          "tone": "cóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "此",
+          "key": "ci",
+          "tone": "cǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "每",
+          "key": "mei",
+          "tone": "měi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "七",
+          "key": "qi",
+          "tone": "qī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "月",
+          "key": "yue",
+          "tone": "yuè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "初",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "七",
+          "key": "qi",
+          "tone": "qī"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "喜",
+          "key": "xi",
+          "tone": "xǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鹊",
+          "key": "que",
+          "tone": "què"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "搭",
+          "key": "da",
+          "tone": "dā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鹊",
+          "key": "que",
+          "tone": "què"
+        },
+        {
+          "kind": "hanzi",
+          "char": "桥",
+          "key": "qiao",
+          "tone": "qiáo"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "让",
+          "key": "rang",
+          "tone": "ràng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "相",
+          "key": "xiang",
+          "tone": "xiāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "会",
+          "key": "hui",
+          "tone": "huì"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "每年七月初七，谁来帮牛郎和织女相会？",
+        "options": [
+          "喜鹊",
+          "燕子",
+          "仙鹤"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "id": "maliang-1",
+      "title": "神笔马良 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "穷",
+          "key": "qiong",
+          "tone": "qióng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "孩",
+          "key": "hai",
+          "tone": "hái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "特",
+          "key": "te",
+          "tone": "tè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "别",
+          "key": "bie",
+          "tone": "bié"
+        },
+        {
+          "kind": "hanzi",
+          "char": "喜",
+          "key": "xi",
+          "tone": "xǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "欢",
+          "key": "huan",
+          "tone": "huan"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "可",
+          "key": "ke",
+          "tone": "kě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "连",
+          "key": "lian",
+          "tone": "lián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "支",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "笔",
+          "key": "bi",
+          "tone": "bǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "买",
+          "key": "mai",
+          "tone": "mǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "用",
+          "key": "yong",
+          "tone": "yòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "树",
+          "key": "shu",
+          "tone": "shù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "枝",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "沙",
+          "key": "sha",
+          "tone": "shā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "地",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "用",
+          "key": "yong",
+          "tone": "yòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "木",
+          "key": "mu",
+          "tone": "mù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "炭",
+          "key": "tan",
+          "tone": "tàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "墙",
+          "key": "qiang",
+          "tone": "qiáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "练",
+          "key": "lian",
+          "tone": "liàn"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "从",
+          "key": "cong",
+          "tone": "cóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "偷",
+          "key": "tou",
+          "tone": "tōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "懒",
+          "key": "lan",
+          "tone": "lǎn"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鸟",
+          "key": "niao",
+          "tone": "niǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "好",
+          "key": "hao",
+          "tone": "hǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "像",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "要",
+          "key": "yao",
+          "tone": "yào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "飞",
+          "key": "fei",
+          "tone": "fēi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "样",
+          "key": "yang",
+          "tone": "yàng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "马良没有笔，他用什么画画？",
+        "options": [
+          "用手指和泥巴",
+          "用树枝和木炭",
+          "用石头和树叶"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "maliang-2",
+      "title": "神笔马良 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夜",
+          "key": "ye",
+          "tone": "yè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "位",
+          "key": "wei",
+          "tone": "wèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "白",
+          "key": "bai",
+          "tone": "bái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "胡",
+          "key": "hu",
+          "tone": "hú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爷",
+          "key": "ye",
+          "tone": "yé"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爷",
+          "key": "ye",
+          "tone": "ye"
+        },
+        {
+          "kind": "hanzi",
+          "char": "送",
+          "key": "song",
+          "tone": "sòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "支",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "金",
+          "key": "jin",
+          "tone": "jīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "光",
+          "key": "guang",
+          "tone": "guāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "闪",
+          "key": "shan",
+          "tone": "shǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "闪",
+          "key": "shan",
+          "tone": "shǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "神",
+          "key": "shen",
+          "tone": "shén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "笔",
+          "key": "bi",
+          "tone": "bǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "用",
+          "key": "yong",
+          "tone": "yòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "它",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "只",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "公",
+          "key": "gong",
+          "tone": "gōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鸡",
+          "key": "ji",
+          "tone": "jī"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "公",
+          "key": "gong",
+          "tone": "gōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鸡",
+          "key": "ji",
+          "tone": "jī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "竟",
+          "key": "jing",
+          "tone": "jìng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "然",
+          "key": "ran",
+          "tone": "rán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "扑",
+          "key": "pu",
+          "tone": "pū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "扑",
+          "key": "pu",
+          "tone": "pū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "翅",
+          "key": "chi",
+          "tone": "chì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "膀",
+          "key": "bang",
+          "tone": "bǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "活",
+          "key": "huo",
+          "tone": "huó"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "穷",
+          "key": "qiong",
+          "tone": "qióng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "苦",
+          "key": "ku",
+          "tone": "kǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "乡",
+          "key": "xiang",
+          "tone": "xiāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "亲",
+          "key": "qin",
+          "tone": "qīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "水",
+          "key": "shui",
+          "tone": "shuǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "车",
+          "key": "che",
+          "tone": "chē"
+        },
+        {
+          "kind": "skip",
+          "char": "、"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "耕",
+          "key": "geng",
+          "tone": "gēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牛",
+          "key": "niu",
+          "tone": "niú"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "帮",
+          "key": "bang",
+          "tone": "bāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "好",
+          "key": "hao",
+          "tone": "hǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "日",
+          "key": "ri",
+          "tone": "rì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "马良用神笔为乡亲们画了什么？",
+        "options": [
+          "水车和耕牛",
+          "金子和银子",
+          "房子和花园"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "id": "maliang-3",
+      "title": "神笔马良 · 三",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "贪",
+          "key": "tan",
+          "tone": "tān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "心",
+          "key": "xin",
+          "tone": "xīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "皇",
+          "key": "huang",
+          "tone": "huáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "帝",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "抢",
+          "key": "qiang",
+          "tone": "qiǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "走",
+          "key": "zou",
+          "tone": "zǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "逼",
+          "key": "bi",
+          "tone": "bī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "座",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "金",
+          "key": "jin",
+          "tone": "jīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "山",
+          "key": "shan",
+          "tone": "shān"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "先",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "片",
+          "key": "pian",
+          "tone": "piàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "那",
+          "key": "na",
+          "tone": "nà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "边",
+          "key": "bian",
+          "tone": "biān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "金",
+          "key": "jin",
+          "tone": "jīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "山",
+          "key": "shan",
+          "tone": "shān"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "皇",
+          "key": "huang",
+          "tone": "huáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "帝",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "坐",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "船",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拿",
+          "key": "na",
+          "tone": "ná"
+        },
+        {
+          "kind": "hanzi",
+          "char": "金",
+          "key": "jin",
+          "tone": "jīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "再",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "几",
+          "key": "ji",
+          "tone": "jǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "笔",
+          "key": "bi",
+          "tone": "bǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "风",
+          "key": "feng",
+          "tone": "fēng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "掀",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "巨",
+          "key": "ju",
+          "tone": "jù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "浪",
+          "key": "lang",
+          "tone": "làng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "贪",
+          "key": "tan",
+          "tone": "tān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "心",
+          "key": "xin",
+          "tone": "xīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "皇",
+          "key": "huang",
+          "tone": "huáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "帝",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "卷",
+          "key": "juan",
+          "tone": "juǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "进",
+          "key": "jin",
+          "tone": "jìn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "马良最后用什么惩罚了贪心的皇帝？",
+        "options": [
+          "一座高山",
+          "一群老虎",
+          "大风和巨浪"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "tianluo-1",
+      "title": "田螺姑娘 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "勤",
+          "key": "qin",
+          "tone": "qín"
+        },
+        {
+          "kind": "hanzi",
+          "char": "劳",
+          "key": "lao",
+          "tone": "láo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "轻",
+          "key": "qing",
+          "tone": "qīng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "农",
+          "key": "nong",
+          "tone": "nóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夫",
+          "key": "fu",
+          "tone": "fū"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "田",
+          "key": "tian",
+          "tone": "tián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "捡",
+          "key": "jian",
+          "tone": "jiǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "只",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "亮",
+          "key": "liang",
+          "tone": "liàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "田",
+          "key": "tian",
+          "tone": "tián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "螺",
+          "key": "luo",
+          "tone": "luó"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "它",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "养",
+          "key": "yang",
+          "tone": "yǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "水",
+          "key": "shui",
+          "tone": "shuǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "缸",
+          "key": "gang",
+          "tone": "gāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "从",
+          "key": "cong",
+          "tone": "cóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "那",
+          "key": "na",
+          "tone": "nà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "每",
+          "key": "mei",
+          "tone": "měi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "干",
+          "key": "gan",
+          "tone": "gàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "活",
+          "key": "huo",
+          "tone": "huó"
+        },
+        {
+          "kind": "hanzi",
+          "char": "回",
+          "key": "hui",
+          "tone": "huí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "桌",
+          "key": "zhuo",
+          "tone": "zhuō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "总",
+          "key": "zong",
+          "tone": "zǒng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "摆",
+          "key": "bai",
+          "tone": "bǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "热",
+          "key": "re",
+          "tone": "rè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "乎",
+          "key": "hu",
+          "tone": "hū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "乎",
+          "key": "hu",
+          "tone": "hū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "饭",
+          "key": "fan",
+          "tone": "fàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "菜",
+          "key": "cai",
+          "tone": "cài"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "屋",
+          "key": "wu",
+          "tone": "wū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "也",
+          "key": "ye",
+          "tone": "yě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "收",
+          "key": "shou",
+          "tone": "shōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拾",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "干",
+          "key": "gan",
+          "tone": "gān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "干",
+          "key": "gan",
+          "tone": "gān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "净",
+          "key": "jing",
+          "tone": "jìng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "净",
+          "key": "jing",
+          "tone": "jìng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "农夫把田螺养在哪里？",
+        "options": [
+          "院子的池塘里",
+          "家里的水缸里",
+          "门前的小河里"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "tianluo-2",
+      "title": "田螺姑娘 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "农",
+          "key": "nong",
+          "tone": "nóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夫",
+          "key": "fu",
+          "tone": "fū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "觉",
+          "key": "jue",
+          "tone": "jué"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "奇",
+          "key": "qi",
+          "tone": "qí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "怪",
+          "key": "guai",
+          "tone": "guài"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "假",
+          "key": "jia",
+          "tone": "jiǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "装",
+          "key": "zhuang",
+          "tone": "zhuāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "门",
+          "key": "men",
+          "tone": "mén"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "偷",
+          "key": "tou",
+          "tone": "tōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "偷",
+          "key": "tou",
+          "tone": "tōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "躲",
+          "key": "duo",
+          "tone": "duǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "门",
+          "key": "men",
+          "tone": "mén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "外",
+          "key": "wai",
+          "tone": "wài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "看",
+          "key": "kan",
+          "tone": "kàn"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "只",
+          "key": "zhi",
+          "tone": "zhǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "见",
+          "key": "jian",
+          "tone": "jiàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "位",
+          "key": "wei",
+          "tone": "wèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "姑",
+          "key": "gu",
+          "tone": "gū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "娘",
+          "key": "niang",
+          "tone": "niáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "从",
+          "key": "cong",
+          "tone": "cóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "水",
+          "key": "shui",
+          "tone": "shuǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "缸",
+          "key": "gang",
+          "tone": "gāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "走",
+          "key": "zou",
+          "tone": "zǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "忙",
+          "key": "mang",
+          "tone": "máng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "烧",
+          "key": "shao",
+          "tone": "shāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "火",
+          "key": "huo",
+          "tone": "huǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "做",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "饭",
+          "key": "fan",
+          "tone": "fàn"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "原",
+          "key": "yuan",
+          "tone": "yuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "她",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "田",
+          "key": "tian",
+          "tone": "tián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "螺",
+          "key": "luo",
+          "tone": "luó"
+        },
+        {
+          "kind": "hanzi",
+          "char": "变",
+          "key": "bian",
+          "tone": "biàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "因",
+          "key": "yin",
+          "tone": "yīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "为",
+          "key": "wei",
+          "tone": "wèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "喜",
+          "key": "xi",
+          "tone": "xǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "欢",
+          "key": "huan",
+          "tone": "huan"
+        },
+        {
+          "kind": "hanzi",
+          "char": "农",
+          "key": "nong",
+          "tone": "nóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夫",
+          "key": "fu",
+          "tone": "fū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "勤",
+          "key": "qin",
+          "tone": "qín"
+        },
+        {
+          "kind": "hanzi",
+          "char": "劳",
+          "key": "lao",
+          "tone": "láo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "善",
+          "key": "shan",
+          "tone": "shàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "良",
+          "key": "liang",
+          "tone": "liáng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "才",
+          "key": "cai",
+          "tone": "cái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "帮",
+          "key": "bang",
+          "tone": "bāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "后",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "两",
+          "key": "liang",
+          "tone": "liǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "幸",
+          "key": "xing",
+          "tone": "xìng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "福",
+          "key": "fu",
+          "tone": "fú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "日",
+          "key": "ri",
+          "tone": "rì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "田螺姑娘为什么要帮农夫？",
+        "options": [
+          "农夫给了她很多钱",
+          "她喜欢农夫勤劳善良",
+          "农夫求她帮忙"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "baxian-1",
+      "title": "八仙过海 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "传",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "八",
+          "key": "ba",
+          "tone": "bā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "位",
+          "key": "wei",
+          "tone": "wèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "神",
+          "key": "shen",
+          "tone": "shén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "仙",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "参",
+          "key": "can",
+          "tone": "cān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "加",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "蟠",
+          "key": "pan",
+          "tone": "pán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "桃",
+          "key": "tao",
+          "tone": "táo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "会",
+          "key": "hui",
+          "tone": "huì"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "回",
+          "key": "hui",
+          "tone": "huí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "时",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "路",
+          "key": "lu",
+          "tone": "lù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "东",
+          "key": "dong",
+          "tone": "dōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "只",
+          "key": "zhi",
+          "tone": "zhǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "见",
+          "key": "jian",
+          "tone": "jiàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "波",
+          "key": "bo",
+          "tone": "bō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "浪",
+          "key": "lang",
+          "tone": "làng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "滚",
+          "key": "gun",
+          "tone": "gǔn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "滚",
+          "key": "gun",
+          "tone": "gǔn"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吕",
+          "key": "lv",
+          "tone": "lǚ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "洞",
+          "key": "dong",
+          "tone": "dòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "宾",
+          "key": "bin",
+          "tone": "bīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "我",
+          "key": "wo",
+          "tone": "wǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "坐",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "船",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "各",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "自",
+          "key": "zi",
+          "tone": "zì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拿",
+          "key": "na",
+          "tone": "ná"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "自",
+          "key": "zi",
+          "tone": "zì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "己",
+          "key": "ji",
+          "tone": "jǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "宝",
+          "key": "bao",
+          "tone": "bǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "贝",
+          "key": "bei",
+          "tone": "bèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "看",
+          "key": "kan",
+          "tone": "kàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "看",
+          "key": "kan",
+          "tone": "kàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "谁",
+          "key": "shui",
+          "tone": "shuí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "本",
+          "key": "ben",
+          "tone": "běn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "领",
+          "key": "ling",
+          "tone": "lǐng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "skip",
+          "char": "！"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "听",
+          "key": "ting",
+          "tone": "tīng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拍",
+          "key": "pai",
+          "tone": "pāi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "手",
+          "key": "shou",
+          "tone": "shǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "叫",
+          "key": "jiao",
+          "tone": "jiào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "好",
+          "key": "hao",
+          "tone": "hǎo"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "八位神仙打算怎样过海？",
+        "options": [
+          "一起坐大船",
+          "让龙王来接",
+          "各自用宝贝过海"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "baxian-2",
+      "title": "八仙过海 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "铁",
+          "key": "tie",
+          "tone": "tiě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拐",
+          "key": "guai",
+          "tone": "guǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "李",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拐",
+          "key": "guai",
+          "tone": "guǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "杖",
+          "key": "zhang",
+          "tone": "zhàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "扔",
+          "key": "reng",
+          "tone": "rēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "进",
+          "key": "jin",
+          "tone": "jìn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "站",
+          "key": "zhan",
+          "tone": "zhàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "漂",
+          "key": "piao",
+          "tone": "piāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "走",
+          "key": "zou",
+          "tone": "zǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "；"
+        },
+        {
+          "kind": "hanzi",
+          "char": "汉",
+          "key": "han",
+          "tone": "hàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "钟",
+          "key": "zhong",
+          "tone": "zhōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "离",
+          "key": "li",
+          "tone": "lí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "坐",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "芭",
+          "key": "ba",
+          "tone": "bā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "蕉",
+          "key": "jiao",
+          "tone": "jiāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "扇",
+          "key": "shan",
+          "tone": "shàn"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "何",
+          "key": "he",
+          "tone": "hé"
+        },
+        {
+          "kind": "hanzi",
+          "char": "仙",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "姑",
+          "key": "gu",
+          "tone": "gū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "踩",
+          "key": "cai",
+          "tone": "cǎi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "荷",
+          "key": "he",
+          "tone": "hé"
+        },
+        {
+          "kind": "hanzi",
+          "char": "花",
+          "key": "hua",
+          "tone": "huā"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "乘",
+          "key": "cheng",
+          "tone": "chéng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "风",
+          "key": "feng",
+          "tone": "fēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "破",
+          "key": "po",
+          "tone": "pò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "浪",
+          "key": "lang",
+          "tone": "làng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "后",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "八",
+          "key": "ba",
+          "tone": "bā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "仙",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "海",
+          "key": "hai",
+          "tone": "hǎi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "各",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "显",
+          "key": "xian",
+          "tone": "xiǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "神",
+          "key": "shen",
+          "tone": "shén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "通",
+          "key": "tong",
+          "tone": "tōng"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "意",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "思",
+          "key": "si",
+          "tone": "sī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "每",
+          "key": "mei",
+          "tone": "měi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "自",
+          "key": "zi",
+          "tone": "zì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "己",
+          "key": "ji",
+          "tone": "jǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "好",
+          "key": "hao",
+          "tone": "hǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "办",
+          "key": "ban",
+          "tone": "bàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "法",
+          "key": "fa",
+          "tone": "fǎ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "何仙姑是踩着什么过海的？",
+        "options": [
+          "芭蕉扇",
+          "荷花",
+          "拐杖"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "luban-1",
+      "title": "鲁班造锯 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "很",
+          "key": "hen",
+          "tone": "hěn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "久",
+          "key": "jiu",
+          "tone": "jiǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "以",
+          "key": "yi",
+          "tone": "yǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "前",
+          "key": "qian",
+          "tone": "qián"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鲁",
+          "key": "lu",
+          "tone": "lǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "班",
+          "key": "ban",
+          "tone": "bān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "带",
+          "key": "dai",
+          "tone": "dài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "徒",
+          "key": "tu",
+          "tone": "tú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "弟",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "山",
+          "key": "shan",
+          "tone": "shān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "砍",
+          "key": "kan",
+          "tone": "kǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "树",
+          "key": "shu",
+          "tone": "shù"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "准",
+          "key": "zhun",
+          "tone": "zhǔn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "备",
+          "key": "bei",
+          "tone": "bèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "盖",
+          "key": "gai",
+          "tone": "gài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "座",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "宫",
+          "key": "gong",
+          "tone": "gōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "殿",
+          "key": "dian",
+          "tone": "diàn"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "可",
+          "key": "ke",
+          "tone": "kě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "用",
+          "key": "yong",
+          "tone": "yòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "斧",
+          "key": "fu",
+          "tone": "fǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tou"
+        },
+        {
+          "kind": "hanzi",
+          "char": "砍",
+          "key": "kan",
+          "tone": "kǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "树",
+          "key": "shu",
+          "tone": "shù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "慢",
+          "key": "man",
+          "tone": "màn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "累",
+          "key": "lei",
+          "tone": "lèi"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "很",
+          "key": "hen",
+          "tone": "hěn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhao",
+          "tone": "zháo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "急",
+          "key": "ji",
+          "tone": "jí"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "次",
+          "key": "ci",
+          "tone": "cì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爬",
+          "key": "pa",
+          "tone": "pá"
+        },
+        {
+          "kind": "hanzi",
+          "char": "山",
+          "key": "shan",
+          "tone": "shān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "时",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鲁",
+          "key": "lu",
+          "tone": "lǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "班",
+          "key": "ban",
+          "tone": "bān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "手",
+          "key": "shou",
+          "tone": "shǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "被",
+          "key": "bei",
+          "tone": "bèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "种",
+          "key": "zhong",
+          "tone": "zhǒng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "野",
+          "key": "ye",
+          "tone": "yě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "草",
+          "key": "cao",
+          "tone": "cǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "划",
+          "key": "hua",
+          "tone": "huá"
+        },
+        {
+          "kind": "hanzi",
+          "char": "破",
+          "key": "po",
+          "tone": "pò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "流",
+          "key": "liu",
+          "tone": "liú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "血",
+          "key": "xue",
+          "tone": "xuè"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "鲁班的手是被什么划破的？",
+        "options": [
+          "斧头",
+          "石头",
+          "一种野草"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "luban-2",
+      "title": "鲁班造锯 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "鲁",
+          "key": "lu",
+          "tone": "lǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "班",
+          "key": "ban",
+          "tone": "bān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拔",
+          "key": "ba",
+          "tone": "bá"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "那",
+          "key": "na",
+          "tone": "nà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "棵",
+          "key": "ke",
+          "tone": "kē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "草",
+          "key": "cao",
+          "tone": "cǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "仔",
+          "key": "zi",
+          "tone": "zǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "细",
+          "key": "xi",
+          "tone": "xì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "看",
+          "key": "kan",
+          "tone": "kàn"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "草",
+          "key": "cao",
+          "tone": "cǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "叶",
+          "key": "ye",
+          "tone": "yè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "边",
+          "key": "bian",
+          "tone": "biān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "长",
+          "key": "zhang",
+          "tone": "zhǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "排",
+          "key": "pai",
+          "tone": "pái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "细",
+          "key": "xi",
+          "tone": "xì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "细",
+          "key": "xi",
+          "tone": "xì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "齿",
+          "key": "chi",
+          "tone": "chǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "想",
+          "key": "xiang",
+          "tone": "xiǎng"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "hanzi",
+          "char": "要",
+          "key": "yao",
+          "tone": "yào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "做",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "带",
+          "key": "dai",
+          "tone": "dài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "齿",
+          "key": "chi",
+          "tone": "chǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "铁",
+          "key": "tie",
+          "tone": "tiě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "片",
+          "key": "pian",
+          "tone": "piàn"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "砍",
+          "key": "kan",
+          "tone": "kǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "树",
+          "key": "shu",
+          "tone": "shù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "快",
+          "key": "kuai",
+          "tone": "kuài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "多",
+          "key": "duo",
+          "tone": "duō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吗",
+          "key": "ma",
+          "tone": "ma"
+        },
+        {
+          "kind": "skip",
+          "char": "？"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "动",
+          "key": "dong",
+          "tone": "dòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "手",
+          "key": "shou",
+          "tone": "shǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "试",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "做",
+          "key": "zuo",
+          "tone": "zuò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "世",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "第",
+          "key": "di",
+          "tone": "dì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "锯",
+          "key": "ju",
+          "tone": "jù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "鲁班从野草的什么地方得到了启发？",
+        "options": [
+          "草的根",
+          "草叶边上的小齿",
+          "草的花"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "nian-1",
+      "title": "年的传说 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "传",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "古",
+          "key": "gu",
+          "tone": "gǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "时",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "候",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "种",
+          "key": "zhong",
+          "tone": "zhǒng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "叫",
+          "key": "jiao",
+          "tone": "jiào"
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "怪",
+          "key": "guai",
+          "tone": "guài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "兽",
+          "key": "shou",
+          "tone": "shòu"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tóu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "长",
+          "key": "zhang",
+          "tone": "zhǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "着",
+          "key": "zhe",
+          "tone": "zhe"
+        },
+        {
+          "kind": "hanzi",
+          "char": "尖",
+          "key": "jian",
+          "tone": "jiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "角",
+          "key": "jiao",
+          "tone": "jiǎo"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "十",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "分",
+          "key": "fen",
+          "tone": "fēn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "凶",
+          "key": "xiong",
+          "tone": "xiōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "猛",
+          "key": "meng",
+          "tone": "měng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "每",
+          "key": "mei",
+          "tone": "měi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "除",
+          "key": "chu",
+          "tone": "chú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夕",
+          "key": "xi",
+          "tone": "xī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夜",
+          "key": "ye",
+          "tone": "yè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "它",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "跑",
+          "key": "pao",
+          "tone": "pǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "进",
+          "key": "jin",
+          "tone": "jìn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "村",
+          "key": "cun",
+          "tone": "cūn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吃",
+          "key": "chi",
+          "tone": "chī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "牲",
+          "key": "sheng",
+          "tone": "shēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "口",
+          "key": "kou",
+          "tone": "kǒu"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "还",
+          "key": "hai",
+          "tone": "hái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "伤",
+          "key": "shang",
+          "tone": "shāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "害",
+          "key": "hai",
+          "tone": "hài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "所",
+          "key": "suo",
+          "tone": "suǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "以",
+          "key": "yi",
+          "tone": "yǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "这",
+          "key": "zhe",
+          "tone": "zhè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "村",
+          "key": "cun",
+          "tone": "cūn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "扶",
+          "key": "fu",
+          "tone": "fú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "携",
+          "key": "xie",
+          "tone": "xié"
+        },
+        {
+          "kind": "hanzi",
+          "char": "幼",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "躲",
+          "key": "duo",
+          "tone": "duǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "进",
+          "key": "jin",
+          "tone": "jìn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "深",
+          "key": "shen",
+          "tone": "shēn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "山",
+          "key": "shan",
+          "tone": "shān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "“年”一般在什么时候跑进村子？",
+        "options": [
+          "中秋节",
+          "除夕夜里",
+          "端午节"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "nian-2",
+      "title": "年的传说 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "位",
+          "key": "wei",
+          "tone": "wèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "留",
+          "key": "liu",
+          "tone": "liú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "村",
+          "key": "cun",
+          "tone": "cūn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "门",
+          "key": "men",
+          "tone": "mén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "贴",
+          "key": "tie",
+          "tone": "tiē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "红",
+          "key": "hong",
+          "tone": "hóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "纸",
+          "key": "zhi",
+          "tone": "zhǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "屋",
+          "key": "wu",
+          "tone": "wū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "点",
+          "key": "dian",
+          "tone": "diǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "灯",
+          "key": "deng",
+          "tone": "dēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "火",
+          "key": "huo",
+          "tone": "huǒ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "院",
+          "key": "yuan",
+          "tone": "yuàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "放",
+          "key": "fang",
+          "tone": "fàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "噼",
+          "key": "pi",
+          "tone": "pī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "li"
+        },
+        {
+          "kind": "hanzi",
+          "char": "啪",
+          "key": "pa",
+          "tone": "pā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "啦",
+          "key": "la",
+          "tone": "lā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爆",
+          "key": "bao",
+          "tone": "bào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "竹",
+          "key": "zhu",
+          "tone": "zhú"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吓",
+          "key": "xia",
+          "tone": "xià"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "掉",
+          "key": "diao",
+          "tone": "diào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tóu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "逃",
+          "key": "tao",
+          "tone": "táo"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "从",
+          "key": "cong",
+          "tone": "cóng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "此",
+          "key": "ci",
+          "tone": "cǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "过",
+          "key": "guo",
+          "tone": "guò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "要",
+          "key": "yao",
+          "tone": "yào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "贴",
+          "key": "tie",
+          "tone": "tiē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "春",
+          "key": "chun",
+          "tone": "chūn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "联",
+          "key": "lian",
+          "tone": "lián"
+        },
+        {
+          "kind": "skip",
+          "char": "、"
+        },
+        {
+          "kind": "hanzi",
+          "char": "放",
+          "key": "fang",
+          "tone": "fàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鞭",
+          "key": "bian",
+          "tone": "biān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "炮",
+          "key": "pao",
+          "tone": "pào"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "热",
+          "key": "re",
+          "tone": "rè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "热",
+          "key": "re",
+          "tone": "rè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "闹",
+          "key": "nao",
+          "tone": "nào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "闹",
+          "key": "nao",
+          "tone": "nào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "地",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "守",
+          "key": "shou",
+          "tone": "shǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "岁",
+          "key": "sui",
+          "tone": "suì"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "老人用什么办法赶走了“年”？",
+        "options": [
+          "贴红纸、点灯火、放爆竹",
+          "敲锣打鼓唱大戏",
+          "拿刀拿枪去打它"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "id": "laoshu-1",
+      "title": "老鼠嫁女 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鼠",
+          "key": "shu",
+          "tone": "shǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "bà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "ba"
+        },
+        {
+          "kind": "hanzi",
+          "char": "想",
+          "key": "xiang",
+          "tone": "xiǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "儿",
+          "key": "er",
+          "tone": "ér"
+        },
+        {
+          "kind": "hanzi",
+          "char": "找",
+          "key": "zhao",
+          "tone": "zhǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "最",
+          "key": "zui",
+          "tone": "zuì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "厉",
+          "key": "li",
+          "tone": "lì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "害",
+          "key": "hai",
+          "tone": "hài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "婿",
+          "key": "xu",
+          "tone": "xu"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "先",
+          "key": "xian",
+          "tone": "xiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "找",
+          "key": "zhao",
+          "tone": "zhǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "太",
+          "key": "tai",
+          "tone": "tài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "阳",
+          "key": "yang",
+          "tone": "yáng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "太",
+          "key": "tai",
+          "tone": "tài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "阳",
+          "key": "yang",
+          "tone": "yáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "云",
+          "key": "yun",
+          "tone": "yún"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "能",
+          "key": "neng",
+          "tone": "néng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "我",
+          "key": "wo",
+          "tone": "wǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "遮",
+          "key": "zhe",
+          "tone": "zhē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "住",
+          "key": "zhu",
+          "tone": "zhù"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "找",
+          "key": "zhao",
+          "tone": "zhǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "云",
+          "key": "yun",
+          "tone": "yún"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "云",
+          "key": "yun",
+          "tone": "yún"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "风",
+          "key": "feng",
+          "tone": "fēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吹",
+          "key": "chui",
+          "tone": "chuī"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "我",
+          "key": "wo",
+          "tone": "wǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "被",
+          "key": "bei",
+          "tone": "bèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吹",
+          "key": "chui",
+          "tone": "chuī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "散",
+          "key": "san",
+          "tone": "sàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鼠",
+          "key": "shu",
+          "tone": "shǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "bà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "ba"
+        },
+        {
+          "kind": "hanzi",
+          "char": "只",
+          "key": "zhi",
+          "tone": "zhǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "好",
+          "key": "hao",
+          "tone": "hǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "去",
+          "key": "qu",
+          "tone": "qù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "找",
+          "key": "zhao",
+          "tone": "zhǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "风",
+          "key": "feng",
+          "tone": "fēng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "太阳说谁能把自己遮住？",
+        "options": [
+          "风",
+          "云",
+          "墙"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "laoshu-2",
+      "title": "老鼠嫁女 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "风",
+          "key": "feng",
+          "tone": "fēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "墙",
+          "key": "qiang",
+          "tone": "qiáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "能",
+          "key": "neng",
+          "tone": "néng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "挡",
+          "key": "dang",
+          "tone": "dǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "住",
+          "key": "zhu",
+          "tone": "zhù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "我",
+          "key": "wo",
+          "tone": "wǒ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "墙",
+          "key": "qiang",
+          "tone": "qiáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "却",
+          "key": "que",
+          "tone": "què"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鼠",
+          "key": "shu",
+          "tone": "shǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "会",
+          "key": "hui",
+          "tone": "huì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "我",
+          "key": "wo",
+          "tone": "wǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "身",
+          "key": "shen",
+          "tone": "shēn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "打",
+          "key": "da",
+          "tone": "dǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "洞",
+          "key": "dong",
+          "tone": "dòng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "老",
+          "key": "lao",
+          "tone": "lǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "鼠",
+          "key": "shu",
+          "tone": "shǔ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "bà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "ba"
+        },
+        {
+          "kind": "hanzi",
+          "char": "想",
+          "key": "xiang",
+          "tone": "xiǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "想",
+          "key": "xiang",
+          "tone": "xiǎng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "觉",
+          "key": "jue",
+          "tone": "jué"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "猫",
+          "key": "mao",
+          "tone": "māo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "最",
+          "key": "zui",
+          "tone": "zuì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "厉",
+          "key": "li",
+          "tone": "lì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "害",
+          "key": "hai",
+          "tone": "hài"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "女",
+          "key": "nv",
+          "tone": "nǚ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "儿",
+          "key": "er",
+          "tone": "ér"
+        },
+        {
+          "kind": "hanzi",
+          "char": "嫁",
+          "key": "jia",
+          "tone": "jià"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "猫",
+          "key": "mao",
+          "tone": "māo"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "没",
+          "key": "mei",
+          "tone": "méi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "想",
+          "key": "xiang",
+          "tone": "xiǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "成",
+          "key": "cheng",
+          "tone": "chéng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "亲",
+          "key": "qin",
+          "tone": "qīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "那",
+          "key": "na",
+          "tone": "nà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "天",
+          "key": "tian",
+          "tone": "tiān"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "猫",
+          "key": "mao",
+          "tone": "māo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "张",
+          "key": "zhang",
+          "tone": "zhāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "开",
+          "key": "kai",
+          "tone": "kāi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "嘴",
+          "key": "zui",
+          "tone": "zuǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "口",
+          "key": "kou",
+          "tone": "kǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "新",
+          "key": "xin",
+          "tone": "xīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "娘",
+          "key": "niang",
+          "tone": "niáng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吃",
+          "key": "chi",
+          "tone": "chī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "掉",
+          "key": "diao",
+          "tone": "diào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "老鼠爸爸最后把女儿嫁给了谁？",
+        "options": [
+          "风",
+          "墙",
+          "猫"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "caochong-1",
+      "title": "曹冲称象 · 一",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "送",
+          "key": "song",
+          "tone": "sòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "曹",
+          "key": "cao",
+          "tone": "cáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "操",
+          "key": "cao",
+          "tone": "cāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tóu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "象",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "曹",
+          "key": "cao",
+          "tone": "cáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "操",
+          "key": "cao",
+          "tone": "cāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "想",
+          "key": "xiang",
+          "tone": "xiǎng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "知",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "道",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "它",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "多",
+          "key": "duo",
+          "tone": "duō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "重",
+          "key": "zhong",
+          "tone": "zhòng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "可",
+          "key": "ke",
+          "tone": "kě"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "那",
+          "key": "na",
+          "tone": "nà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "时",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "候",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "没",
+          "key": "mei",
+          "tone": "méi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "这",
+          "key": "zhe",
+          "tone": "zhè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "么",
+          "key": "me",
+          "tone": "me"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "秤",
+          "key": "cheng",
+          "tone": "chèng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "官",
+          "key": "guan",
+          "tone": "guān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "员",
+          "key": "yuan",
+          "tone": "yuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "造",
+          "key": "zao",
+          "tone": "zào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "杆",
+          "key": "gan",
+          "tone": "gǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "秤",
+          "key": "cheng",
+          "tone": "chèng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "象",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "杀",
+          "key": "sha",
+          "tone": "shā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "切",
+          "key": "qie",
+          "tone": "qiē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "成",
+          "key": "cheng",
+          "tone": "chéng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "块",
+          "key": "kuai",
+          "tone": "kuài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "再",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "称",
+          "key": "cheng",
+          "tone": "chēng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "曹",
+          "key": "cao",
+          "tone": "cáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "操",
+          "key": "cao",
+          "tone": "cāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "听",
+          "key": "ting",
+          "tone": "tīng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "直",
+          "key": "zhi",
+          "tone": "zhí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "摇",
+          "key": "yao",
+          "tone": "yáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tóu"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "曹操为什么不知道大象有多重？",
+        "options": [
+          "大象不肯站好",
+          "没有那么大的秤",
+          "大象跑掉了"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "caochong-2",
+      "title": "曹冲称象 · 二",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "曹",
+          "key": "cao",
+          "tone": "cáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "操",
+          "key": "cao",
+          "tone": "cāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "儿",
+          "key": "er",
+          "tone": "ér"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "曹",
+          "key": "cao",
+          "tone": "cáo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "冲",
+          "key": "chong",
+          "tone": "chōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "站",
+          "key": "zhan",
+          "tone": "zhàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "把",
+          "key": "ba",
+          "tone": "bǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "象",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "赶",
+          "key": "gan",
+          "tone": "gǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "船",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "船",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "边",
+          "key": "bian",
+          "tone": "biān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "画",
+          "key": "hua",
+          "tone": "huà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "道",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "线",
+          "key": "xian",
+          "tone": "xiàn"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "再",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "换",
+          "key": "huan",
+          "tone": "huàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "上",
+          "key": "shang",
+          "tone": "shàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "石",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tou"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "装",
+          "key": "zhuang",
+          "tone": "zhuāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "船",
+          "key": "chuan",
+          "tone": "chuán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "沉",
+          "key": "chen",
+          "tone": "chén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "到",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "那",
+          "key": "na",
+          "tone": "nà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "道",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "线",
+          "key": "xian",
+          "tone": "xiàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "为",
+          "key": "wei",
+          "tone": "wéi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "止",
+          "key": "zhi",
+          "tone": "zhǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "最",
+          "key": "zui",
+          "tone": "zuì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "后",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "称",
+          "key": "cheng",
+          "tone": "chēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "称",
+          "key": "cheng",
+          "tone": "chēng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "这",
+          "key": "zhe",
+          "tone": "zhè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "些",
+          "key": "xie",
+          "tone": "xiē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "石",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tou"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "就",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "知",
+          "key": "zhi",
+          "tone": "zhī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "道",
+          "key": "dao",
+          "tone": "dào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "象",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "多",
+          "key": "duo",
+          "tone": "duō"
+        },
+        {
+          "kind": "hanzi",
+          "char": "重",
+          "key": "zhong",
+          "tone": "zhòng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夸",
+          "key": "kua",
+          "tone": "kuā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "聪",
+          "key": "cong",
+          "tone": "cōng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "明",
+          "key": "ming",
+          "tone": "ming"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "曹冲是称什么来知道大象重量的？",
+        "options": [
+          "称船",
+          "称水",
+          "称石头"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "simaguang-1",
+      "title": "司马光砸缸",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "司",
+          "key": "si",
+          "tone": "sī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "光",
+          "key": "guang",
+          "tone": "guāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "时",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "候",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "和",
+          "key": "he",
+          "tone": "hé"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "伙",
+          "key": "huo",
+          "tone": "huǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "伴",
+          "key": "ban",
+          "tone": "bàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "在",
+          "key": "zai",
+          "tone": "zài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "院",
+          "key": "yuan",
+          "tone": "yuàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "玩",
+          "key": "wan",
+          "tone": "wán"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "孩",
+          "key": "hai",
+          "tone": "hái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "心",
+          "key": "xin",
+          "tone": "xīn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "掉",
+          "key": "diao",
+          "tone": "diào"
+        },
+        {
+          "kind": "hanzi",
+          "char": "进",
+          "key": "jin",
+          "tone": "jìn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "装",
+          "key": "zhuang",
+          "tone": "zhuāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "满",
+          "key": "man",
+          "tone": "mǎn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "水",
+          "key": "shui",
+          "tone": "shuǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "缸",
+          "key": "gang",
+          "tone": "gāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "别",
+          "key": "bie",
+          "tone": "bié"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "孩",
+          "key": "hai",
+          "tone": "hái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "子",
+          "key": "zi",
+          "tone": "zi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吓",
+          "key": "xia",
+          "tone": "xià"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "哭",
+          "key": "ku",
+          "tone": "kū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "又",
+          "key": "you",
+          "tone": "yòu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "喊",
+          "key": "han",
+          "tone": "hǎn"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "司",
+          "key": "si",
+          "tone": "sī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "马",
+          "key": "ma",
+          "tone": "mǎ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "光",
+          "key": "guang",
+          "tone": "guāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "却",
+          "key": "que",
+          "tone": "què"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "慌",
+          "key": "huang",
+          "tone": "huāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "不",
+          "key": "bu",
+          "tone": "bù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "忙",
+          "key": "mang",
+          "tone": "máng"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "搬",
+          "key": "ban",
+          "tone": "bān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "起",
+          "key": "qi",
+          "tone": "qǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "块",
+          "key": "kuai",
+          "tone": "kuài"
+        },
+        {
+          "kind": "hanzi",
+          "char": "石",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "头",
+          "key": "tou",
+          "tone": "tou"
+        },
+        {
+          "kind": "hanzi",
+          "char": "使",
+          "key": "shi",
+          "tone": "shǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "劲",
+          "key": "jin",
+          "tone": "jìn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "砸",
+          "key": "za",
+          "tone": "zá"
+        },
+        {
+          "kind": "hanzi",
+          "char": "向",
+          "key": "xiang",
+          "tone": "xiàng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "水",
+          "key": "shui",
+          "tone": "shuǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "缸",
+          "key": "gang",
+          "tone": "gāng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "缸",
+          "key": "gang",
+          "tone": "gāng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "破",
+          "key": "po",
+          "tone": "pò"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "水",
+          "key": "shui",
+          "tone": "shuǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "流",
+          "key": "liu",
+          "tone": "liú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "出",
+          "key": "chu",
+          "tone": "chū"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "伙",
+          "key": "huo",
+          "tone": "huǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "伴",
+          "key": "ban",
+          "tone": "bàn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "dé"
+        },
+        {
+          "kind": "hanzi",
+          "char": "救",
+          "key": "jiu",
+          "tone": "jiù"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "司马光是怎样救出小伙伴的？",
+        "options": [
+          "跑去叫大人",
+          "用石头砸破水缸",
+          "用绳子把他拉上来"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "id": "kongrong-1",
+      "title": "孔融让梨",
+      "tokens": [
+        {
+          "kind": "hanzi",
+          "char": "孔",
+          "key": "kong",
+          "tone": "kǒng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "融",
+          "key": "rong",
+          "tone": "róng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "四",
+          "key": "si",
+          "tone": "sì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "岁",
+          "key": "sui",
+          "tone": "suì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "时",
+          "key": "shi",
+          "tone": "shí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "候",
+          "key": "hou",
+          "tone": "hòu"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "里",
+          "key": "li",
+          "tone": "lǐ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "人",
+          "key": "ren",
+          "tone": "rén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "端",
+          "key": "duan",
+          "tone": "duān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "来",
+          "key": "lai",
+          "tone": "lái"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "盘",
+          "key": "pan",
+          "tone": "pán"
+        },
+        {
+          "kind": "hanzi",
+          "char": "梨",
+          "key": "li",
+          "tone": "lí"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "没",
+          "key": "mei",
+          "tone": "méi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "有",
+          "key": "you",
+          "tone": "yǒu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "挑",
+          "key": "tiao",
+          "tone": "tiāo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "而",
+          "key": "er",
+          "tone": "ér"
+        },
+        {
+          "kind": "hanzi",
+          "char": "是",
+          "key": "shi",
+          "tone": "shì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "拿",
+          "key": "na",
+          "tone": "ná"
+        },
+        {
+          "kind": "hanzi",
+          "char": "了",
+          "key": "le",
+          "tone": "le"
+        },
+        {
+          "kind": "hanzi",
+          "char": "一",
+          "key": "yi",
+          "tone": "yí"
+        },
+        {
+          "kind": "hanzi",
+          "char": "个",
+          "key": "ge",
+          "tone": "gè"
+        },
+        {
+          "kind": "hanzi",
+          "char": "最",
+          "key": "zui",
+          "tone": "zuì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "bà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "爸",
+          "key": "ba",
+          "tone": "ba"
+        },
+        {
+          "kind": "hanzi",
+          "char": "问",
+          "key": "wen",
+          "tone": "wèn"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "为",
+          "key": "wei",
+          "tone": "wèi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "什",
+          "key": "shen",
+          "tone": "shén"
+        },
+        {
+          "kind": "hanzi",
+          "char": "么",
+          "key": "me",
+          "tone": "me"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "孔",
+          "key": "kong",
+          "tone": "kǒng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "融",
+          "key": "rong",
+          "tone": "róng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "说",
+          "key": "shuo",
+          "tone": "shuō"
+        },
+        {
+          "kind": "skip",
+          "char": "："
+        },
+        {
+          "kind": "skip",
+          "char": "“"
+        },
+        {
+          "kind": "hanzi",
+          "char": "我",
+          "key": "wo",
+          "tone": "wǒ"
+        },
+        {
+          "kind": "hanzi",
+          "char": "年",
+          "key": "nian",
+          "tone": "nián"
+        },
+        {
+          "kind": "hanzi",
+          "char": "纪",
+          "key": "ji",
+          "tone": "jì"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "应",
+          "key": "ying",
+          "tone": "yīng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "该",
+          "key": "gai",
+          "tone": "gāi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "吃",
+          "key": "chi",
+          "tone": "chī"
+        },
+        {
+          "kind": "hanzi",
+          "char": "小",
+          "key": "xiao",
+          "tone": "xiǎo"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "skip",
+          "char": "，"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "的",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "留",
+          "key": "liu",
+          "tone": "liú"
+        },
+        {
+          "kind": "hanzi",
+          "char": "给",
+          "key": "gei",
+          "tone": "gěi"
+        },
+        {
+          "kind": "hanzi",
+          "char": "哥",
+          "key": "ge",
+          "tone": "gē"
+        },
+        {
+          "kind": "hanzi",
+          "char": "哥",
+          "key": "ge",
+          "tone": "ge"
+        },
+        {
+          "kind": "hanzi",
+          "char": "们",
+          "key": "men",
+          "tone": "men"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        },
+        {
+          "kind": "skip",
+          "char": "”"
+        },
+        {
+          "kind": "hanzi",
+          "char": "大",
+          "key": "da",
+          "tone": "dà"
+        },
+        {
+          "kind": "hanzi",
+          "char": "家",
+          "key": "jia",
+          "tone": "jiā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "都",
+          "key": "dou",
+          "tone": "dōu"
+        },
+        {
+          "kind": "hanzi",
+          "char": "夸",
+          "key": "kua",
+          "tone": "kuā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "他",
+          "key": "ta",
+          "tone": "tā"
+        },
+        {
+          "kind": "hanzi",
+          "char": "懂",
+          "key": "dong",
+          "tone": "dǒng"
+        },
+        {
+          "kind": "hanzi",
+          "char": "得",
+          "key": "de",
+          "tone": "de"
+        },
+        {
+          "kind": "hanzi",
+          "char": "谦",
+          "key": "qian",
+          "tone": "qiān"
+        },
+        {
+          "kind": "hanzi",
+          "char": "让",
+          "key": "rang",
+          "tone": "ràng"
+        },
+        {
+          "kind": "skip",
+          "char": "。"
+        }
+      ],
+      "quiz": {
+        "q": "孔融为什么拿最小的梨？",
+        "options": [
+          "他不爱吃梨",
+          "小梨更甜",
+          "他觉得自己年纪小，应该让着哥哥"
+        ],
+        "answer": 2
+      }
+    }
+  ]
+}
