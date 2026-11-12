@@ -13,13 +13,17 @@
 .kb-space { flex: 0 0 46%; height: 56px; background: #f1f3f8; font: 700 18px var(--font-body); }
 @keyframes kb-shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
 
-/* 盖在键盘上的半透明双手，不挡点击 */
-.kb-hands { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.kb-hand-palm { fill: var(--hand-skin); fill-opacity: 0.3; stroke: var(--hand-ink); stroke-opacity: 0.3; stroke-width: 2; }
-.kb-hand-finger line { stroke: var(--hand-skin); stroke-opacity: 0.45; }
-.kb-hand-finger.is-active line { stroke: var(--sun); stroke-opacity: 0.6; filter: drop-shadow(0 0 1px var(--hand-ink)) drop-shadow(0 0 1px var(--hand-ink)); }
-.kb-hand-arrow { stroke: var(--hand-ink); stroke-opacity: 0.7; fill: none; }
-.kb-hand-target { fill: none; stroke: var(--hand-ink); stroke-width: 3; stroke-opacity: 0.6; }
+/* 键盘下方的一双卡通手：手指颜色和负责的键一样，要按的手指变黄点动 */
+.kb-hands { display: block; width: 100%; height: clamp(140px, 24vh, 230px); margin-top: 4px; overflow: visible; pointer-events: none; }
+.kb-hand-palm, .kb-hand-finger rect { fill: #f6d2b4; stroke: var(--ink); stroke-width: 4; }
+.kb-hand-finger .kb-hand-nail { fill: #fff; fill-opacity: 0.7; stroke: none; }
+.kb-hand-finger.is-active rect:first-child { fill: var(--sun); }
+.kb-hand-finger.is-active .kb-hand-press { animation: kb-hand-press 0.9s ease-in-out infinite; }
+.kb-hand-name { font: 700 26px var(--font-body); fill: var(--ink); fill-opacity: 0.45; }
+.kb-hand-bubble rect { fill: #fff; stroke: var(--ink); stroke-width: 4; }
+.kb-hand-bubble text { font: 700 30px var(--font-latin); fill: var(--ink); }
+@keyframes kb-hand-press { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+@media (prefers-reduced-motion: reduce) { .kb-hand-finger.is-active .kb-hand-press { animation: none; } }
 
 @media (max-width: 640px) {
   .kb-row { gap: 4px; }

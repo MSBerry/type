@@ -34,7 +34,7 @@ describe('Keyboard', () => {
   });
 });
 
-describe('键盘上的半透明双手', () => {
+describe('键盘下方的双手', () => {
   it('不打开时不画手', () => {
     const { container } = render(<Keyboard nextKey="t" wrongKey={null} />);
     expect(container.querySelector('.kb-hands')).toBeNull();
@@ -45,21 +45,29 @@ describe('键盘上的半透明双手', () => {
     expect(container.querySelectorAll('[data-hand-finger]')).toHaveLength(10);
   });
 
-  it('亮起负责下一个键的手指，并画出伸过去的方向', () => {
+  it('亮起负责下一个键的手指，头顶冒出这个键', () => {
     const { container } = render(<Keyboard nextKey="t" wrongKey={null} showHands />);
     expect(container.querySelector('[data-hand-finger="li"]')).toHaveClass('is-active');
     expect(container.querySelectorAll('.is-active')).toHaveLength(1);
-    expect(container.querySelector('.kb-hand-arrow')).toBeInTheDocument();
+    expect(container.querySelector('.kb-hand-bubble')).toHaveTextContent('T');
   });
 
-  it('下一个键就在手指原位时，只按下去，不画方向', () => {
+  it('右手的键亮右手的手指', () => {
     const { container } = render(<Keyboard nextKey="j" wrongKey={null} showHands />);
     expect(container.querySelector('[data-hand-finger="ri"]')).toHaveClass('is-active');
-    expect(container.querySelector('.kb-hand-arrow')).toBeNull();
+    expect(container.querySelector('[data-hand-finger="li"]')).not.toHaveClass('is-active');
+  });
+
+  it('空格亮两根拇指', () => {
+    const { container } = render(<Keyboard nextKey=" " wrongKey={null} showHands />);
+    expect(container.querySelector('[data-hand-finger="lt"]')).toHaveClass('is-active');
+    expect(container.querySelector('[data-hand-finger="rt"]')).toHaveClass('is-active');
+    expect(container.querySelector('.kb-hand-bubble')).toHaveTextContent('空格');
   });
 
   it('没有下一个键时手指都不亮', () => {
     const { container } = render(<Keyboard nextKey={null} wrongKey={null} showHands />);
     expect(container.querySelectorAll('.is-active')).toHaveLength(0);
+    expect(container.querySelector('.kb-hand-bubble')).toBeNull();
   });
 });
